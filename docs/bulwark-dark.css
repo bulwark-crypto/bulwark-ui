@@ -4,6 +4,107 @@
 /* Colors */
 /* Color Codes */
 /* Font */
+.b, button {
+  background-color: #252525;
+  border: 1px solid #252525;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 30px;
+  line-height: 19px;
+  margin: 0 5px;
+  overflow: hidden;
+  padding: 5px 22px;
+  text-align: center;
+  transition: background-color .3s; }
+  .b-outline, button-outline {
+    background: transparent;
+    border: 1px solid #252525; }
+  .b-text, button-text {
+    background: transparent;
+    border: 0;
+    box-shadow: none; }
+  .b-default:hover, .b-default:focus, button-default:hover, button-default:focus {
+    background-color: #3f3f3f;
+    border: 1px solid #3f3f3f; }
+  .b-default-outline, button-default-outline {
+    background: transparent;
+    border-color: #252525;
+    color: #252525; }
+    .b-default-outline:hover, .b-default-outline:focus, button-default-outline:hover, button-default-outline:focus {
+      background-color: #bebebe; }
+  .b-default-text, button-default-text {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    color: #252525; }
+    .b-default-text:hover, .b-default-text:focus, button-default-text:hover, button-default-text:focus {
+      background-color: #bebebe; }
+  .b-primary, button-primary {
+    background-color: #294dea;
+    border: 1px solid #294dea;
+    color: #ffffff; }
+    .b-primary:hover, .b-primary:focus, button-primary:hover, button-primary:focus {
+      background-color: #5774ef;
+      border: 1px solid #5774ef; }
+    .b-primary-outline, button-primary-outline {
+      background: transparent;
+      border-color: #294dea;
+      color: #294dea; }
+      .b-primary-outline:hover, .b-primary-outline:focus, button-primary-outline:hover, button-primary-outline:focus {
+        background-color: #e3e8fc; }
+    .b-primary-text, button-primary-text {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      color: #294dea; }
+      .b-primary-text:hover, .b-primary-text:focus, button-primary-text:hover, button-primary-text:focus {
+        background-color: #e3e8fc; }
+  .b-secondary, button-secondary {
+    background-color: #7c7c7c;
+    border: 1px solid #7c7c7c;
+    color: #ffffff; }
+    .b-secondary:hover, .b-secondary:focus, button-secondary:hover, button-secondary:focus {
+      background-color: #969696;
+      border: 1px solid #969696; }
+    .b-secondary-outline, button-secondary-outline {
+      background: transparent;
+      border-color: #7c7c7c;
+      color: #7c7c7c; }
+      .b-secondary-outline:hover, .b-secondary-outline:focus, button-secondary-outline:hover, button-secondary-outline:focus {
+        background-color: #efefef; }
+    .b-secondary-text, button-secondary-text {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      color: #7c7c7c; }
+      .b-secondary-text:hover, .b-secondary-text:focus, button-secondary-text:hover, button-secondary-text:focus {
+        background-color: #e2e2e2; }
+  .b-disabled, button-disabled {
+    background-color: #f7f7f7;
+    border: 1px solid #f7f7f7;
+    box-shadow: 0;
+    color: #cccccc;
+    cursor: not-allowed; }
+    .b-disabled:hover, .b-disabled:focus, button-disabled:hover, button-disabled:focus {
+      background-color: #f7f7f7;
+      border: 1px solid #f7f7f7; }
+    .b-disabled-outline, button-disabled-outline {
+      background: transparent;
+      border-color: #f7f7f7;
+      color: #cccccc;
+      cursor: not-allowed; }
+    .b-disabled-text, button-disabled-text {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      color: #cccccc;
+      cursor: not-allowed; }
+
 html, body {
   background-color: #252525;
   color: #ffffff; }

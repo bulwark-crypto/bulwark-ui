@@ -1,0 +1,150 @@
+
+.b, button {
+    background-color: $black;
+    border: 1px solid $black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    color: $white;
+    cursor: pointer;
+    font-family: $roboto;
+    font-size: 14px;
+    font-weight: 500;
+    height: 30px;
+    line-height: 19px;
+    margin: 0 5px;
+    overflow: hidden;
+    padding: 5px 22px;
+    text-align: center;
+    transition: background-color .3s;
+
+    &-outline {
+        background: transparent;
+        border: 1px solid $black;
+    }
+
+    &-text {
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+    }
+
+    &-default {
+        &:hover, &:focus {
+            background-color: lighten($black, 10%);
+            border: 1px solid lighten($black, 10%);
+        }
+
+        &-outline {
+            background: transparent;
+            border-color: $black;
+            color: $black;
+
+            &:hover, &:focus {
+                background-color: lighten($black, 60%);
+            }
+        }
+
+        &-text {
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            color: $black;
+
+            &:hover, &:focus {
+                background-color: lighten($black, 60%);
+            }
+        }
+    }
+
+    &-primary {
+        background-color: $primary;
+        border: 1px solid $primary;
+        color: $white;
+
+        &:hover, &:focus {
+            background-color: lighten($primary, 10%);
+            border: 1px solid lighten($primary, 10%);
+        }
+
+        &-outline {
+            background: transparent;
+            border-color: $primary;
+            color: $primary;
+
+            &:hover, &:focus {
+                background-color: lighten($primary, 40%);
+            }
+        }
+
+        &-text {
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            color: $primary;
+
+            &:hover, &:focus {
+                background-color: lighten($primary, 40%);
+            }
+        }
+    }
+
+    &-secondary {
+        background-color: $secondary;
+        border: 1px solid $secondary;
+        color: $white;
+
+        &:hover, &:focus {
+            background-color: lighten($secondary, 10%);
+            border: 1px solid lighten($secondary, 10%);
+        }
+
+        &-outline {
+            background: transparent;
+            border-color: $secondary;
+            color: $secondary;
+
+            &:hover, &:focus {
+                background-color: lighten($secondary, 45%);
+            }
+        }
+
+        &-text {
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            color: $secondary;
+
+            &:hover, &:focus {
+                background-color: lighten($secondary, 40%);
+            }
+        }
+    }
+
+    &-disabled {
+        background-color: $light-gray;
+        border: 1px solid $light-gray;
+        box-shadow: 0;
+        color: $gray;
+        cursor: not-allowed;
+
+        &:hover, &:focus {
+            background-color: $light-gray;
+            border: 1px solid $light-gray;
+        }
+
+        &-outline {
+            background: transparent;
+            border-color: $light-gray;
+            color: $gray;
+            cursor: not-allowed;
+        }
+
+        &-text {
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            color: $gray;
+            cursor: not-allowed;
+        }
+    }
+}
