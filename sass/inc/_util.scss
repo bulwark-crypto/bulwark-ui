@@ -1,0 +1,23 @@
+
+/* Utility Classes */
+.u {
+    /* Background */
+    &-bg {
+        &-black {
+            background-color: $black;
+        }
+        &-white {
+            background-color: $white;
+        }
+    }
+
+    /* Foreground */
+    &-fg {
+        &-black {
+            color: $black;
+        }
+        &-white {
+            color: $white;
+        }
+    }
+}

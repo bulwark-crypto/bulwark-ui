@@ -1,0 +1,102 @@
+/**
+ * Core Variables
+ */
+/* Colors */
+/* Color Codes */
+/* Font */
+html, body {
+  background-color: #252525;
+  color: #ffffff; }
+
+/* Base */
+.body, body {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  letter-spacing: -1px;
+  line-height: 21px; }
+  .body .hero, body .hero {
+    font-family: "Poppins", sans-serif;
+    font-size: 52px;
+    font-weight: bold;
+    line-height: 78px; }
+  .body .h1, .body h1, body .h1, body h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 60px; }
+  .body .h2, .body h2, body .h2, body h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    line-height: 48px; }
+  .body .h3, .body h3, body .h3, body h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 28px;
+    line-height: 42px; }
+  .body .h4, .body h4, body .h4, body h4 {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 35px; }
+  .body .h5, .body h5, body .h5, body h5 {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px; }
+  .body .p, .body p, body .p, body p {
+    font-size: 14px;
+    line-height: 19px; }
+
+/* Helpers */
+.t {
+  /* Color Code */
+  /* Family */
+  /* Position */
+  /* Size */ }
+  .t-primary {
+    color: #294dea; }
+  .t-secondary {
+    color: #7c7c7c; }
+  .t-tertiary {
+    color: #e9edfc; }
+  .t-poppins {
+    font-family: "Poppins", sans-serif; }
+  .t-roboto {
+    font-family: "Roboto", sans-serif; }
+  .t-center {
+    text-align: center; }
+  .t-left {
+    text-align: left; }
+  .t-right {
+    text-align: right; }
+  .t-52 {
+    font-size: 52px; }
+  .t-40 {
+    font-size: 40px; }
+  .t-32 {
+    font-size: 32px; }
+  .t-28 {
+    font-size: 28px; }
+  .t-24 {
+    font-size: 24px; }
+  .t-20 {
+    font-size: 20px; }
+  .t-16 {
+    font-size: 16px; }
+  .t-14 {
+    font-size: 14px; }
+  .t-9 {
+    font-size: 9px; }
+
+/* Utility Classes */
+.u {
+  /* Background */
+  /* Foreground */ }
+  .u-bg-black {
+    background-color: #252525; }
+  .u-bg-white {
+    background-color: #ffffff; }
+  .u-fg-black {
+    color: #252525; }
+  .u-fg-white {
+    color: #ffffff; }

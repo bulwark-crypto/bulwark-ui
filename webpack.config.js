@@ -37,7 +37,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'STYLE': JSON.stringify(process.env.STYLE === 'light' ? 'light' : 'dark')
+      'STYLE': JSON.stringify(process.env.STYLE === 'dark' ? 'dark' : 'light')
     }),
     new htmlPlugin({
       title: 'Bulwark UI - TODO Demo App',
