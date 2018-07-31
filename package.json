@@ -30,7 +30,7 @@
   ],
   "private": false,
   "scripts": {
-    "build": "yarn run build:sass && yarn run build:todo && cp -R ./dist/* ./docs",
+    "build": "rm -fR ./dist/* ./docs/* && yarn run build:sass && yarn run build:todo && cp -R ./dist/* ./docs",
     "build:sass": "yarn run build:sass-dark && yarn run build:sass-light",
     "build:sass-dark": "node sass-build.js dark && node sass-build.js dark min",
     "build:sass-light": "node sass-build.js light && node sass-build.js light min",
