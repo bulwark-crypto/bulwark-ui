@@ -1,0 +1,65 @@
+{
+  "name": "bulwark-ui",
+  "version": "0.0.1",
+  "description": "Bulwark Cryptocurrency front-end style and JavaScript framework.",
+  "main": "dist/bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dustinengle/bulwark-ui.git"
+  },
+  "keywords": [
+    "scss",
+    "library",
+    "framework",
+    "responsive",
+    "sass",
+    "bulwark",
+    "micro",
+    "open source",
+    "lightweight",
+    "frontend"
+  ],
+  "author": {
+    "name": "Dustin Engle",
+    "url": "https://github.com/dustinengle"
+  },
+  "licenses": [
+    {
+      "type": "MIT License"
+    }
+  ],
+  "private": false,
+  "scripts": {
+    "build": "yarn run build:sass && yarn run build:todo && cp -R ./dist/* ./docs",
+    "build:sass": "yarn run build:sass-dark && yarn run build:sass-light",
+    "build:sass-dark": "node sass-build.js dark && node sass-build.js dark min",
+    "build:sass-light": "node sass-build.js light && node sass-build.js light min",
+    "build:todo": "webpack --color",
+    "start": "yarn run start:todo",
+    "start:todo": "webpack-dev-server --color --hot"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "d3-dsv": "^1.0.8",
+    "d3-format": "^1.3.0",
+    "d3-time-format": "^2.1.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-stockcharts": "^0.7.7"
+  }
+}
