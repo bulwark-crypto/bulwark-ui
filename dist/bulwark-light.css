@@ -104,6 +104,9 @@ html, body {
   background-color: #f7f7f7;
   color: #252525; }
 
+button:focus {
+  outline: none; }
+
 /* Base */
 .body, body {
   color: #252525;
