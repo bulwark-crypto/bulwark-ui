@@ -3,3 +3,9 @@ html, body {
     background-color: $bg-color;
     color: $fg-color;
 }
+
+button {
+	&:focus {
+        outline: none;
+    }
+}
