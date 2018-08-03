@@ -15,7 +15,7 @@
     box-shadow: none;
 }
 
-.b, button {
+.b {
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 5px;
@@ -26,54 +26,55 @@
     font-weight: 500;
     height: 30px;
     line-height: 19px;
+    letter-spacing: normal;
     margin: 0 5px;
     overflow: hidden;
     padding: 5px 22px;
     text-align: center;
     transition: $animation-button-hover;
+    
+    background-color: $black;
+    border: 1px solid $black;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    color: $white;
 
-    &-default {
-        background-color: $black;
-        border: 1px solid $black;
-        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-        color: $white;
+    &--outline { @include button-outline($black, 60%); }
+    &--text { @include button-text($black, 60%); }
 
-        &--outline { @include button-outline($black, 60%); }
-        &--text { @include button-text($black, 60%); }
-    }
+    $self: &;
 
-    &-primary {
+    &--primary {
         background-color: $primary;
         border: 1px solid $primary;
         box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
         color: $white;
 
-        &--outline { @include button-outline($primary, 40%); }
-        &--text { @include button-text($primary, 40%); }
+        &#{$self}--outline { @include button-outline($primary, 40%); }
+        &#{$self}--text { @include button-text($primary, 40%); }
     }
 
-    &-secondary {
+    &--secondary {
         background-color: $secondary;
         border: 1px solid $secondary;
         box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
         color: $white;
 
-        &--outline { @include button-outline($secondary, 35%); }
-        &--text { @include button-text($secondary, 35%); }
+        &#{$self}--outline { @include button-outline($secondary, 35%); }
+        &#{$self}--text { @include button-text($secondary, 35%); }
     }
 
-    &-disabled {
+    &--disabled {
         background-color: $disabled;
         border: 1px solid $disabled;
         box-shadow: none;
         color: lighten($disabled, 10%);
         cursor: not-allowed;
 
-        &--outline {
+        &#{$self}--outline {
             @include button-outline($disabled, 10%);
             cursor: not-allowed;
         }
-        &--text {
+        &#{$self}--text {
             @include button-text($disabled, 10%);
             cursor: not-allowed;
         }
