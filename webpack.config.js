@@ -1,7 +1,7 @@
 
-const htmlPlugin = require('html-webpack-plugin');
-const path = require('path');
-const webpack = require('webpack');
+const htmlPlugin = require('html-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   devServer: {
@@ -39,7 +39,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'STYLE': JSON.stringify(process.env.STYLE === 'dark' ? 'dark' : 'light')
     }),
-    new htmlPlugin({
+    new htmlPlugin({ // eslint-disable-line new-cap
       title: 'Bulwark UI - TODO Demo App',
       filename: 'index.html',
       template: path.join(__dirname, 'react', 'template.html'),
@@ -47,9 +47,15 @@ module.exports = {
       favicon: path.join(__dirname, 'ico', 'favicon.png'),
       hash: true,
       showErrors: true
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        REBEM_MOD_DELIM: JSON.stringify('--'),
+        REBEM_ELEM_DELIM: JSON.stringify('__')
+      }
     })
   ],
   resolve: {
     extensions: ['.js', '.jsx']
   }
-};
+}

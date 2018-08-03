@@ -8,3 +8,5 @@ node_modules/
 *.sublime-gulp.cache
 
 \.DS_Store
+
+.vscode
