@@ -1,80 +1,90 @@
 /* Base */
 .body, body {
-    color: $fg-color;
-    font-family: $font-primary;
-    font-size: 16px;
-    line-height: 21px;
+  color: $fg-color;
+  font-family: $font-primary;
+  font-size: 16px;
+  line-height: 21px;
+}
 
-    .hero {
-        font-family: $font-secondary;
-        font-size: 52px;
-        font-weight: bold;
-        letter-spacing: -1px;
-        line-height: 78px;
-    }
-    .h1, h1 {
-        font-family: $font-secondary;
-        font-size: 40px;
-        font-weight: bold;
-        letter-spacing: -1px;
-        line-height: 60px;
-    }
-    .h2, h2 {
-        font-family: $font-secondary;
-        font-size: 32px;
-        letter-spacing: -1px;
-        line-height: 48px;
-    }
-    .h3, h3 {
-        font-family: $font-secondary;
-        font-size: 28px;
-        letter-spacing: -1px;
-        line-height: 42px;
-    }
-    .h4, h4 {
-        font-family: $font-secondary;
-        font-size: 24px;
-        font-weight: bold;
-        letter-spacing: -1px;
-        line-height: 35px;
-    }
-    .h5, h5 {
-        font-family: $font-secondary;
-        font-size: 20px;
-        font-weight: bold;
-        letter-spacing: -1px;
-        line-height: 30px;
-    }
-    .p, p {
-        font-size: 14px;
-        line-height: 19px;
-    }
+.hero {
+  font-family: $font-secondary;
+  font-size: 52px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 78px;
+}
+
+.h1, h1 {
+  font-family: $font-secondary;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 60px;
+}
+
+.h2, h2 {
+  font-family: $font-secondary;
+  font-size: 32px;
+  letter-spacing: -1px;
+  line-height: 48px;
+}
+
+.h3, h3 {
+  font-family: $font-secondary;
+  font-size: 28px;
+  letter-spacing: -1px;
+  line-height: 42px;
+}
+
+.h4, h4 {
+  font-family: $font-secondary;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 35px;
+}
+
+.h5, h5 {
+  font-family: $font-secondary;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 30px;
+}
+
+.p, p {
+  font-size: 14px;
+  line-height: 19px;
 }
 
 /* Helpers */
 .t {
-    /* Color Code */
+  /* Color Code */
+  &--color {
     &-primary { color: $primary; }
     &-secondary { color: $secondary; }
     &-tertiary { color: $tertiary; }
+  }
 
-    /* Family */
+  /* Family */
+  &--font {
     &-primary { font-family: $font-primary; }
     &-secondary { font-family: $font-secondary; }
+  }
 
-    /* Position */
-    &-center { text-align: center; }
-    &-left { text-align: left; }
-    &-right { text-align: right; }
+  /* Position */
+  &--center { text-align: center; }
+  &--left { text-align: left; }
+  &--right { text-align: right; }
 
-    /* Size */
-    &-52 { font-size: 52px; }
-    &-40 { font-size: 40px; }
-    &-32 { font-size: 32px; }
-    &-28 { font-size: 28px; }
-    &-24 { font-size: 24px; }
-    &-20 { font-size: 20px; }
-    &-16 { font-size: 16px; }
-    &-14 { font-size: 14px; }
-    &-9 { font-size: 9px; }
+  /* Size */
+  &--52 { font-size: 52px; }
+  &--40 { font-size: 40px; }
+  &--32 { font-size: 32px; }
+  &--28 { font-size: 28px; }
+  &--24 { font-size: 24px; }
+  &--20, &--lg { font-size: 20px; }
+  &--16 { font-size: 16px; }
+  &--14, &--md { font-size: 14px; }
+  &--9, &--sm { font-size: 9px; }
 }

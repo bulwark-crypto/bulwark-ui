@@ -1,10 +1,8 @@
 import React from 'react'
 
-import Row from '../../react/Row'
-
 const FontDemo = () => (
   <div>
-    <div className="hero">Hero</div>
+    <div className='hero'>Hero</div>
     <h1>H1</h1>
     <h2>H2</h2>
     <h3>H3</h3>

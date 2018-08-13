@@ -1,0 +1,28 @@
+
+@mixin border($color: transparent) {
+  border: 1px solid $color;
+}
+
+@mixin button-outline($color, $p) {
+  background: transparent;
+  border: 1px solid $color;
+  color: $color;
+
+  &:hover, &:focus {
+    background-color: lighten($color, $p);
+  }
+}
+
+@mixin button-text($color, $p) {
+  @include button-outline($color, $p);
+  border: 0;
+  box-shadow: none;
+}
+
+@mixin cols($slug) {
+  @for $i from 1 through $grid-size {
+    .col-#{$slug}-#{$i} {
+      width: ($i/$grid-size)*100%;
+    }
+  }
+}

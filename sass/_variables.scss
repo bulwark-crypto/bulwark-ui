@@ -4,6 +4,7 @@
 
 /* Colors */
 $black: #252525;
+$blue: #294dea;
 $green: #9eff90;
 $light-gray: #f7f7f7;
 $purple: #bc92ff;
@@ -13,9 +14,13 @@ $yellow: #fffb79;
 
 /* Color Codes */
 $disabled: #cccccc;
-$primary: #294dea;
+$primary: $blue;
 $secondary: #7c7c7c;
 $tertiary: #e9edfc;
+
+$alert: $red;
+$info: $blue;
+$success: $green;
 
 /* Font */
 $font-primary: 'Roboto', sans-serif;
@@ -24,7 +29,8 @@ $font-secondary: 'Poppins', sans-serif;
 /* Grid */
 $grid-gutter: 10px;
 $grid-size: 12;
+$grid-xs: 496px;
 $grid-sm: 768px;
 $grid-md: 1024px;
 $grid-lg: 1200px;
-$grid-breaks: ("sm": $grid-sm, "md": $grid-md, "lg": $grid-lg);
+$grid-breaks: ("xs": $grid-xs, "sm": $grid-sm, "md": $grid-md, "lg": $grid-lg);

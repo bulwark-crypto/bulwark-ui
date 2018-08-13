@@ -35,6 +35,7 @@
     "build:sass-dark": "node sass-build.js dark && node sass-build.js dark min",
     "build:sass-light": "node sass-build.js light && node sass-build.js light min",
     "build:todo": "webpack --color",
+    "jsfmt": "./node_modules/.bin/standard --fix",
     "start": "yarn run start:todo",
     "start:todo": "webpack-dev-server --color --hot"
   },

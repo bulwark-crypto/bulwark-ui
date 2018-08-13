@@ -1,44 +1,35 @@
-html {
-  box-sizing: border-box;
-
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-}
 
 .row {
-  margin-left: -1*$grid-gutter;
-  margin-right: -1*$grid-gutter;
+  @include border($blue);
+
+  width: 100%;
 
   &:after {
-    content: " ";
-    visibility: hidden;
-    display: block;
-    height: 0;
     clear: both;
-  }
-}
-
-.col {
-  display: inline;
-  vertical-align: baseline;
-  padding-left: $grid-gutter;
-  padding-right: $grid-gutter;
-  float: left;
-
-  @for $i from 1 to $grid-size {
-    &-#{$i} {
-      width: ($i/$grid-size)*100%;
-    }
+    content: " ";
+    display: table;
   }
 
-  @each $slug, $size in $grid-breaks {
-    @media (max-width: #{$size}) {
-      @for $i from 1 to $grid-size {
-        &-#{$slug}-#{$i} {
-          width: ($i/$grid-size)*100%;
-        }
-      }
-    }
+  [class*="col-"] {
+    @include border($red);
+
+    float: left;
+    padding: $grid-gutter;
+  }
+
+  @media only screen and (min-width: $grid-md) {
+    @include cols("lg");
+  }
+
+  @media only screen and (max-width: $grid-md) {
+    @include cols("md");
+  }
+
+  @media only screen and (max-width: $grid-sm) {
+    @include cols("sm");
+  }
+
+  @media only screen and (max-width: $grid-xs) {
+    @include cols("xs");
   }
 }
