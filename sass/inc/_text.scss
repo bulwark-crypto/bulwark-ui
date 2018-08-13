@@ -1,44 +1,48 @@
-
 /* Base */
 .body, body {
     color: $fg-color;
-    font-family: $roboto;
+    font-family: $font-primary;
     font-size: 16px;
-    letter-spacing: -1px;
     line-height: 21px;
 
     .hero {
-        font-family: $poppins;
+        font-family: $font-secondary;
         font-size: 52px;
         font-weight: bold;
+        letter-spacing: -1px;
         line-height: 78px;
     }
     .h1, h1 {
-        font-family: $poppins;
+        font-family: $font-secondary;
         font-size: 40px;
         font-weight: bold;
+        letter-spacing: -1px;
         line-height: 60px;
     }
     .h2, h2 {
-        font-family: $poppins;
+        font-family: $font-secondary;
         font-size: 32px;
+        letter-spacing: -1px;
         line-height: 48px;
     }
     .h3, h3 {
-        font-family: $poppins;
+        font-family: $font-secondary;
         font-size: 28px;
+        letter-spacing: -1px;
         line-height: 42px;
     }
     .h4, h4 {
-        font-family: $poppins;
+        font-family: $font-secondary;
         font-size: 24px;
         font-weight: bold;
+        letter-spacing: -1px;
         line-height: 35px;
     }
     .h5, h5 {
-        font-family: $poppins;
+        font-family: $font-secondary;
         font-size: 20px;
         font-weight: bold;
+        letter-spacing: -1px;
         line-height: 30px;
     }
     .p, p {
@@ -55,8 +59,8 @@
     &-tertiary { color: $tertiary; }
 
     /* Family */
-    &-poppins { font-family: $poppins; }
-    &-roboto { font-family: $roboto; }
+    &-primary { font-family: $font-primary; }
+    &-secondary { font-family: $font-secondary; }
 
     /* Position */
     &-center { text-align: center; }

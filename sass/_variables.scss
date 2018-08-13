@@ -18,5 +18,13 @@ $secondary: #7c7c7c;
 $tertiary: #e9edfc;
 
 /* Font */
-$poppins: 'Poppins', sans-serif;
-$roboto: 'Roboto', sans-serif;
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Poppins', sans-serif;
+
+/* Grid */
+$grid-gutter: 10px;
+$grid-size: 12;
+$grid-sm: 768px;
+$grid-md: 1024px;
+$grid-lg: 1200px;
+$grid-breaks: ("sm": $grid-sm, "md": $grid-md, "lg": $grid-lg);
