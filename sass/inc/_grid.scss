@@ -1,7 +1,5 @@
 
 .row {
-  @include border($blue);
-
   width: 100%;
 
   &:after {
@@ -11,8 +9,6 @@
   }
 
   [class*="col-"] {
-    @include border($red);
-
     float: left;
     padding: $grid-gutter;
   }

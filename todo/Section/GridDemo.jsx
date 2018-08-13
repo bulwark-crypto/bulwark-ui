@@ -4,7 +4,7 @@ import Col from '../../react/Col'
 import Row from '../../react/Row'
 
 const GridDemo = () => (
-  <div className='t--md'>
+  <div className='t--center t--md'>
     <Row>
       <Col sm={6} md={4} lg={3}>col-xs-12 col-sm-6 col-md-4 col-lg-3</Col>
       <Col sm={6} md={4} lg={3}>col-xs-12 col-sm-6 col-md-4 col-lg-3</Col>
