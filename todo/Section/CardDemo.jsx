@@ -6,7 +6,6 @@ import CardActions from '../../react/CardActions'
 import CardBody from '../../react/CardBody'
 import CardTitle from '../../react/CardTitle'
 import Col from '../../react/Col'
-import Icon from '../../react/Icon'
 import Row from '../../react/Row'
 
 const CardDemo = () => (

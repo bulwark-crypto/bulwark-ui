@@ -4,7 +4,7 @@ import React from 'react'
 const CardBody = ({children, className, ...props}) => (
   <div
     {...props}
-    className={!!className ? `card__body ${className}` : 'card__body'}>
+    className={className ? `card__body ${className}` : 'card__body'}>
     {children}
   </div>
 )
