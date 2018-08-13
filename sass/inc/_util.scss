@@ -1,23 +1,27 @@
 
 /* Utility Classes */
 .u {
-    /* Background */
-    &-bg {
-        &-black {
-            background-color: $black;
-        }
-        &-white {
-            background-color: $white;
-        }
-    }
+  /* Background */
+  &--bg {
+    &-black { background-color: $black; }
+    &-white { background-color: $white; }
+  }
 
-    /* Foreground */
-    &-fg {
-        &-black {
-            color: $black;
-        }
-        &-white {
-            color: $white;
-        }
-    }
+  /* Boxes */
+  &--box {
+    &-xs { @include box(8px); }
+    &-sm { @include box(16px); }
+    &-base { @include box(24px); }
+    &-md { @include box(32px); }
+    &-lg { @include box(48px); }
+    &-xlg { @include box(64px); }
+    &-xxlg { @include box(72px); }
+    &-american { @include box(128px); }
+  }
+
+  /* Foreground */
+  &--fg {
+    &-black { color: $black; }
+    &-white { color: $white; }
+  }
 }

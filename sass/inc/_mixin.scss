@@ -3,6 +3,11 @@
   border: 1px solid $color;
 }
 
+@mixin box($size: 8px) {
+  height: $size;
+  width: $size;
+}
+
 @mixin button-outline($color, $p) {
   background: transparent;
   border: 1px solid $color;

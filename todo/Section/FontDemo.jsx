@@ -1,7 +1,8 @@
 import React from 'react'
 
 const FontDemo = () => (
-  <div>
+  <div className='t--center'>
+    <h3 className='t--left'>Typography</h3>
     <div className='hero'>Hero</div>
     <h1>H1</h1>
     <h2>H2</h2>
