@@ -8,6 +8,18 @@
   width: $size;
 }
 
+@mixin button-icon($color, $p) {
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  color: $color;
+
+  &:hover, &:focus {
+    background-color: lighten($color, $p);
+    border: 1px solid lighten($color, $p);
+  }
+}
+
 @mixin button-outline($color, $p) {
   background: transparent;
   border: 1px solid $color;

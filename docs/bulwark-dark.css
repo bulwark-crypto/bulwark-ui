@@ -28,6 +28,21 @@
   border: 1px solid #252525;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   color: #ffffff; }
+  .b--icon {
+    background: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
+    color: #252525;
+    border-radius: 50%;
+    color: #252525;
+    height: 44px;
+    margin: 0 10px;
+    padding: 0;
+    text-align: center;
+    width: 44px; }
+    .b--icon:hover, .b--icon:focus {
+      background-color: #bebebe;
+      border: 1px solid #bebebe; }
   .b--outline {
     background: transparent;
     border: 1px solid #252525;
@@ -47,6 +62,14 @@
     border: 1px solid #294dea;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     color: #ffffff; }
+    .b--primary.b--icon {
+      background: transparent;
+      border: 1px solid transparent;
+      box-shadow: none;
+      color: #294dea; }
+      .b--primary.b--icon:hover, .b--primary.b--icon:focus {
+        background-color: #e3e8fc;
+        border: 1px solid #e3e8fc; }
     .b--primary.b--outline {
       background: transparent;
       border: 1px solid #294dea;
@@ -66,6 +89,14 @@
     border: 1px solid #7c7c7c;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     color: #ffffff; }
+    .b--secondary.b--icon {
+      background: transparent;
+      border: 1px solid transparent;
+      box-shadow: none;
+      color: #7c7c7c; }
+      .b--secondary.b--icon:hover, .b--secondary.b--icon:focus {
+        background-color: #d5d5d5;
+        border: 1px solid #d5d5d5; }
     .b--secondary.b--outline {
       background: transparent;
       border: 1px solid #7c7c7c;
@@ -86,6 +117,15 @@
     box-shadow: none;
     color: #e6e6e6;
     cursor: not-allowed; }
+    .b--disabled.b--icon {
+      background: transparent;
+      border: 1px solid transparent;
+      box-shadow: none;
+      color: #cccccc;
+      cursor: not-allowed; }
+      .b--disabled.b--icon:hover, .b--disabled.b--icon:focus {
+        background-color: #e6e6e6;
+        border: 1px solid #e6e6e6; }
     .b--disabled.b--outline {
       background: transparent;
       border: 1px solid #cccccc;

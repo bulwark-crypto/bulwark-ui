@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Button from '../../react/Button'
+import IconButton from '../../react/IconButton'
 
 const ButtonDemo = () => (
   <div>
@@ -21,6 +22,12 @@ const ButtonDemo = () => (
     <Button primary text>Primary</Button>
     <Button secondary text>Secondary</Button>
     <Button disabled text>Disabled</Button>
+
+    <h3>Icon Buttons</h3>
+    <IconButton icon k='home' />
+    <IconButton primary icon k='check' />
+    <IconButton secondary icon k='user' />
+    <IconButton disabled icon k='times' />
   </div>
 )
 
