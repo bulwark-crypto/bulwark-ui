@@ -2,7 +2,7 @@
 .b {
     background-color: transparent;
     border: 1px solid transparent;
-    border-radius: 5px;
+    border-radius: $border-radius;
     color: $white;
     cursor: pointer;
     font-family: $font-primary;
