@@ -3,18 +3,41 @@ import React from 'react'
 
 export default class Button extends React.Component {
   render () {
-    const {as, children, ...mods} = this.props
-    return <this.props.as block='b' mods={mods}>{children}</this.props.as>
+    const {
+      as,
+      block,
+      children,
+      icon,
+      outline,
+      primary,
+      secondary,
+      text,
+      ...props
+    } = this.props
+
+    return (
+      <this.props.as
+        {...props}
+        block={block}
+        mods={{icon, outline, primary, secondary, text}}>
+        {children}
+      </this.props.as>
+    );
   }
 }
 
 Button.defaultProps = {
   as: 'button',
-  mods: {}
+  block: 'b'
 }
 
 Button.propTypes = {
   as: PropTypes.string.isRequired,
+  block: PropTypes.string.isRequired,
   children: PropTypes.any.isRequired,
-  mods: PropTypes.object.isRequired
+  icon: PropTypes.bool,
+  outline: PropTypes.bool,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  text: PropTypes.bool
 }
