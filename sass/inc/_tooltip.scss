@@ -1,0 +1,25 @@
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+
+  &__content {
+    background-color: $black;
+    border-radius: $border-radius;
+    color: $white;
+    padding: $grid-gutter 0;
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+    z-index: 1;
+
+    &--top {
+      bottom: 40px;
+      left: 0;
+    }
+  }
+
+  &:hover &__content {
+    visibility: visible;
+  }
+}
