@@ -4,14 +4,20 @@ about: Suggest an idea for this project
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**Does this component have a design provided?**
+Yes
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**Where is the design located?**
+InVision
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**What type of user interaction will this component provide?**
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+
+**What variations are there for this component?**
+
+
+**Will this component require tests?**
+Yes
+
+**Other related information for the component?**
+N/A
