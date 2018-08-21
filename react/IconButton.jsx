@@ -9,7 +9,7 @@ export default class IconButton extends React.Component {
     const [ mods, {children, as, k, ...rest} ] = pickRest(this.props, ['primary', 'secondary', 'disabled'])
     const As = as
     return (
-      <As block='button' mods={{...mods, icon: 'true'}} {...rest}>
+      <As block='button' mods={{...mods, icon: true}} {...rest}>
         <Icon {...{k}} />
       </As>
     )
