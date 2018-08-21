@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/dustinengle/bulwark-ui/badge.svg?branch=master)](https://coveralls.io/github/dustinengle/bulwark-ui?branch=master)
+
 # Bulwark UI
 Bulwark Cryptocurrency front-end style and JavaScript framework.
 
