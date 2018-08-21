@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 
 const Button = props => {
   const [ mods, {children, as, block, ...rest} ] = pickRest(props, ['primary', 'secondary', 'icon', 'disabled', 'outline', 'text'])
-  return <as block={block} mods={mods} {...rest}>{children}</as>
+  const As = as
+  return <As block={block} mods={mods} {...rest}>{children}</As>
 }
 
 Button.defaultProps = {
