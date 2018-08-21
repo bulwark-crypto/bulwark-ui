@@ -37,7 +37,11 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'STYLE': JSON.stringify(process.env.STYLE === 'dark' ? 'dark' : 'light')
+      'STYLE': JSON.stringify(process.env.STYLE === 'dark' ? 'dark' : 'light'),
+      'process.env': {
+        REBEM_MOD_DELIM: JSON.stringify('--'),
+        REBEM_ELEM_DELIM: JSON.stringify('__')
+      }
     }),
     new htmlPlugin({ // eslint-disable-line new-cap
       title: 'Bulwark UI - TODO Demo App',
@@ -47,12 +51,6 @@ module.exports = {
       favicon: path.join(__dirname, 'ico', 'favicon.png'),
       hash: true,
       showErrors: true
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        REBEM_MOD_DELIM: JSON.stringify('--'),
-        REBEM_ELEM_DELIM: JSON.stringify('__')
-      }
     })
   ],
   resolve: {

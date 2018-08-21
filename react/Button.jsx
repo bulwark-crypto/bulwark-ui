@@ -1,43 +1,24 @@
-import PropTypes from 'prop-types'
 import React from 'react'
+import {pickRest} from '../lib/utils'
+import PropTypes from 'prop-types'
 
-export default class Button extends React.Component {
-  render () {
-    const {
-      as,
-      block,
-      children,
-      icon,
-      outline,
-      primary,
-      secondary,
-      text,
-      ...props
-    } = this.props
-
-    return (
-      <this.props.as
-        {...props}
-        block={block}
-        mods={{icon, outline, primary, secondary, text}}>
-        {children}
-      </this.props.as>
-    );
-  }
+const Button = props => {
+  const [ mods, {children, as, block, ...rest} ] = pickRest(props, ['primary', 'secondary', 'disabled', 'outline', 'text'])
+  const As = as
+  return <As block='button' mods={mods} {...rest}>{children}</As>
 }
 
 Button.defaultProps = {
-  as: 'button',
-  block: 'b'
+  as: 'button'
 }
 
 Button.propTypes = {
-  as: PropTypes.string.isRequired,
-  block: PropTypes.string.isRequired,
-  children: PropTypes.any.isRequired,
-  icon: PropTypes.bool,
-  outline: PropTypes.bool,
+  as: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
+  disabled: PropTypes.bool,
+  outline: PropTypes.bool,
   text: PropTypes.bool
 }
+
+export default Button

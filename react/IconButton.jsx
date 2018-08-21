@@ -1,27 +1,29 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import {pickRest} from '../lib/utils'
 
 import Icon from './Icon'
 
 export default class IconButton extends React.Component {
   render () {
-    const {as, k, ...mods} = this.props
-
+    const [ mods, {children, as, k, ...rest} ] = pickRest(this.props, ['primary', 'secondary', 'disabled'])
+    const As = as
     return (
-      <this.props.as block='b' mods={mods}>
+      <As block='button' mods={{...mods, icon: true}} {...rest}>
         <Icon {...{k}} />
-      </this.props.as>
+      </As>
     )
   }
 }
 
 IconButton.defaultProps = {
-  as: 'button',
-  mods: {}
+  as: 'button'
 }
 
 IconButton.propTypes = {
   as: PropTypes.string.isRequired,
   k: PropTypes.string.isRequired,
-  mods: PropTypes.object.isRequired
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  disabled: PropTypes.bool
 }
