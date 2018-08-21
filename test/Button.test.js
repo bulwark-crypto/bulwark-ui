@@ -16,11 +16,10 @@ describe('<Button />', () => {
   })
 
   it('renders classes', () => {
-    const wrapper = shallow(<Button primary secondary icon disabled outline text />)
+    const wrapper = shallow(<Button primary secondary disabled outline text />)
     expect(wrapper.hasClass('button')).to.be.true()
     expect(wrapper.hasClass('button--primary')).to.be.true()
     expect(wrapper.hasClass('button--secondary')).to.be.true()
-    expect(wrapper.hasClass('button--icon')).to.be.true()
     expect(wrapper.hasClass('button--disabled')).to.be.true()
     expect(wrapper.hasClass('button--outline')).to.be.true()
     expect(wrapper.hasClass('button--text')).to.be.true()
