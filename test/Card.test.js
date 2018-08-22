@@ -3,10 +3,7 @@ import React from 'react'
 import expect from 'must'
 import { shallow } from 'enzyme'
 import Button from '../react/Button'
-import Card from '../react/Card'
-import CardActions from '../react/CardActions'
-import CardBody from '../react/CardBody'
-import CardTitle from '../react/CardTitle'
+import {Card, CardActions, CardBody, CardTitle} from '../react/Card'
 
 describe('<Card />', () => {
   it('renders as a card', () => {
