@@ -1,36 +1,26 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import {pickRest} from '../lib/utils'
 
-const Tooltip = ({bgcolor, children, content, fgcolor, position, ...props}) => {
+const Tooltip = (props) => {
+  const [ mods, {children, content, ...rest} ] = pickRest(props, ['bottom', 'left', 'primary', 'right', 'top', 'urgent'])
   return (
-    <div {...props} className="tooltip">
-      <div
-        className={`tooltip__content tooltip__content--${position}`}
-        style={{backgroundColor: bgcolor, color: fgcolor}}>
-        {content}
-      </div>
+    <div block='tooltip' {...rest}>
+      <span block='tooltip' elem='content' mods={mods}>{content}</span>
       {children}
     </div>
   )
 }
 
-Tooltip.defaultProps = {
-  bgcolor: 'black',
-  fgcolor: 'white',
-  position: 'top'
-}
-
 Tooltip.propTypes = {
-  bgcolor: PropTypes.string.isRequired,
+  bottom: PropTypes.bool,
   children: PropTypes.any.isRequired,
   content: PropTypes.any.isRequired,
-  fgcolor: PropTypes.string.isRequired,
-  position: PropTypes.oneOf([
-    'top',
-    'right',
-    'bottom',
-    'left'
-  ]).isRequired
+  left: PropTypes.bool,
+  primary: PropTypes.bool,
+  right: PropTypes.bool,
+  top: PropTypes.bool,
+  urgent: PropTypes.bool
 }
 
 export default Tooltip
