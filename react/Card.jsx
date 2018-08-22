@@ -4,64 +4,49 @@ import React from 'react'
 import Icon from './Icon'
 
 // Card
-export const Card = ({children, className, image, ...props}) => {
-  let classes = className ? `card ${className}` : 'card'
-  if (image) classes = classes.replace('card', 'card card--image')
-
-  return (
-    <div {...props} className={classes}>
-      {!!image && <img alt='' src={image} />}
-      {children}
-    </div>
-  )
-}
+export const Card = ({children, image, ...rest}) => (
+  <div block='card' mods={image ? {image: true} : {}} {...rest}>
+    {!!image && <img alt='' src={image} />}
+    {children}
+  </div>
+)
 
 Card.propTypes = {
   children: PropTypes.any.isRequired,
-  className: PropTypes.string,
   image: PropTypes.string
 }
 
 // Actions
-export const CardActions = ({children, className, ...props}) => (
-  <div
-    {...props}
-    className={className ? `card__actions ${className}` : 'card__actions'}>
+export const CardActions = ({children, ...rest}) => (
+  <div block='card' elem='actions' {...rest}>
     {children}
   </div>
 )
 
 CardActions.propTypes = {
-  children: PropTypes.any.isRequired,
-  className: PropTypes.string
+  children: PropTypes.any.isRequired
 }
 
 // Body
-export const CardBody = ({children, className, ...props}) => (
-  <div
-    {...props}
-    className={className ? `card__body ${className}` : 'card__body'}>
+export const CardBody = ({children, ...rest}) => (
+  <div block='card' elem='body' {...rest}>
     {children}
   </div>
 )
 
 CardBody.propTypes = {
-  children: PropTypes.any.isRequired,
-  className: PropTypes.string
+  children: PropTypes.any.isRequired
 }
 
 // Title
-export const CardTitle = ({className, icon, title, ...props}) => (
-  <div
-    {...props}
-    className={className ? `card__title ${className}` : 'card__title'}>
+export const CardTitle = ({icon, title, ...rest}) => (
+  <div block='card' elem='title' {...rest}>
     <span className='card__title__text'>{title}</span>
     {icon && <Icon k={icon} />}
   </div>
 )
 
 CardTitle.propTypes = {
-  className: PropTypes.string,
   icon: PropTypes.string,
   title: PropTypes.string.isRequired
 }

@@ -146,12 +146,9 @@
 .card {
   background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-  padding-bottom: 32px; }
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25); }
   .card--image {
-    display: inline-block;
-    padding-top: 0;
-    width: min-content; }
+    overflow: hidden; }
     .card--image .card__title {
       border: 0;
       color: #ffffff;
@@ -163,23 +160,18 @@
         position: absolute; }
     .card--image img {
       border-top-left-radius: 5px;
-      border-top-right-radius: 5px; }
+      border-top-right-radius: 5px;
+      height: min-content; }
   .card__actions {
-    padding: 32px 32px 0 32px;
+    padding: 0 32px 32px 32px;
     position: relative; }
     .card__actions .row div:first {
       margin-left: 0;
       padding-left: 0; }
     .card__actions button {
-      margin-left: 0; }
-    .card__actions small {
-      color: #959595;
-      position: absolute;
-      right: 32px;
-      top: 50%;
-      transform: translateY(-50%); }
+      margin: 0 10px 0 0; }
   .card__body {
-    padding: 32px 32px 0 32px; }
+    padding: 32px; }
   .card__title {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     font-family: "Poppins", sans-serif;
@@ -370,44 +362,44 @@ button:focus {
   line-height: 19px; }
 
 /* Helpers */
-.t {
+.text {
   /* Color Code */
   /* Family */
   /* Position */
   /* Size */ }
-  .t--color-primary {
+  .text--color-primary {
     color: #294dea; }
-  .t--color-secondary {
+  .text--color-secondary {
     color: #7c7c7c; }
-  .t--color-tertiary {
+  .text--color-tertiary {
     color: #e9edfc; }
-  .t--font-primary {
+  .text--font-primary {
     font-family: "Roboto", sans-serif; }
-  .t--font-secondary {
+  .text--font-secondary {
     font-family: "Poppins", sans-serif; }
-  .t--center {
+  .text--center {
     text-align: center; }
-  .t--left {
+  .text--left {
     text-align: left; }
-  .t--right {
+  .text--right {
     text-align: right; }
-  .t--52 {
+  .text--52 {
     font-size: 52px; }
-  .t--40 {
+  .text--40 {
     font-size: 40px; }
-  .t--32 {
+  .text--32 {
     font-size: 32px; }
-  .t--28 {
+  .text--28 {
     font-size: 28px; }
-  .t--24 {
+  .text--24 {
     font-size: 24px; }
-  .t--20, .t--lg {
+  .text--20, .text--lg {
     font-size: 20px; }
-  .t--16 {
+  .text--16 {
     font-size: 16px; }
-  .t--14, .t--md {
+  .text--14, .text--md {
     font-size: 14px; }
-  .t--9, .t--sm {
+  .text--9, .text--sm {
     font-size: 9px; }
 
 .tooltip {
@@ -496,7 +488,8 @@ button:focus {
 .u {
   /* Background */
   /* Boxes */
-  /* Foreground */ }
+  /* Foreground */
+  /* Float */ }
   .u--bg-black {
     background-color: #252525; }
   .u--bg-white {
@@ -529,3 +522,9 @@ button:focus {
     color: #252525; }
   .u--fg-white {
     color: #ffffff; }
+  .u--clear {
+    clear: both; }
+  .u--float-left {
+    float: left; }
+  .u--float-right {
+    float: right; }

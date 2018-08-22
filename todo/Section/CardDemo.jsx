@@ -19,19 +19,13 @@ const CardDemo = () => (
             también tienen estilo.
           </CardBody>
           <CardActions>
-            <Row>
-              <Col md={4} lg={6}>
-                <Button onClick={f => f} outline>Read More</Button>
-              </Col>
-              <Col md={8} lg={6} className='t--right'>
-                <small className='t--gray'>20/20/2019</small>
-              </Col>
-            </Row>
+            <Button onClick={f => f} outline>Read More</Button>
+            <small className='u--float-right text--color-secondary'>20/20/2019</small>
           </CardActions>
         </Card>
       </Col>
-      <Col sm={6} md={6} lg={6}>
-        <Card image='https://dummyimage.com/480x130/00f/00c.gif'>
+      <Col sm={6} md={6} lg={3}>
+        <Card image='https://dummyimage.com/356x130/00f/00c.gif'>
           <CardTitle title='Hello There' />
           <CardBody>
             Solo necesito tirarme desde un avión con una
@@ -40,15 +34,19 @@ const CardDemo = () => (
             te quieres morir.
           </CardBody>
           <CardActions>
-            <Row>
-              <Col md={4} lg={6}>
-                <Button onClick={f => f} outline>Read More</Button>
-              </Col>
-              <Col md={8} lg={6} className='t--right'>
-                <small className='t--gray'>20/20/2019</small>
-              </Col>
-            </Row>
+            <Button onClick={f => f} outline>Read More</Button>
+            <small className='u--float-right text--color-secondary'>20/20/2019</small>
           </CardActions>
+        </Card>
+      </Col>
+      <Col sm={6} md={6} lg={3}>
+        <Card>
+          <CardBody>
+            Solo necesito tirarme desde un avión con una
+            bufanda para no coger un catarro. Mi perro es negro, mi rata es
+            blanca. Mis padres quieren que tenga un hijo. El colegio es útil si
+            te quieres morir.
+          </CardBody>
         </Card>
       </Col>
     </Row>
