@@ -7,7 +7,7 @@
 /* Border */
 /* Font */
 /* Grid */
-.b {
+.button {
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -28,7 +28,7 @@
   border: 1px solid #252525;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   color: #ffffff; }
-  .b--icon {
+  .button--icon {
     background: transparent;
     border: 1px solid transparent;
     box-shadow: none;
@@ -40,107 +40,107 @@
     padding: 0;
     text-align: center;
     width: 44px; }
-    .b--icon:hover, .b--icon:focus {
+    .button--icon:hover, .button--icon:focus {
       background-color: #bebebe;
       border: 1px solid #bebebe; }
-  .b--outline {
+  .button--outline {
     background: transparent;
     border: 1px solid #252525;
     color: #252525; }
-    .b--outline:hover, .b--outline:focus {
+    .button--outline:hover, .button--outline:focus {
       background-color: #bebebe; }
-  .b--text {
+  .button--text {
     background: transparent;
     border: 1px solid #252525;
     color: #252525;
     border: 0;
     box-shadow: none; }
-    .b--text:hover, .b--text:focus {
+    .button--text:hover, .button--text:focus {
       background-color: #bebebe; }
-  .b--primary {
+  .button--primary {
     background-color: #294dea;
     border: 1px solid #294dea;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     color: #ffffff; }
-    .b--primary.b--icon {
+    .button--primary.button--icon {
       background: transparent;
       border: 1px solid transparent;
       box-shadow: none;
       color: #294dea; }
-      .b--primary.b--icon:hover, .b--primary.b--icon:focus {
+      .button--primary.button--icon:hover, .button--primary.button--icon:focus {
         background-color: #e3e8fc;
         border: 1px solid #e3e8fc; }
-    .b--primary.b--outline {
+    .button--primary.button--outline {
       background: transparent;
       border: 1px solid #294dea;
       color: #294dea; }
-      .b--primary.b--outline:hover, .b--primary.b--outline:focus {
+      .button--primary.button--outline:hover, .button--primary.button--outline:focus {
         background-color: #e3e8fc; }
-    .b--primary.b--text {
+    .button--primary.button--text {
       background: transparent;
       border: 1px solid #294dea;
       color: #294dea;
       border: 0;
       box-shadow: none; }
-      .b--primary.b--text:hover, .b--primary.b--text:focus {
+      .button--primary.button--text:hover, .button--primary.button--text:focus {
         background-color: #e3e8fc; }
-  .b--secondary {
+  .button--secondary {
     background-color: #7c7c7c;
     border: 1px solid #7c7c7c;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     color: #ffffff; }
-    .b--secondary.b--icon {
+    .button--secondary.button--icon {
       background: transparent;
       border: 1px solid transparent;
       box-shadow: none;
       color: #7c7c7c; }
-      .b--secondary.b--icon:hover, .b--secondary.b--icon:focus {
+      .button--secondary.button--icon:hover, .button--secondary.button--icon:focus {
         background-color: #d5d5d5;
         border: 1px solid #d5d5d5; }
-    .b--secondary.b--outline {
+    .button--secondary.button--outline {
       background: transparent;
       border: 1px solid #7c7c7c;
       color: #7c7c7c; }
-      .b--secondary.b--outline:hover, .b--secondary.b--outline:focus {
+      .button--secondary.button--outline:hover, .button--secondary.button--outline:focus {
         background-color: #d5d5d5; }
-    .b--secondary.b--text {
+    .button--secondary.button--text {
       background: transparent;
       border: 1px solid #7c7c7c;
       color: #7c7c7c;
       border: 0;
       box-shadow: none; }
-      .b--secondary.b--text:hover, .b--secondary.b--text:focus {
+      .button--secondary.button--text:hover, .button--secondary.button--text:focus {
         background-color: #d5d5d5; }
-  .b--disabled {
+  .button--disabled {
     background-color: #cccccc;
     border: 1px solid #cccccc;
     box-shadow: none;
     color: #e6e6e6;
     cursor: not-allowed; }
-    .b--disabled.b--icon {
+    .button--disabled.button--icon {
       background: transparent;
       border: 1px solid transparent;
       box-shadow: none;
       color: #cccccc;
       cursor: not-allowed; }
-      .b--disabled.b--icon:hover, .b--disabled.b--icon:focus {
+      .button--disabled.button--icon:hover, .button--disabled.button--icon:focus {
         background-color: #e6e6e6;
         border: 1px solid #e6e6e6; }
-    .b--disabled.b--outline {
+    .button--disabled.button--outline {
       background: transparent;
       border: 1px solid #cccccc;
       color: #cccccc;
       cursor: not-allowed; }
-      .b--disabled.b--outline:hover, .b--disabled.b--outline:focus {
+      .button--disabled.button--outline:hover, .button--disabled.button--outline:focus {
         background-color: #e6e6e6; }
-    .b--disabled.b--text {
+    .button--disabled.button--text {
       background: transparent;
       border: 1px solid #cccccc;
       color: #cccccc;
       border: 0;
       box-shadow: none;
       cursor: not-allowed; }
-      .b--disabled.b--text:hover, .b--disabled.b--text:focus {
+      .button--disabled.button--text:hover, .button--disabled.button--text:focus {
         background-color: #e6e6e6; }
 
 .card {
@@ -409,6 +409,88 @@ button:focus {
     font-size: 14px; }
   .t--9, .t--sm {
     font-size: 9px; }
+
+.tooltip {
+  display: inline-block;
+  position: relative; }
+  .tooltip__content {
+    background-color: #7c7c7c;
+    border-radius: 5px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 9px;
+    line-height: 11px;
+    padding: 5px 10px;
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+    width: max-content;
+    z-index: 1; }
+    .tooltip__content::after {
+      border-style: solid;
+      border-width: 5px;
+      content: " ";
+      position: absolute; }
+    .tooltip__content--primary {
+      background-color: #294dea; }
+      .tooltip__content--primary.tooltip__content--bottom::after {
+        border-color: transparent transparent #294dea transparent; }
+      .tooltip__content--primary.tooltip__content--left::after {
+        border-color: transparent transparent transparent #294dea; }
+      .tooltip__content--primary.tooltip__content--right::after {
+        border-color: transparent #294dea transparent transparent; }
+      .tooltip__content--primary.tooltip__content--top::after {
+        border-color: #294dea transparent transparent transparent; }
+    .tooltip__content--urgent {
+      background-color: #e34a4a; }
+      .tooltip__content--urgent.tooltip__content--bottom::after {
+        border-color: transparent transparent #e34a4a transparent; }
+      .tooltip__content--urgent.tooltip__content--left::after {
+        border-color: transparent transparent transparent #e34a4a; }
+      .tooltip__content--urgent.tooltip__content--right::after {
+        border-color: transparent #e34a4a transparent transparent; }
+      .tooltip__content--urgent.tooltip__content--top::after {
+        border-color: #e34a4a transparent transparent transparent; }
+    .tooltip__content--bottom {
+      left: 50%;
+      top: 105%;
+      transform: translateX(-50%); }
+      .tooltip__content--bottom::after {
+        border-color: transparent transparent #7c7c7c transparent;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%); }
+    .tooltip__content--left {
+      top: 50%;
+      right: 105%;
+      transform: translateY(-50%); }
+      .tooltip__content--left::after {
+        border-color: transparent transparent transparent #7c7c7c;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%); }
+    .tooltip__content--right {
+      left: 105%;
+      top: 50%;
+      transform: translateY(-50%); }
+      .tooltip__content--right::after {
+        border-color: transparent #7c7c7c transparent transparent;
+        right: 100%;
+        top: 50%;
+        transform: translateY(-50%); }
+    .tooltip__content--top {
+      bottom: 105%;
+      left: 50%;
+      transform: translateX(-50%); }
+      .tooltip__content--top::after {
+        border-color: #7c7c7c transparent transparent transparent;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%); }
+  .tooltip:hover .tooltip__content {
+    visibility: visible; }
+  .tooltip .button {
+    margin: 5px; }
 
 /* Utility Classes */
 .u {
