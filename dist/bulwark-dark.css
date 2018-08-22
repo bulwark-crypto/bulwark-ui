@@ -417,6 +417,8 @@ button:focus {
     text-align: center;
     visibility: hidden;
     width: max-content;
+    width: -moz-max-content;
+    width: -webkit-max-content;
     z-index: 1; }
     .tooltip__content::after {
       border-style: solid;
