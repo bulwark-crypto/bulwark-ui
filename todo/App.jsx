@@ -6,7 +6,7 @@ import ButtonDemo from './Section/ButtonDemo'
 import FontDemo from './Section/FontDemo'
 import GridDemo from './Section/GridDemo'
 import CardDemo from './Section/CardDemo'
-import TooltipDemo from './Section/TooltipDemo';
+import TooltipDemo from './Section/TooltipDemo'
 
 require(`../sass/bulwark-${STYLE}.scss`)
 
