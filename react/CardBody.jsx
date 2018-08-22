@@ -1,17 +1,14 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const CardBody = ({children, className, ...props}) => (
-  <div
-    {...props}
-    className={className ? `card__body ${className}` : 'card__body'}>
+const CardBody = ({children, ...rest}) => (
+  <div block='card' elem='body' {...rest}>
     {children}
   </div>
 )
 
 CardBody.propTypes = {
-  children: PropTypes.any.isRequired,
-  className: PropTypes.string
+  children: PropTypes.any.isRequired
 }
 
 export default CardBody
