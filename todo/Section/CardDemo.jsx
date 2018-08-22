@@ -1,10 +1,7 @@
 import React from 'react'
 
 import Button from '../../react/Button'
-import Card from '../../react/Card'
-import CardActions from '../../react/CardActions'
-import CardBody from '../../react/CardBody'
-import CardTitle from '../../react/CardTitle'
+import {Card, CardActions, CardBody, CardTitle} from '../../react/Card'
 import Col from '../../react/Col'
 import Row from '../../react/Row'
 
@@ -12,7 +9,7 @@ const CardDemo = () => (
   <div>
     <h3>Cards</h3>
     <Row>
-      <Col sm={6} md={6} lg={6}>
+      <Col sm={6} md={6} lg={3}>
         <Card>
           <CardTitle icon='shield-alt' title='Important' />
           <CardBody>
