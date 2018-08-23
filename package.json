@@ -38,7 +38,8 @@
     "jsfmt": "./node_modules/.bin/standard --fix",
     "start": "yarn run start:todo",
     "start:todo": "webpack-dev-server --color --hot",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
