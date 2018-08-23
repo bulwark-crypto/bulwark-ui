@@ -67,4 +67,24 @@ describe('<Radio />', () => {
       expect(wrapper.state('checked')).to.be.false()
     })
   })
+
+  describe('activates on keyboard', () => {
+    it('enter', () => {
+      const wrapper = shallow(<Radio />)
+      wrapper.find('span').simulate('keyDown', {key: 'Enter'})
+      expect(wrapper.state('checked')).to.be.true()
+    })
+
+    it('spacebar', () => {
+      const wrapper = shallow(<Radio />)
+      wrapper.find('span').simulate('keyDown', {key: ' '})
+      expect(wrapper.state('checked')).to.be.true()
+    })
+
+    it('doesn\'t activate on other', () => {
+      const wrapper = shallow(<Radio />)
+      wrapper.find('span').simulate('keyDown', {key: 'f'})
+      expect(wrapper.state('checked')).to.be.false()
+    })
+  })
 })

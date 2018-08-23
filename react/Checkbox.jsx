@@ -9,7 +9,7 @@ export default class Checkbox extends React.Component {
       checked: props.defaultChecked
     }
     this.handleClick = this.handleClick.bind(this)
-    this.handleKeyPress = this.handleKeyPress.bind(this)
+    this.handleKeyDown = this.handleKeyDown.bind(this)
   }
 
   canToggle () {
@@ -35,7 +35,7 @@ export default class Checkbox extends React.Component {
     }
   }
 
-  handleKeyPress (e) {
+  handleKeyDown (e) {
     if (e.key === 'Enter' || e.key === ' ') {
       this.handleClick(e)
     }
@@ -45,7 +45,7 @@ export default class Checkbox extends React.Component {
     const [mods, { children, as, checked, onChange, value, ...rest }] = pickRest(this.props, ['primary', 'secondary', 'red', 'disabled', 'indeterminate', 'switch'])
     mods.checked = this.isControlled() ? checked : this.state.checked
     const As = as
-    return <As block='checkbox' mods={mods} onClick={this.handleClick} onKeyPress={this.handleKeyPress} tabIndex={0} {...rest} />
+    return <As block='checkbox' mods={mods} onClick={this.handleClick} onKeyDown={this.handleKeyDown} tabIndex={0} {...rest} />
   }
 }
 

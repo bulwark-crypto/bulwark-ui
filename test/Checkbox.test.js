@@ -68,4 +68,24 @@ describe('<Checkbox />', () => {
       expect(wrapper.state('checked')).to.be.false()
     })
   })
+
+  describe('keyboard', () => {
+    it('activates on enter', () => {
+      const wrapper = shallow(<Checkbox />)
+      wrapper.find('span').simulate('keyDown', {key: 'Enter'})
+      expect(wrapper.state('checked')).to.be.true()
+    })
+
+    it('activates on spacebar', () => {
+      const wrapper = shallow(<Checkbox />)
+      wrapper.find('span').simulate('keyDown', {key: ' '})
+      expect(wrapper.state('checked')).to.be.true()
+    })
+
+    it('doesn\'t activate on other', () => {
+      const wrapper = shallow(<Checkbox />)
+      wrapper.find('span').simulate('keyDown', {key: 'f'})
+      expect(wrapper.state('checked')).to.be.false()
+    })
+  })
 })
