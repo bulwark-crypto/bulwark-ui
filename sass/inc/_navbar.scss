@@ -1,0 +1,51 @@
+
+.navbar {
+  background-color: $white;
+  height: 90px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+
+  &__links {
+    left: 145px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__link {
+    color: $black;
+    font-family: $font-primary;
+    font-size: 20px;
+    height: 26px;
+    line-height: 26px;
+    margin-right: 48px;
+    text-decoration: none;
+
+    &--active { color: $primary; }
+
+    i {
+      font-size: 22px;
+      margin-right: 10px;
+    }
+  }
+
+  &__menu {
+    left: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .button--icon {
+      font-size: 32px;
+      margin: 0;
+
+      &:active, &:focus, &:hover {
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+  }
+}
