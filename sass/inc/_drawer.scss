@@ -1,0 +1,77 @@
+
+.drawer {
+  bottom: 0;
+  display: block;
+  left: -100%;
+  position: fixed;
+  top: 0;
+  z-index: 6;
+
+  &--open {
+    left: 0;
+    right: 0;
+  }
+
+  &__menu {
+    background-color: $white;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    height: 100%;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    width: $drawer-width;
+    z-index: 7;
+
+    &__divider {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      height: 1px;
+    }
+
+    &__header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+
+    &__link {
+      height: 80px;
+      position: relative;
+
+      * {
+        left: 39px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      a {
+        color: $secondary;
+        font-family: $font-primary;
+        font-size: 14px;
+        left: 84px;
+        line-height: 19px;
+        text-decoration: none;
+      }
+
+      i { font-size: 24px; }
+    }
+
+    &__title {
+      color: $black;
+      font-family: $font-secondary;
+      font-size: 24px;
+      font-weight: bold;
+      height: 33px;
+      letter-spacing: -1px;
+      line-height: 35px;
+    }
+
+    &__subtitle {
+      color: $black;
+      font-family: $font-primary;
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+}
