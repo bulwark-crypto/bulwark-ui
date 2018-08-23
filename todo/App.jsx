@@ -2,6 +2,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
+import BadgeDemo from './Section/BadgeDemo'
 import ButtonDemo from './Section/ButtonDemo'
 import FontDemo from './Section/FontDemo'
 import GridDemo from './Section/GridDemo'
@@ -33,6 +34,7 @@ class App extends React.Component {
           <ButtonDemo />
           <CardDemo />
           <TooltipDemo />
+          <BadgeDemo />
         </div>
       </div>
     )
