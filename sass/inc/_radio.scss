@@ -1,0 +1,38 @@
+.radio {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  border: 1px solid $black;
+  border-radius: 50%;
+  margin: 0 5px;
+  color: $white;
+  text-align: center;
+  vertical-align: top;
+  
+  &--primary { border-color: $primary; }
+  &--secondary { border-color: $secondary; }
+  &--red { border-color: $red; }
+  &--disabled {
+    border-color:  #C8C8C8;
+    cursor: not-allowed;
+  }
+
+  $self: &;
+
+  &--checked {
+    &::after {
+      content: "";
+      border-radius: 50%;
+      display: block;
+      margin: 4px;
+      height: 14px;
+      width: 14px;
+      background-color: $black;
+    }
+
+    &#{$self}--primary::after { background-color: $primary; }
+    &#{$self}--secondary::after { background-color: $secondary; }
+    &#{$self}--red::after { background-color: $red; }
+    &#{$self}--disabled::after { background-color: #C8C8C8; }
+  }
+}
