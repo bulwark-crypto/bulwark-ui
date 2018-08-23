@@ -7,6 +7,28 @@
 /* Border */
 /* Font */
 /* Grid */
+.badge {
+  background-color: #252525;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  height: 24px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -12px;
+  width: 24px; }
+  .badge--primary {
+    background-color: #294dea; }
+  .badge__text {
+    font-size: 14px;
+    left: 50%;
+    line-height: 19px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-margin-before: -1px; }
+
 .button {
   background-color: transparent;
   border: 1px solid transparent;
@@ -20,8 +42,8 @@
   line-height: 19px;
   letter-spacing: normal;
   margin: 0 5px;
-  overflow: hidden;
   padding: 5px 22px;
+  position: relative;
   text-align: center;
   transition: background-color 0.3s;
   background-color: #252525;
@@ -190,6 +212,9 @@
       border-top-left-radius: 5px;
       border-top-right-radius: 5px; }
 
+.wrapper {
+  padding-top: 90px; }
+
 .row {
   width: 100%; }
   .row:after {
@@ -299,6 +324,44 @@
       width: 91.66667%; }
     .row .col-xs-12 {
       width: 100%; } }
+
+.navbar {
+  background-color: #ffffff;
+  height: 90px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5; }
+  .navbar__links {
+    left: 145px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+  .navbar__link {
+    color: #252525;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    height: 26px;
+    line-height: 26px;
+    margin-right: 48px;
+    text-decoration: none; }
+    .navbar__link--active {
+      color: #294dea; }
+    .navbar__link i {
+      font-size: 22px;
+      margin-right: 10px; }
+  .navbar__menu {
+    left: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+    .navbar__menu .button--icon {
+      font-size: 32px;
+      margin: 0; }
+      .navbar__menu .button--icon:active, .navbar__menu .button--icon:focus, .navbar__menu .button--icon:hover {
+        background-color: transparent;
+        border-color: transparent; }
 
 * {
   box-sizing: border-box; }
