@@ -3,14 +3,11 @@
   background-color: $white;
   border-radius: $border-radius;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-  padding-bottom: $card-padding;
 
   $self: &;
 
   &--image {
-    display: inline-block;
-    padding-top: 0;
-    width: min-content;
+    overflow: hidden;
 
     #{$self}__title {
       border: 0;
@@ -28,11 +25,12 @@
     img {
       border-top-left-radius: $border-radius;
       border-top-right-radius: $border-radius;
+      height: min-content;
     }
   }
 
   &__actions {
-    padding: $card-padding $card-padding 0 $card-padding;
+    padding: 0 $card-padding $card-padding $card-padding;
     position: relative;
 
     .row div:first {
@@ -40,19 +38,11 @@
       padding-left: 0;
     }
 
-    button { margin-left: 0; }
-
-    small {
-      color: $gray;
-      position: absolute;
-      right: $card-padding;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+    button { margin: 0 $grid-gutter 0 0; }
   }
 
   &__body {
-    padding: $card-padding $card-padding 0 $card-padding;
+    padding: $card-padding;
   }
 
   &__title {

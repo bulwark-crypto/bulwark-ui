@@ -24,4 +24,11 @@
     &-black { color: $black; }
     &-white { color: $white; }
   }
+
+  /* Float */
+  &--clear { clear: both; }
+  &--float {
+    &-left { float: left; }
+    &-right { float: right; }
+  }
 }
