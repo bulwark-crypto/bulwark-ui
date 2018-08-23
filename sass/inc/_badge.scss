@@ -1,0 +1,25 @@
+
+.badge {
+  background-color: $black;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  color: $white;
+  height: 24px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -12px;
+  width: 24px;
+
+  &--primary { background-color: $primary; }
+
+  &__text {
+    font-size: 14px;
+    left: 50%;
+    line-height: 19px;
+    margin-top: -1px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

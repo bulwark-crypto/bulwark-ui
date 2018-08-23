@@ -10,7 +10,7 @@ export default class IconButton extends React.Component {
     const As = as
     return (
       <As block='button' mods={{...mods, icon: true}} {...rest}>
-        <Icon {...{k}} />
+        <Icon {...{k}} />{children}
       </As>
     )
   }
