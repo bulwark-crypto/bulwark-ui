@@ -4,6 +4,7 @@ import { render } from 'react-dom'
 
 import BadgeDemo from './Section/BadgeDemo'
 import ButtonDemo from './Section/ButtonDemo'
+import {Drawer, DrawerDivider, DrawerHeader, DrawerLink} from '../react/Drawer'
 import FontDemo from './Section/FontDemo'
 import GridDemo from './Section/GridDemo'
 import CardDemo from './Section/CardDemo'
@@ -30,6 +31,15 @@ class App extends React.Component {
           <NavbarLink to='#'>Transactions</NavbarLink>
           <NavbarLink to='#'>API</NavbarLink>
         </Navbar>
+        <Drawer onDrawer={this.handleDrawer} open={this.state.menu}>
+          <DrawerHeader title='Header' subtitle='Subtitle' />
+          <DrawerLink active k='home'><a href='#'>Menu Item One</a></DrawerLink>
+          <DrawerLink k='envelope'><a href='#'>Menu Item Two</a></DrawerLink>
+          <DrawerLink k='lock'><a href='#'>Menu Item Three</a></DrawerLink>
+          <DrawerLink k='globe'><a href='#'>Menu Item Four</a></DrawerLink>
+          <DrawerDivider />
+          <DrawerLink k='angry'><a href='#'>Menu Item Five</a></DrawerLink>
+        </Drawer>
         <div block='wrapper'>
           <FontDemo />
           <GridDemo />

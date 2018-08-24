@@ -2,6 +2,9 @@
  * Core Variables
  */
 
+/* Border */
+$border-radius: 5px;
+
 /* Colors */
 $black: #252525;
 $blue: #294dea;
@@ -26,8 +29,8 @@ $success: $green;
 /* Card */
 $card-padding: 32px;
 
-/* Border */
-$border-radius: 5px;
+/* Drawer */
+$drawer-width: 290px;
 
 /* Font */
 $font-primary: 'Roboto', sans-serif;
