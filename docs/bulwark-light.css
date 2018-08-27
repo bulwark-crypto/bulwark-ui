@@ -8,6 +8,8 @@
 /* Drawer */
 /* Font */
 /* Grid */
+/* Modal */
+/* Panel */
 .badge {
   background-color: #252525;
   border-radius: 50%;
@@ -384,6 +386,58 @@
     .row .col-xs-12 {
       width: 100%; } }
 
+.modal {
+  background: transparent;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10; }
+  .modal--open {
+    opacity: 1;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    will-change: opacity; }
+  .modal--overlay {
+    background-color: rgba(0, 0, 0, 0.5); }
+  .modal__actions {
+    margin: 0;
+    padding-top: 42px;
+    text-align: right; }
+    .modal__actions .button, .modal__actions button {
+      margin: 0; }
+    .modal__actions .button:first-child, .modal__actions button:first-child {
+      margin-right: 20px; }
+  .modal__container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    left: 50%;
+    margin: 0;
+    padding: 32px;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+  .modal__content {
+    margin: 0;
+    padding: 0; }
+    .modal__content * {
+      margin: 0;
+      padding: 0; }
+  .modal__title {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    height: 28px;
+    letter-spacing: -1px;
+    line-height: 30px;
+    margin-bottom: 17px; }
+    .modal__title * {
+      margin: 0;
+      padding: 0; }
+
 .navbar {
   background-color: #ffffff;
   height: 90px;
@@ -421,6 +475,48 @@
       .navbar__menu .button--icon:active, .navbar__menu .button--icon:focus, .navbar__menu .button--icon:hover {
         background-color: transparent;
         border-color: transparent; }
+
+.panel {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+  transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; }
+  .panel--open .panel__content {
+    display: inline-block;
+    height: auto; }
+  .panel__arrow {
+    cursor: pointer;
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%); }
+  .panel__content {
+    color: #7c7c7c;
+    display: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    height: 0;
+    overflow: hidden;
+    margin: 0 32px 32px 32px; }
+  .panel__header {
+    padding: 32px;
+    position: relative; }
+    .panel__header__subtitle {
+      color: #7c7c7c;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      height: 19px;
+      left: 50%;
+      line-height: 19px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+    .panel__header__title {
+      font-family: "Roboto", sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      height: 26px;
+      line-height: 26px; }
 
 * {
   box-sizing: border-box; }
