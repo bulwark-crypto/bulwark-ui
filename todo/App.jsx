@@ -4,10 +4,11 @@ import { render } from 'react-dom'
 
 import BadgeDemo from './Section/BadgeDemo'
 import ButtonDemo from './Section/ButtonDemo'
+import CardDemo from './Section/CardDemo'
 import {Drawer, DrawerDivider, DrawerHeader, DrawerLink} from '../react/Drawer'
 import FontDemo from './Section/FontDemo'
 import GridDemo from './Section/GridDemo'
-import CardDemo from './Section/CardDemo'
+import ModalDemo from './Section/ModalDemo'
 import {Navbar, NavbarLink} from '../react/Navbar'
 import TooltipDemo from './Section/TooltipDemo'
 
@@ -45,6 +46,7 @@ class App extends React.Component {
           <CardDemo />
           <TooltipDemo />
           <BadgeDemo />
+          <ModalDemo />
         </div>
       </div>
     )
