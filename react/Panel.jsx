@@ -14,7 +14,7 @@ export default class Panel extends React.Component {
 
   handleClick = () => this.setState({open: !this.state.open})
 
-  render() {
+  render () {
     const open = this.state.open
     const {children, subtitle, title, ...rest} = this.props
     return (

@@ -1,0 +1,61 @@
+
+.input {
+  font-family: $font-primary;
+  font-size: 12px;
+  height: 55px;
+  padding-top: 18px;
+  position: relative;
+
+  $self: &;
+
+  &--active {
+    #{$self}__label {
+      color: $black;
+      font-size: 9px;
+      height: 11px;
+      line-height: 11px;
+      top: 0;
+    }
+  }
+
+  &--focus {
+    #{$self}__text { border-color: $primary; }
+  }
+
+  &--error {
+    #{$self}__label { color: $red; }
+
+    #{$self}__text { border-color: $red; }
+  }
+
+  &__label {
+    color: $secondary;
+    cursor: text;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    position: absolute;
+    top: 18px;
+    transition: top 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  }
+
+  &__message {
+    color: $secondary;
+    font-size: 9px;
+    height: 11px;
+    line-height: 11px;
+    margin-top: 6px;
+  }
+
+  &__text {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
+  input, select, textarea {
+    line-height: 16px;
+    outline: none;
+    padding: 4px 0;
+  }
+}

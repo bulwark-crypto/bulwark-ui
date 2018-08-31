@@ -39,6 +39,7 @@
     "start": "yarn run start:todo",
     "start:todo": "webpack-dev-server --color --hot",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "devDependencies": {
