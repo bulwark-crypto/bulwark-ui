@@ -8,6 +8,7 @@
 /* Drawer */
 /* Font */
 /* Grid */
+/* Input */
 /* Modal */
 /* Panel */
 .badge {
@@ -385,6 +386,48 @@
       width: 91.66667%; }
     .row .col-xs-12 {
       width: 100%; } }
+
+.input {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  height: 55px;
+  padding-top: 18px;
+  position: relative; }
+  .input--active .input__label {
+    color: #252525;
+    font-size: 9px;
+    height: 11px;
+    line-height: 11px;
+    top: 0; }
+  .input--focus .input__text {
+    border-color: #294dea; }
+  .input--error .input__label {
+    color: #e34a4a; }
+  .input--error .input__text {
+    border-color: #e34a4a; }
+  .input__label {
+    color: #7c7c7c;
+    cursor: text;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    position: absolute;
+    top: 18px;
+    transition: top 200ms cubic-bezier(0, 0, 0.2, 1) 0ms; }
+  .input__message {
+    color: #7c7c7c;
+    font-size: 9px;
+    height: 11px;
+    line-height: 11px;
+    margin-top: 6px; }
+  .input__text {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #f2f2f2; }
+  .input input, .input select, .input textarea {
+    line-height: 16px;
+    outline: none;
+    padding: 4px 0; }
 
 .modal {
   background: transparent;
