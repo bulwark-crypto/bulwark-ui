@@ -11,6 +11,7 @@ import GridDemo from './Section/GridDemo'
 import ModalDemo from './Section/ModalDemo'
 import {Navbar, NavbarLink} from '../react/Navbar'
 import PanelDemo from './Section/PanelDemo'
+import TextInputDemo from './Section/TextInputDemo'
 import TooltipDemo from './Section/TooltipDemo'
 
 require(`../sass/bulwark-${STYLE}.scss`)
@@ -49,7 +50,9 @@ class App extends React.Component {
           <BadgeDemo />
           <ModalDemo />
           <PanelDemo />
+          <TextInputDemo />
         </div>
+        <div style={{height: 100}} />
       </div>
     )
   }
