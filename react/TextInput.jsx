@@ -26,11 +26,7 @@ export default class TextInput extends React.Component {
     this.setState({value: this.props.value || this.props.defaultValue || ''})
   }
 
-  handleChange = (ev) => {
-    this.setState({value: ev.target.value}, () => {
-      if (this.props.onChange) this.props.onChange(ev)
-    })
-  }
+  handleChange = ev => this.setState({value: ev.target.value}, () => this.props.onChange(ev))
 
   handleLabelClick = () => this.input.focus()
 

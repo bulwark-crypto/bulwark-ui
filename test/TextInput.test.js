@@ -27,6 +27,11 @@ describe('<TextInput />', () => {
     expect(wrapper.find('.input__message').text()).to.equal('Test')
   })
 
+  it('renders the provided default value', () => {
+    const wrapper = shallow(<TextInput defaultValue='T' message='Test' name='test' />)
+    expect(wrapper.find('.input__text').prop('value')).to.equal('T')
+  })
+
   it('passes extra props down', () => {
     const wrapper = shallow(<TextInput max={1} name='test' />)
     expect(wrapper.find('.input__text').prop('name')).to.equal('test')
