@@ -16,16 +16,40 @@
       line-height: 11px;
       top: 0;
     }
-  }
 
-  &--focus {
-    #{$self}__text { border-color: $primary; }
+    #{$self}__arrow { color: $black; }
+
+    select { color: $black !important; }
   }
 
   &--error {
-    #{$self}__label { color: $red; }
+    #{$self}__label { color: $red !important; }
 
-    #{$self}__text { border-color: $red; }
+    #{$self}__component { border-color: $red !important; }
+  }
+
+  &--focus {
+    #{$self}__component { border-color: $primary !important; }
+
+    select#{$self}__component { display: none; }
+
+    #{$self}__options { height: initial; }
+  }
+
+  &__arrow {
+    color: $secondary;
+    float: right;
+    height: 5px;
+    position: absolute;
+    right: 0;
+    top: 19px;
+    width: 10px;
+  }
+
+  &__component {
+    border-bottom: 1px solid #f2f2f2 !important;
+    min-width: 108px;
+    width: 100%;
   }
 
   &__label {
@@ -34,6 +58,7 @@
     font-size: 12px;
     height: 16px;
     line-height: 16px;
+    min-width: 108px;
     position: absolute;
     top: 18px;
     transition: top 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
@@ -47,15 +72,63 @@
     margin-top: 6px;
   }
 
-  &__text {
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid #f2f2f2;
+  &__options {
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    left: 0;
+    height: 0;
+    max-height: 108px;
+    min-width: 108px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 18px;
+    transition: height 189ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    width: 100%;
+    z-index: 2;
+
+    &__item {
+      cursor: pointer;
+      font-family: $font-primary;
+      font-size: 14px;
+      height: 27px;
+      line-height: 19px;
+      min-width: 108px;
+      padding: 6px 11px;
+      width: 100%;
+
+      &:hover { background-color: rgba(124, 124, 124, 0.1); }
+
+      &--active { background-color: rgba(124, 124, 124, 0.2); }
+    }
   }
 
   input, select, textarea {
+    background: transparent;
+    border: 0;
+    color: $black;
     line-height: 16px;
-    outline: none;
+    outline: 0;
     padding: 4px 0;
+    z-index: 1;
+  }
+
+  select {
+    border: 0 !important;  /*Removes border*/
+    -webkit-appearance: none;  /*Removes default chrome and safari style*/
+    -moz-appearance: none;  /*Removes default style Firefox*/
+
+    option {
+      background-color: transparent;
+      border: 0;
+      color: transparent;
+      display: none;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      outline: 0;
+      width: 0;
+    }
   }
 }

@@ -41,8 +41,6 @@ export default class TextInput extends React.Component {
 
     const inputProps = {
       autoComplete: 'off',
-      block: 'input',
-      elem: 'text',
       onBlur: () => this.handleFocus(false),
       onChange: this.handleChange,
       onFocus: () => this.handleFocus(true),
@@ -58,7 +56,7 @@ export default class TextInput extends React.Component {
             {label}
           </label>
         }
-        <As {...rest} {...inputProps} />
+        <As block='input' elem='component' {...rest} {...inputProps} />
         {!!message && <div block='input' elem='message'>{message}</div>}
       </div>
     )
