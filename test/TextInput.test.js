@@ -7,12 +7,12 @@ import TextInput from '../react/TextInput'
 describe('<TextInput />', () => {
   it('renders as an input', () => {
     const wrapper = shallow(<TextInput name='test' />)
-    expect(wrapper.find('.input__text').is('input')).to.be.true()
+    expect(wrapper.find('.input__component').is('input')).to.be.true()
   })
 
   it('augments itself', () => {
     const wrapper = shallow(<TextInput as='textarea' name='test' />)
-    expect(wrapper.find('.input__text').is('textarea')).to.be.true()
+    expect(wrapper.find('.input__component').is('textarea')).to.be.true()
   })
 
   it('renders classes', () => {
@@ -29,39 +29,39 @@ describe('<TextInput />', () => {
 
   it('renders the provided default value', () => {
     const wrapper = shallow(<TextInput defaultValue='T' message='Test' name='test' />)
-    expect(wrapper.find('.input__text').prop('value')).to.equal('T')
+    expect(wrapper.find('.input__component').prop('value')).to.equal('T')
   })
 
   it('passes extra props down', () => {
     const wrapper = shallow(<TextInput max={1} name='test' />)
-    expect(wrapper.find('.input__text').prop('name')).to.equal('test')
-    expect(wrapper.find('.input__text').prop('max')).to.equal(1)
+    expect(wrapper.find('.input__component').prop('name')).to.equal('test')
+    expect(wrapper.find('.input__component').prop('max')).to.equal(1)
   })
 
   it('calls onchange event', () => {
     let i = 0
     const onChange = () => { i++ }
     const wrapper = shallow(<TextInput onChange={onChange} name='test' />)
-    wrapper.find('.input__text').simulate('change', {target: {value: 'test'}})
+    wrapper.find('.input__component').simulate('change', {target: {value: 'test'}})
     expect(i).to.equal(1)
   })
 
   it('handle focus event with class toggle', () => {
     const wrapper = shallow(<TextInput name='test' />)
-    wrapper.find('.input__text').simulate('focus')
+    wrapper.find('.input__component').simulate('focus')
     expect(wrapper.hasClass('input--focus')).to.be.true()
   })
 
   it('handle blur event with class toggle', () => {
     const wrapper = shallow(<TextInput name='test' />)
-    wrapper.find('.input__text').simulate('focus')
-    wrapper.find('.input__text').simulate('blur')
+    wrapper.find('.input__component').simulate('focus')
+    wrapper.find('.input__component').simulate('blur')
     expect(wrapper.hasClass('input--focus')).to.be.false()
   })
 
   it('click on label makes input focused', () => {
     const wrapper = mount(<TextInput label='Test' name='test' />)
     wrapper.find('.input__label').simulate('click')
-    expect(document.activeElement.className).to.equal('input__text')
+    expect(document.activeElement.className).to.equal('input__component')
   })
 })

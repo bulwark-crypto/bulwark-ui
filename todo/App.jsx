@@ -11,6 +11,7 @@ import GridDemo from './Section/GridDemo'
 import ModalDemo from './Section/ModalDemo'
 import {Navbar, NavbarLink} from '../react/Navbar'
 import PanelDemo from './Section/PanelDemo'
+import SelectInputDemo from './Section/SelectInputDemo'
 import TextInputDemo from './Section/TextInputDemo'
 import TooltipDemo from './Section/TooltipDemo'
 
@@ -51,6 +52,7 @@ class App extends React.Component {
           <ModalDemo />
           <PanelDemo />
           <TextInputDemo />
+          <SelectInputDemo />
         </div>
         <div style={{height: 100}} />
       </div>
