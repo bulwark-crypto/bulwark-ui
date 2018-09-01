@@ -399,18 +399,39 @@
     height: 11px;
     line-height: 11px;
     top: 0; }
-  .input--focus .input__text {
-    border-color: #294dea; }
+  .input--active .input__arrow {
+    color: #252525; }
+  .input--active select {
+    color: #252525 !important; }
   .input--error .input__label {
-    color: #e34a4a; }
-  .input--error .input__text {
-    border-color: #e34a4a; }
+    color: #e34a4a !important; }
+  .input--error .input__component {
+    border-color: #e34a4a !important; }
+  .input--focus .input__component {
+    border-color: #294dea !important; }
+  .input--focus select.input__component {
+    display: none; }
+  .input--focus .input__options {
+    height: initial; }
+  .input__arrow {
+    color: #7c7c7c;
+    float: right;
+    height: 5px;
+    position: absolute;
+    right: 0;
+    top: 19px;
+    width: 10px; }
+  .input__component {
+    border-bottom: 1px solid #f2f2f2 !important;
+    min-width: 108px;
+    width: 100%; }
   .input__label {
     color: #7c7c7c;
     cursor: text;
     font-size: 12px;
     height: 16px;
     line-height: 16px;
+    min-width: 108px;
     position: absolute;
     top: 18px;
     transition: top 200ms cubic-bezier(0, 0, 0.2, 1) 0ms; }
@@ -420,14 +441,59 @@
     height: 11px;
     line-height: 11px;
     margin-top: 6px; }
-  .input__text {
+  .input__options {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    left: 0;
+    height: 0;
+    max-height: 108px;
+    min-width: 108px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 18px;
+    transition: height 189ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    width: 100%;
+    z-index: 2; }
+    .input__options__item {
+      cursor: pointer;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      height: 27px;
+      line-height: 19px;
+      min-width: 108px;
+      padding: 6px 11px;
+      width: 100%; }
+      .input__options__item:hover {
+        background-color: rgba(124, 124, 124, 0.1); }
+      .input__options__item--active {
+        background-color: rgba(124, 124, 124, 0.2); }
+  .input input, .input select, .input textarea {
     background: transparent;
     border: 0;
-    border-bottom: 1px solid #f2f2f2; }
-  .input input, .input select, .input textarea {
+    color: #252525;
     line-height: 16px;
-    outline: none;
-    padding: 4px 0; }
+    outline: 0;
+    padding: 4px 0;
+    z-index: 1; }
+  .input select {
+    border: 0 !important;
+    /*Removes border*/
+    -webkit-appearance: none;
+    /*Removes default chrome and safari style*/
+    -moz-appearance: none;
+    /*Removes default style Firefox*/ }
+    .input select option {
+      background-color: transparent;
+      border: 0;
+      color: transparent;
+      display: none;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      outline: 0;
+      width: 0; }
 
 .modal {
   background: transparent;
