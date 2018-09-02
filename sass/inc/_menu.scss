@@ -1,0 +1,43 @@
+
+.menu {
+  position: relative;
+
+  &__items {
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    left: 0;
+    margin: 0;
+    max-height: 130px;
+    min-width: 58px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: intrinsic;
+    width: -moz-max-content;
+    width: -webkit-max-content;
+  }
+
+  &__item {
+    cursor: pointer;
+    font-family: $font-primary;
+    font-size: 14px;
+    height: 39px;
+    line-height: 19px;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px 11px;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+
+    &:hover { background-color: rgba(124, 124, 124, 0.1); }
+
+    &--active { background-color: rgba(124, 124, 124, 0.2); }
+
+    i { margin-right: 12px; }
+  }
+}

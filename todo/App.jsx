@@ -8,6 +8,7 @@ import CardDemo from './Section/CardDemo'
 import {Drawer, DrawerDivider, DrawerHeader, DrawerLink} from '../react/Drawer'
 import FontDemo from './Section/FontDemo'
 import GridDemo from './Section/GridDemo'
+import MenuDemo from './Section/MenuDemo'
 import ModalDemo from './Section/ModalDemo'
 import {Navbar, NavbarLink} from '../react/Navbar'
 import PanelDemo from './Section/PanelDemo'
@@ -53,6 +54,7 @@ class App extends React.Component {
           <PanelDemo />
           <TextInputDemo />
           <SelectInputDemo />
+          <MenuDemo />
         </div>
         <div style={{height: 100}} />
       </div>
