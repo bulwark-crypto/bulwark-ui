@@ -1,0 +1,55 @@
+
+.pagination {
+  color: $secondary;
+  display: block;
+  font-size: 14px;
+  line-height: 19px;
+
+  * { display: inline-block; }
+
+  &__count {
+    margin-right: 20px;
+  }
+
+  &__label {
+    margin-right: 20px;
+  }
+
+  &__page {
+    &__label {
+      padding: 0 10px;
+    }
+
+    .button--icon {
+      border: 0;
+      color: $secondary;
+      font-size: 14px;
+      margin: 0 4px;
+      padding: 0;
+      width: 16px;
+
+      &:active, &:focus, &:hover {
+        background: transparent;
+      }
+    }
+  }
+
+  &__size {
+    margin-right: 20px;
+    position: relative;
+
+    select {
+      background-color: transparent;
+      border: 0;
+      border-bottom: 1px solid $secondary;
+      color: $secondary;
+      min-width: 43px;
+      width: 43px;
+    }
+
+    .input__options {
+      min-width: 60px;
+      width: 60px;
+    }
+  }
+}

@@ -11,6 +11,7 @@ import GridDemo from './Section/GridDemo'
 import MenuDemo from './Section/MenuDemo'
 import ModalDemo from './Section/ModalDemo'
 import {Navbar, NavbarLink} from '../react/Navbar'
+import PaginationDemo from './Section/PaginationDemo'
 import PanelDemo from './Section/PanelDemo'
 import SelectInputDemo from './Section/SelectInputDemo'
 import TabDemo from './Section/TabDemo'
@@ -57,6 +58,7 @@ class App extends React.Component {
           <SelectInputDemo />
           <MenuDemo />
           <TabDemo />
+          <PaginationDemo />
         </div>
         <div style={{height: 100}} />
       </div>
