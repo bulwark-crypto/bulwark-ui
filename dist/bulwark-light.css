@@ -675,6 +675,60 @@ html, body {
 button:focus {
   outline: none; }
 
+.tabs {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center; }
+  .tabs__bar {
+    background-color: transparent;
+    border-bottom: 2px solid #294dea;
+    height: 0px;
+    position: absolute;
+    top: 50px;
+    transition: left .2s ease;
+    -webkit-transition: left .2s ease; }
+  .tabs__clear {
+    clear: both; }
+  .tabs__content {
+    padding: 32px;
+    text-align: left;
+    width: 100%; }
+  .tabs__list {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+    position: relative; }
+    .tabs__list__items {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%); }
+
+.tab {
+  display: inline-block; }
+  .tab--active .tab__title {
+    font-weight: bold; }
+  .tab--disabled .tab__content {
+    display: none; }
+  .tab--disabled .tab__icon, .tab--disabled .tab__title {
+    color: #7c7c7c;
+    cursor: not-allowed; }
+  .tab__icon {
+    cursor: pointer;
+    font-size: 24px;
+    height: 70px;
+    padding: 23px 63px; }
+    .tab__icon:hover {
+      font-weight: bold; }
+  .tab__title {
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 15px 42px; }
+    .tab__title:hover {
+      font-weight: bold; }
+
 /* Base */
 .body, body {
   color: #252525;
