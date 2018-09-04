@@ -42,11 +42,11 @@
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  height: 30px;
+  height: 35px;
   line-height: 19px;
   letter-spacing: normal;
   margin: 0 5px;
-  padding: 5px 22px;
+  padding: 8px 16px;
   position: relative;
   text-align: center;
   transition: background-color 0.3s;
@@ -69,15 +69,20 @@
     .button--icon:hover, .button--icon:focus {
       background-color: #bebebe;
       border: 1px solid #bebebe; }
+  .button--large {
+    height: 51px;
+    padding: 16px 24px; }
   .button--outline {
     background: transparent;
     border: 1px solid #252525;
+    box-shadow: none;
     color: #252525; }
     .button--outline:hover, .button--outline:focus {
       background-color: #bebebe; }
   .button--text {
     background: transparent;
     border: 1px solid #252525;
+    box-shadow: none;
     color: #252525;
     border: 0;
     box-shadow: none; }
@@ -99,12 +104,14 @@
     .button--primary.button--outline {
       background: transparent;
       border: 1px solid #294dea;
+      box-shadow: none;
       color: #294dea; }
       .button--primary.button--outline:hover, .button--primary.button--outline:focus {
         background-color: #e3e8fc; }
     .button--primary.button--text {
       background: transparent;
       border: 1px solid #294dea;
+      box-shadow: none;
       color: #294dea;
       border: 0;
       box-shadow: none; }
@@ -126,12 +133,14 @@
     .button--secondary.button--outline {
       background: transparent;
       border: 1px solid #7c7c7c;
+      box-shadow: none;
       color: #7c7c7c; }
       .button--secondary.button--outline:hover, .button--secondary.button--outline:focus {
         background-color: #d5d5d5; }
     .button--secondary.button--text {
       background: transparent;
       border: 1px solid #7c7c7c;
+      box-shadow: none;
       color: #7c7c7c;
       border: 0;
       box-shadow: none; }
@@ -155,6 +164,7 @@
     .button--disabled.button--outline {
       background: transparent;
       border: 1px solid #cccccc;
+      box-shadow: none;
       color: #cccccc;
       cursor: not-allowed; }
       .button--disabled.button--outline:hover, .button--disabled.button--outline:focus {
@@ -162,6 +172,7 @@
     .button--disabled.button--text {
       background: transparent;
       border: 1px solid #cccccc;
+      box-shadow: none;
       color: #cccccc;
       border: 0;
       box-shadow: none;
