@@ -5,6 +5,7 @@ import { render } from 'react-dom'
 import BadgeDemo from './Section/BadgeDemo'
 import ButtonDemo from './Section/ButtonDemo'
 import CardDemo from './Section/CardDemo'
+import ChartDemo from './Section/ChartDemo'
 import CheckboxDemo from './Section/CheckboxDemo'
 import {Drawer, DrawerDivider, DrawerHeader, DrawerLink} from '../react/Drawer'
 import FontDemo from './Section/FontDemo'
@@ -67,6 +68,7 @@ class App extends React.Component {
           <PaginationDemo />
           <StepperDemo />
           <TableDemo />
+          <ChartDemo />
         </div>
         <div style={{height: 100}} />
       </div>
