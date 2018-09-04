@@ -711,6 +711,43 @@ html, body {
 button:focus {
   outline: none; }
 
+.stepper__content {
+  padding: 32px; }
+
+.stepper__step {
+  color: #7c7c7c;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 19px; }
+  .stepper__step--active .stepper__step__indicator {
+    background-color: #294dea;
+    color: #ffffff;
+    padding: 9px 12px; }
+  .stepper__step--complete .stepper__step__indicator {
+    background-color: #252525;
+    color: #7c7c7c;
+    padding: 9px 12px; }
+  .stepper__step__bar {
+    border-top: 1px solid #7c7c7c;
+    display: inline-block;
+    height: 5px;
+    margin-right: 21px;
+    margin-top: -2px;
+    min-width: 100px;
+    width: 100px; }
+  .stepper__step__indicator {
+    background-color: #252525;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 16px;
+    height: 35px;
+    line-height: 21px;
+    margin-right: 9px;
+    padding: 7px 13px;
+    width: 35px; }
+  .stepper__step__title {
+    margin-right: 40px; }
+
 .tabs {
   display: block;
   margin: 0;
