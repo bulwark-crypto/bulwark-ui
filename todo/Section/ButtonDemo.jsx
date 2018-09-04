@@ -11,11 +11,23 @@ const ButtonDemo = () => (
     <Button secondary>Secondary</Button>
     <Button disabled>Disabled</Button>
 
+    <h3>Large Buttons</h3>
+    <Button large>Default</Button>
+    <Button large primary>Primary</Button>
+    <Button large secondary>Secondary</Button>
+    <Button disabled large>Disabled</Button>
+
     <h3>Outlined Buttons</h3>
     <Button outline>Default</Button>
     <Button primary outline>Primary</Button>
     <Button secondary outline>Secondary</Button>
     <Button disabled outline>Disabled</Button>
+
+    <h3>Large Outline Buttons</h3>
+    <Button large outline>Default</Button>
+    <Button large primary outline>Primary</Button>
+    <Button large secondary outline>Secondary</Button>
+    <Button disabled large outline>Disabled</Button>
 
     <h3>Text Buttons</h3>
     <Button text>Default</Button>

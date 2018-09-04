@@ -23,6 +23,7 @@
 @mixin button-outline($color, $p) {
   background: transparent;
   border: 1px solid $color;
+  box-shadow: none;
   color: $color;
 
   &:hover, &:focus {

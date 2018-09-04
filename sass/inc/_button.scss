@@ -8,11 +8,11 @@
   font-family: $font-primary;
   font-size: 14px;
   font-weight: 500;
-  height: 30px;
+  height: 35px;
   line-height: 19px;
   letter-spacing: normal;
   margin: 0 5px;
-  padding: 5px 22px;
+  padding: 8px 16px;
   position: relative;
   text-align: center;
   transition: $animation-button-hover;
@@ -31,6 +31,10 @@
     padding: 0;
     text-align: center;
     width: 44px;
+  }
+  &--large {
+    height: 51px;
+    padding: 16px 24px;
   }
   &--outline { @include button-outline($black, 60%); }
   &--text { @include button-text($black, 60%); }
