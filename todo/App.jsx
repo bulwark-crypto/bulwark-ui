@@ -5,6 +5,7 @@ import { render } from 'react-dom'
 import BadgeDemo from './Section/BadgeDemo'
 import ButtonDemo from './Section/ButtonDemo'
 import CardDemo from './Section/CardDemo'
+import CheckboxDemo from './Section/CheckboxDemo'
 import {Drawer, DrawerDivider, DrawerHeader, DrawerLink} from '../react/Drawer'
 import FontDemo from './Section/FontDemo'
 import GridDemo from './Section/GridDemo'
@@ -13,6 +14,7 @@ import ModalDemo from './Section/ModalDemo'
 import {Navbar, NavbarLink} from '../react/Navbar'
 import PaginationDemo from './Section/PaginationDemo'
 import PanelDemo from './Section/PanelDemo'
+import RadioDemo from './Section/RadioDemo'
 import SelectInputDemo from './Section/SelectInputDemo'
 import StepperDemo from './Section/StepperDemo'
 import TabDemo from './Section/TabDemo'
@@ -55,6 +57,8 @@ class App extends React.Component {
           <TooltipDemo />
           <BadgeDemo />
           <ModalDemo />
+          <CheckboxDemo />
+          <RadioDemo />
           <PanelDemo />
           <TextInputDemo />
           <SelectInputDemo />
