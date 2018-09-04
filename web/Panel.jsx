@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Icon from '../react/Icon'
+import Icon from '../web/Icon'
 
 export default class Panel extends React.Component {
   static propTypes = {

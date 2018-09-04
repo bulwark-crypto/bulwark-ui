@@ -2,7 +2,7 @@
 import React from 'react'
 import expect from 'must'
 import {shallow} from 'enzyme'
-import {Navbar, NavbarLink} from '../react/Navbar'
+import {Navbar, NavbarLink} from '../web/Navbar'
 
 describe('<Navbar />', () => {
   it('render as div', () => {

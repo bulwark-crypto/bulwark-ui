@@ -26,7 +26,7 @@ The `react/` components and `lib/` files are meant to be included in your projec
 
 __Example flow:__
 1. `yarn add bulwark-ui`
-2. `import Container from 'bulwark-ui/react/Container';`
+2. `import Container from 'bulwark-ui/web/Container';`
 3. Now use the component `<Container>Some stuff here</Container>`
 
 For an example webpack configuration please see the demo `webpack.config.js` file from this project or `node_modules/bulwark-ui/webpack.config.js` from your own project.

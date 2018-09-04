@@ -2,7 +2,7 @@
 import React from 'react'
 import expect from 'must'
 import {shallow} from 'enzyme'
-import Panel from '../react/Panel'
+import Panel from '../web/Panel'
 
 describe('<Panel />', () => {
   it('render as panel', () => {

@@ -2,7 +2,7 @@
 import React from 'react'
 import expect from 'must'
 import { shallow } from 'enzyme'
-import Badge from '../react/Badge'
+import Badge from '../web/Badge'
 
 describe('<Badge />', () => {
   it('renders as a badge', () => {

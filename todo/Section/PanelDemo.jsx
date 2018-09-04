@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Panel from '../../react/Panel'
+import Panel from '../../web/Panel'
 
 const PanelDemo = () => (
   <div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Table} from '../../react/Table'
+import {Table} from '../../web/Table'
 
 const tx = {
   block: 201933,

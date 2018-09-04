@@ -3,7 +3,7 @@ import React from 'react'
 import expect from 'must'
 import { shallow } from 'enzyme'
 import { spy } from 'sinon'
-import Radio from '../react/Radio'
+import Radio from '../web/Radio'
 
 describe('<Radio />', () => {
   it('renders as a span', () => {

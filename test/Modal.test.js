@@ -2,8 +2,8 @@
 import React from 'react'
 import expect from 'must'
 import {shallow} from 'enzyme'
-import Button from '../react/Button'
-import {Modal, ModalActions, ModalContent, ModalTitle} from '../react/Modal'
+import Button from '../web/Button'
+import {Modal, ModalActions, ModalContent, ModalTitle} from '../web/Modal'
 
 describe('<Modal />', () => {
   it('render as modal', () => {

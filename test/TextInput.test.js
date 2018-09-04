@@ -2,7 +2,7 @@
 import React from 'react'
 import expect from 'must'
 import { mount, shallow } from 'enzyme'
-import TextInput from '../react/TextInput'
+import TextInput from '../web/TextInput'
 
 describe('<TextInput />', () => {
   it('renders as an input', () => {

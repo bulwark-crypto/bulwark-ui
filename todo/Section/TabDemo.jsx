@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Tabs, Tab} from '../../react/Tab'
+import {Tabs, Tab} from '../../web/Tab'
 
 const TabDemo = () => (
   <div>

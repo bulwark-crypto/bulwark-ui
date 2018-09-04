@@ -2,7 +2,7 @@
 import React from 'react'
 import expect from 'must'
 import { shallow } from 'enzyme'
-import Tooltip from '../react/Tooltip'
+import Tooltip from '../web/Tooltip'
 
 describe('<Tooltip />', () => {
   it('renders as a tooltip', () => {

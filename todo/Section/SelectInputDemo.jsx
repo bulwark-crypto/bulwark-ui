@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Col from '../../react/Col'
-import Row from '../../react/Row'
-import SelectInput from '../../react/SelectInput'
+import Col from '../../web/Col'
+import Row from '../../web/Row'
+import SelectInput from '../../web/SelectInput'
 
 const makeOptions = vals => vals.map(v => ({text: v.toString(), value: v}))
 

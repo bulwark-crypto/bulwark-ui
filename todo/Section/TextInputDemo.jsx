@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Col from '../../react/Col'
-import Row from '../../react/Row'
-import TextInput from '../../react/TextInput'
+import Col from '../../web/Col'
+import Row from '../../web/Row'
+import TextInput from '../../web/TextInput'
 
 const TextInputDemo = () => (
   <div>

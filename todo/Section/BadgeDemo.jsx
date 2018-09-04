@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Badge from '../../react/Badge'
-import Button from '../../react/Button'
-import IconButton from '../../react/IconButton'
+import Badge from '../../web/Badge'
+import Button from '../../web/Button'
+import IconButton from '../../web/IconButton'
 
 const ButtonDemo = () => (
   <div>

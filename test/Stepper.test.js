@@ -2,8 +2,8 @@
 import React from 'react'
 import expect from 'must'
 import { shallow } from 'enzyme'
-import Button from '../react/Button'
-import {Step, Stepper} from '../react/Stepper'
+import Button from '../web/Button'
+import {Step, Stepper} from '../web/Stepper'
 
 describe('<Step />', () => {
   const wrapper = shallow(<Step title='Test'>Testing</Step>)

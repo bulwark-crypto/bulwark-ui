@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Button from '../../react/Button'
-import {Card, CardActions, CardBody, CardTitle} from '../../react/Card'
-import Col from '../../react/Col'
-import Row from '../../react/Row'
+import Button from '../../web/Button'
+import {Card, CardActions, CardBody, CardTitle} from '../../web/Card'
+import Col from '../../web/Col'
+import Row from '../../web/Row'
 
 const CardDemo = () => (
   <div>

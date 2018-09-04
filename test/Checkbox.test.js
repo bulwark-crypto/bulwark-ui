@@ -3,7 +3,7 @@ import React from 'react'
 import expect from 'must'
 import { shallow } from 'enzyme'
 import { spy } from 'sinon'
-import Checkbox from '../react/Checkbox'
+import Checkbox from '../web/Checkbox'
 
 describe('<Checkbox />', () => {
   it('renders as a span', () => {

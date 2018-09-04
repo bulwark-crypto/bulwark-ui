@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Button from '../../react/Button'
-import {Modal, ModalActions, ModalContent, ModalTitle} from '../../react/Modal'
+import Button from '../../web/Button'
+import {Modal, ModalActions, ModalContent, ModalTitle} from '../../web/Modal'
 
 class ModalDemo extends React.Component {
   state = {

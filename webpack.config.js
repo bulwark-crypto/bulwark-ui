@@ -46,7 +46,7 @@ module.exports = {
     new htmlPlugin({ // eslint-disable-line new-cap
       title: 'Bulwark UI - TODO Demo App',
       filename: 'index.html',
-      template: path.join(__dirname, 'react', 'template.html'),
+      template: path.join(__dirname, 'web', 'template.html'),
       inject: 'body',
       favicon: path.join(__dirname, 'ico', 'favicon.png'),
       hash: true,

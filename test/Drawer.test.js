@@ -2,7 +2,7 @@
 import React from 'react'
 import expect from 'must'
 import {shallow} from 'enzyme'
-import {Drawer, DrawerDivider, DrawerHeader, DrawerLink} from '../react/Drawer'
+import {Drawer, DrawerDivider, DrawerHeader, DrawerLink} from '../web/Drawer'
 
 describe('<Drawer />', () => {
   it('render as drawer', () => {

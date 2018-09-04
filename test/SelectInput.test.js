@@ -2,7 +2,7 @@
 import React from 'react'
 import expect from 'must'
 import { mount, shallow } from 'enzyme'
-import SelectInput from '../react/SelectInput'
+import SelectInput from '../web/SelectInput'
 
 describe('<SelectInput />', () => {
   it('renders as an input', () => {

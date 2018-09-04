@@ -2,8 +2,8 @@
 import React from 'react'
 import expect from 'must'
 import { shallow } from 'enzyme'
-import Button from '../react/Button'
-import {Menu, MenuItem} from '../react/Menu'
+import Button from '../web/Button'
+import {Menu, MenuItem} from '../web/Menu'
 
 const fn = () => {}
 

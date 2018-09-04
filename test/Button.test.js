@@ -2,7 +2,7 @@
 import React from 'react'
 import expect from 'must'
 import { shallow } from 'enzyme'
-import Button from '../react/Button'
+import Button from '../web/Button'
 
 describe('<Button />', () => {
   it('renders as a button', () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Col from '../../react/Col'
-import Row from '../../react/Row'
+import Col from '../../web/Col'
+import Row from '../../web/Row'
 
 const GridDemo = () => (
   <div className='text--center text--md'>

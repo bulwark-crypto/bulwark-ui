@@ -2,7 +2,7 @@
 import React from 'react'
 import expect from 'must'
 import { mount, shallow } from 'enzyme'
-import {Tab, Tabs} from '../react/Tab'
+import {Tab, Tabs} from '../web/Tab'
 
 const wrapper = shallow(<Tab title='Test'>Testing</Tab>)
 const wrapper2 = shallow(<Tab disabled icon='home'>Testing</Tab>)

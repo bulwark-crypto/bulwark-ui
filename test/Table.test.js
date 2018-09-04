@@ -2,7 +2,7 @@
 import React from 'react'
 import expect from 'must'
 import { shallow } from 'enzyme'
-import {Table, TableBody, TableCell, TableHead, TableRow} from '../react/Table'
+import {Table, TableBody, TableCell, TableHead, TableRow} from '../web/Table'
 
 const columns = [{key: 'a', text: 'A'}, {key: 'b', text: 'B'}]
 const rows = [{a: 1, b: 4}, {a: 2, b: 3}]

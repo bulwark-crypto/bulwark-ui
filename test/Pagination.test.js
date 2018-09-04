@@ -2,7 +2,7 @@
 import React from 'react'
 import expect from 'must'
 import { shallow } from 'enzyme'
-import Pagination from '../react/Pagination'
+import Pagination from '../web/Pagination'
 
 describe('<Pagination />', () => {
   let page = 1

@@ -2,8 +2,8 @@
 import React from 'react'
 import expect from 'must'
 import {shallow} from 'enzyme'
-import Button from '../react/Button'
-import {Card, CardActions, CardBody, CardTitle} from '../react/Card'
+import Button from '../web/Button'
+import {Card, CardActions, CardBody, CardTitle} from '../web/Card'
 
 describe('<Card />', () => {
   it('renders as a card', () => {
