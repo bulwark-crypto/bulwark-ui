@@ -16,6 +16,7 @@ import PanelDemo from './Section/PanelDemo'
 import SelectInputDemo from './Section/SelectInputDemo'
 import StepperDemo from './Section/StepperDemo'
 import TabDemo from './Section/TabDemo'
+import TableDemo from './Section/TableDemo'
 import TextInputDemo from './Section/TextInputDemo'
 import TooltipDemo from './Section/TooltipDemo'
 
@@ -61,6 +62,7 @@ class App extends React.Component {
           <TabDemo />
           <PaginationDemo />
           <StepperDemo />
+          <TableDemo />
         </div>
         <div style={{height: 100}} />
       </div>
