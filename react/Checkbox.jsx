@@ -1,26 +1,39 @@
-import React from 'react'
-import { pickRest } from '../lib/utils'
 import PropTypes from 'prop-types'
+import React from 'react'
+import {pickRest} from '../lib/utils'
 
 export default class Checkbox extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      checked: props.defaultChecked
-    }
-    this.handleClick = this.handleClick.bind(this)
-    this.handleKeyDown = this.handleKeyDown.bind(this)
+  static defaultProps = {
+    as: 'span',
+    defaultChecked: false
   }
 
-  canToggle () {
-    return !this.props.disabled && !this.isControlled()
+  static propTypes = {
+    as: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    primary: PropTypes.bool,
+    secondary: PropTypes.bool,
+    red: PropTypes.bool,
+    disabled: PropTypes.bool,
+    indeterminate: PropTypes.bool,
+    defaultChecked: PropTypes.bool,
+    checked: PropTypes.bool,
+    value: PropTypes.any,
+    toggle: PropTypes.bool
   }
 
-  isControlled () {
-    return this.props.checked !== undefined
+  state = {
+    checked: false
   }
 
-  handleClick (e) {
+  componentWillMount () {
+    if (this.props.defaultChecked) this.setState({checked: true})
+  }
+
+  canToggle = () => !this.props.disabled && !this.isControlled()
+
+  isControlled = () => this.props.checked !== undefined
+
+  handleClick = (ev) => {
     const controlled = this.isControlled()
     const checked = controlled ? this.props.checked : this.state.checked
     if (!controlled) {
@@ -31,13 +44,13 @@ export default class Checkbox extends React.Component {
       }
     }
     if (this.props.onChange) {
-      this.props.onChange(e, {...this.props, checked: !checked})
+      this.props.onChange(ev, {...this.props, checked: !checked})
     }
   }
 
-  handleKeyDown (e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      this.handleClick(e)
+  handleKeyDown = (ev) => {
+    if (ev.key === 'Enter' || ev.key === ' ') {
+      this.handleClick(ev)
     }
   }
 
@@ -47,22 +60,4 @@ export default class Checkbox extends React.Component {
     const As = as
     return <As block='checkbox' mods={mods} onClick={this.handleClick} onKeyDown={this.handleKeyDown} tabIndex={0} {...rest} />
   }
-}
-
-Checkbox.defaultProps = {
-  as: 'span',
-  defaultChecked: false
-}
-
-Checkbox.propTypes = {
-  as: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-  primary: PropTypes.bool,
-  secondary: PropTypes.bool,
-  red: PropTypes.bool,
-  disabled: PropTypes.bool,
-  indeterminate: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
-  checked: PropTypes.bool,
-  value: PropTypes.any,
-  toggle: PropTypes.bool
 }
