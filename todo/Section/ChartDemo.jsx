@@ -12,7 +12,6 @@ const ButtonDemo = () => (
     <ChartLine
       data={data}
       colors={['#ffffff']}
-      legend={false}
       library={{
         scales: {
           xAxes: [{gridLines: {display: false}, ticks: {display: false}}],
