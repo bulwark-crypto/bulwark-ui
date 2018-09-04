@@ -6,6 +6,7 @@ import Icon from './Icon'
 
 export default class SelectInput extends React.Component {
   static defaultProps = {
+    onChange: () => {},
     options: []
   }
 
@@ -47,7 +48,7 @@ export default class SelectInput extends React.Component {
     kill(ev)
     ev = {...ev, target: {...ev.target, value: o.value}}
     this.setState({value: o.value}, () => {
-      if (this.props.onChange) this.props.onChange(ev)
+      try { this.props.onChange(ev) } catch(err) {}
       this.handleHide()
     })
   }
