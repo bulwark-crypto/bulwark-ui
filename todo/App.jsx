@@ -4,14 +4,23 @@ import { render } from 'react-dom'
 
 import BadgeDemo from './Section/BadgeDemo'
 import ButtonDemo from './Section/ButtonDemo'
+import CardDemo from './Section/CardDemo'
+import CheckboxDemo from './Section/CheckboxDemo'
 import {Drawer, DrawerDivider, DrawerHeader, DrawerLink} from '../react/Drawer'
 import FontDemo from './Section/FontDemo'
 import GridDemo from './Section/GridDemo'
-import CardDemo from './Section/CardDemo'
+import MenuDemo from './Section/MenuDemo'
+import ModalDemo from './Section/ModalDemo'
 import {Navbar, NavbarLink} from '../react/Navbar'
-import TooltipDemo from './Section/TooltipDemo'
-import CheckboxDemo from './Section/CheckboxDemo'
+import PaginationDemo from './Section/PaginationDemo'
+import PanelDemo from './Section/PanelDemo'
 import RadioDemo from './Section/RadioDemo'
+import SelectInputDemo from './Section/SelectInputDemo'
+import StepperDemo from './Section/StepperDemo'
+import TabDemo from './Section/TabDemo'
+import TableDemo from './Section/TableDemo'
+import TextInputDemo from './Section/TextInputDemo'
+import TooltipDemo from './Section/TooltipDemo'
 
 require(`../sass/bulwark-${STYLE}.scss`)
 
@@ -47,9 +56,19 @@ class App extends React.Component {
           <CardDemo />
           <TooltipDemo />
           <BadgeDemo />
+          <ModalDemo />
           <CheckboxDemo />
           <RadioDemo />
+          <PanelDemo />
+          <TextInputDemo />
+          <SelectInputDemo />
+          <MenuDemo />
+          <TabDemo />
+          <PaginationDemo />
+          <StepperDemo />
+          <TableDemo />
         </div>
+        <div style={{height: 100}} />
       </div>
     )
   }
