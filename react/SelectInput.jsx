@@ -48,7 +48,7 @@ export default class SelectInput extends React.Component {
     kill(ev)
     ev = {...ev, target: {...ev.target, value: o.value}}
     this.setState({value: o.value}, () => {
-      try { this.props.onChange(ev) } catch(err) {}
+      try { this.props.onChange(ev) } catch (err) {}
       this.handleHide()
     })
   }

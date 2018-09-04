@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import {pickRest} from '../lib/utils'
 
+import Checkbox from './Checkbox'
 import Icon from './Icon'
 
 export const TableBody = ({children, ...rest}) => (
@@ -38,7 +39,7 @@ export class Table extends React.Component {
   render () {
     const [mods, {children, column, columns, onSelect, onSort, row, rows, ...rest}] = pickRest(this.props, ['descending', 'selectable', 'sortable'])
     const cols = mods.selectable ? [{key: '__select', text: ''}, ...columns] : [...columns]
-    console.log(mods)
+
     return (
       <table block='table' mods={mods} cellPadding={0} cellSpacing={0} {...rest}>
         <TableHead>
@@ -59,10 +60,7 @@ export class Table extends React.Component {
                 {cols.map(c => (
                   <TableCell key={c.key}>
                     {c.key === '__select' &&
-                      <div>
-                        <input id={i} name={c.key} onChange={onSelect ? () => onSelect(r) : null} type='checkbox' />
-                        <label htmlFor={i} />
-                      </div>
+                      <Checkbox primary onChange={onSelect ? () => onSelect(r) : null} />
                     }
                     {c.key !== '__select' && r[c.key]}
                   </TableCell>

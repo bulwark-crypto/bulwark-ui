@@ -45,7 +45,7 @@ describe('<Table />', () => {
 
   it('handles onSelect', () => {
     expect(selectedRow).to.equal(null)
-    wrapper.childAt(1).childAt(0).childAt(0).childAt(0).childAt(0).simulate('change')
+    wrapper.childAt(1).childAt(0).childAt(0).childAt(0).simulate('change')
     expect(selectedRow.a).to.equal(1)
 
     wrapper.setProps({onSelect: null})
