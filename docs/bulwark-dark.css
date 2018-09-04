@@ -722,11 +722,11 @@ button:focus {
   .stepper__step--active .stepper__step__indicator {
     background-color: #294dea;
     color: #ffffff;
-    padding: 9px 12px; }
+    padding: 8px 10px; }
   .stepper__step--complete .stepper__step__indicator {
     background-color: #252525;
     color: #7c7c7c;
-    padding: 9px 12px; }
+    padding: 8px 10px; }
   .stepper__step__bar {
     border-top: 1px solid #7c7c7c;
     display: inline-block;
@@ -801,6 +801,52 @@ button:focus {
     padding: 15px 42px; }
     .tab__title:hover {
       font-weight: bold; }
+
+.table {
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+  .table__head .table__cell {
+    color: #7c7c7c;
+    cursor: pointer;
+    font-size: 14px;
+    height: 70px;
+    line-height: 19px; }
+    .table__head .table__cell i {
+      margin-left: 7px; }
+  .table__head .table__row, .table__head .table__row:hover {
+    background: transparent !important; }
+  .table__cell {
+    color: #252525;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 7px; }
+    .table__cell input[type="checkbox"] {
+      border-radius: 2px;
+      display: none; }
+      .table__cell input[type="checkbox"]:hover::before {
+        text-shadow: 0px 0px 1px #294dea; }
+      .table__cell input[type="checkbox"]::before {
+        color: #7c7c7c;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        text-shadow: 0px 0px 1px #f7f7f7;
+        transition: color .3s ease; }
+      .table__cell input[type="checkbox"]:checked + label::before {
+        color: #294dea; }
+      .table__cell input[type="checkbox"] + label::before {
+        content: "\2610";
+        font-size: 18px; }
+      .table__cell input[type="checkbox"]:checked + label::before {
+        content: "\2611"; }
+  .table__row {
+    height: 50px;
+    padding: 0 32px; }
+    .table__row:hover {
+      background-color: rgba(41, 77, 234, 0.1) !important; }
+    .table__row:nth-child(odd) {
+      background-color: rgba(124, 124, 124, 0.1); }
 
 /* Base */
 .body, body {
