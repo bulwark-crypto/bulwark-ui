@@ -53,7 +53,7 @@ describe('<Tabs />', () => {
   })
 
   it('changes second tab to active on click', () => {
-    wrapper3.childAt(0).childAt(0).childAt(1).dive().simulate('click')
+    wrapper3.childAt(0).childAt(0).childAt(1).dive().childAt(0).simulate('click')
     expect(wrapper3.childAt(0).childAt(0).childAt(1).dive().hasClass('tab--active')).to.be.true()
   })
 
@@ -64,7 +64,7 @@ describe('<Tabs />', () => {
         <Tab icon='home'>Test 2</Tab>
       </Tabs>
     )
-    wrapper4.mount().childAt(0).childAt(0).childAt(0).childAt(1).childAt(0).simulate('click')
+    wrapper4.mount().childAt(0).childAt(0).childAt(0).childAt(1).childAt(0).childAt(0).simulate('click')
     expect(wrapper4.mount().childAt(0).childAt(0).childAt(0).childAt(1).hasClass('tab--active'))
     wrapper4.unmount()
   })

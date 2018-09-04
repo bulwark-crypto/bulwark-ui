@@ -23,7 +23,7 @@ export default class Radio extends React.Component {
     checked: false
   }
 
-  componentWillMount() {
+  componentWillMount () {
     if (this.props.defaultChecked || this.props.checked) {
       this.setState({checked: this.props.defaultChecked || this.props.checked})
     }

@@ -5,11 +5,11 @@ import Icon from './Icon'
 
 // Tab
 export const Tab = (props) => {
-  const [mods, {children, icon, index, title, ...rest}] = pickRest(props, ['active', 'disabled'])
+  const [mods, {children, icon, index, onClick, title, ...rest}] = pickRest(props, ['active', 'disabled'])
   return (
     <div block='tab' mods={mods} {...rest}>
-      {!!title && <div block='tab' elem='title'>{title}</div>}
-      {!!icon && <div block='tab' elem='icon'><Icon k={icon} /></div>}
+      {!!title && <div block='tab' elem='title' onClick={onClick}>{title}</div>}
+      {!!icon && <div block='tab' elem='icon' onClick={onClick}><Icon k={icon} /></div>}
     </div>
   )
 }
@@ -48,11 +48,7 @@ export class Tabs extends React.Component {
     const state = {index}
 
     if (ev && ev.target) {
-      let el = ev.target
-      if (!el.classList.contains('tab__icon') && !el.classList.contains('tab__title')) {
-        el = el.parentNode
-      }
-      let rect = el.getBoundingClientRect()
+      const rect = ev.target.parentNode.getBoundingClientRect()
       state.left = rect.left
       state.width = Math.abs(rect.right - rect.left)
     }
