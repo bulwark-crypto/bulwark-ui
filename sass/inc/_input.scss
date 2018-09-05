@@ -35,7 +35,14 @@
 
     select#{$self}__component { display: none; }
 
-    #{$self}__options { height: initial; }
+    #{$self}__options {
+      transform: scale(1);
+      transition: $animation-select;
+      -moz-transition: $animation-select;
+      -ms-transition: $animation-select;
+      -o-transition: $animation-select;
+      -webkit-transition: $animation-select;
+    }
   }
 
   &__arrow {
@@ -87,7 +94,7 @@
     min-width: 108px;
     position: absolute;
     top: 18px;
-    transition: top 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    transition: $animation-label;
   }
 
   &__message {
@@ -103,14 +110,18 @@
     border-radius: 5px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     left: 0;
-    height: 0;
-    max-height: 108px;
+    max-height: 300px;
     min-width: 108px;
     overflow-x: hidden;
     overflow-y: auto;
     position: absolute;
-    top: 18px;
-    transition: height 189ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    top: -50%;
+    transform: scale(0);
+    transition: $animation-select;
+    -moz-transition: $animation-select;
+    -ms-transition: $animation-select;
+    -o-transition: $animation-select;
+    -webkit-transition: $animation-select;
     width: 100%;
     z-index: 2;
 

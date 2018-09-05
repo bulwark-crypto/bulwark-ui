@@ -77,7 +77,7 @@ export class Tabs extends React.Component {
     // Setup bar style
     const barStyle = {
       left: this.state.left,
-      top: (hasIcon ? 70 : 50) - 1,
+      top: (hasIcon ? 70 : 52) - 1,
       width: this.state.width
     }
 

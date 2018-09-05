@@ -23,7 +23,7 @@ describe('<Menu />', () => {
   })
 
   it('should open menu items on click', () => {
-    wrapper.simulate('click')
+    wrapper.childAt(0).simulate('click')
     expect(wrapper.hasClass('menu--open')).to.be.true()
     expect(wrapper.find('.menu__items')).to.have.length(1)
   })

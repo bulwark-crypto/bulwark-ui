@@ -1,12 +1,14 @@
 
 .menu {
   position: relative;
+  z-index: 1;
 
   &__items {
     background-color: $white;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-    left: 0;
+    display: block;
+    left: 10%;
     margin: 0;
     max-height: 130px;
     min-width: 58px;
@@ -14,10 +16,18 @@
     overflow-y: auto;
     padding: 0;
     position: absolute;
-    top: 0;
-    width: intrinsic;
+    top: -50%;
+    transition: $animation-select;
+    -moz-transition: $animation-select;
+    -ms-transition: $animation-select;
+    -o-transition: $animation-select;
+    -webkit-transition: $animation-select;
+    width: max-content;
     width: -moz-max-content;
+    width: -ms-max-content;
+    width: -o-max-content;
     width: -webkit-max-content;
+    z-index: 2;
   }
 
   &__item {
