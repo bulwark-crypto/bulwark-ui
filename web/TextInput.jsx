@@ -57,6 +57,7 @@ export default class TextInput extends React.Component {
           </label>
         }
         <As block='input' elem='component' {...rest} {...inputProps} />
+        <div block='input' elem='bar' />
         {!!message && <div block='input' elem='message'>{message}</div>}
       </div>
     )

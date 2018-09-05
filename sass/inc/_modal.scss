@@ -2,22 +2,34 @@
 .modal {
   background: transparent;
   bottom: 0;
-  left: 0;
+  left: 100%;
   margin: 0;
+  opacity: 0;
   padding: 0;
   position: fixed;
-  right: 0;
+  right: -100%;
   top: 0;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  will-change: opacity;
   z-index: 10;
 
+  $self: &;
+
   &--open {
+    left: 0;
     opacity: 1;
-    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    will-change: opacity;
+    right: 0;
+
+    #{$self}__container {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   &--overlay {
     background-color: rgba(0, 0, 0, 0.5);
+    transition: $animation-modal-overlay;
   }
 
   &__actions {
@@ -34,12 +46,11 @@
     background-color: $white;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-    left: 50%;
+    left: 100%;
     margin: 0;
     padding: $modal-padding;
     position: fixed;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 100%;
   }
 
   &__content {

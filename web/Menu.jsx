@@ -28,9 +28,10 @@ export class Menu extends React.Component {
   render () {
     const [mods, {children, component, ...rest}] = pickRest(this.props, ['open'])
     if (this.state.isOpen) mods.open = true
+
     return (
-      <div block='menu' mods={mods} {...rest} onClick={this.handleOpen}>
-        {component}
+      <div block='menu' mods={mods} {...rest}>
+        {React.cloneElement(component, {onClick: this.handleOpen})}
         {this.state.isOpen && <div block='menu' elem='items'>{children}</div>}
       </div>
     )

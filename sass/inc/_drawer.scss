@@ -1,13 +1,16 @@
 
 .drawer {
+  background-color: transparent;
   bottom: 0;
   display: block;
   left: -100%;
   position: fixed;
   top: 0;
+  transition: $animation-drawer;
   z-index: 6;
 
   &--open {
+    background-color: rgba(0, 0, 0, 0.5);
     left: 0;
     right: 0;
   }
@@ -35,8 +38,17 @@
     }
 
     &__link {
+      cursor: pointer;
       height: 80px;
       position: relative;
+
+      &:active {
+        background-color: darken(#f2f2f2, 25%);
+      }
+
+      &:focus, &:hover {
+        background-color: #f2f2f2;
+      }
 
       * {
         left: 39px;
