@@ -13,11 +13,6 @@ describe('<Modal />', () => {
     expect(wrapper.find('.modal__container')).to.have.length(1)
   })
 
-  it('render nothing if not open', () => {
-    const wrapper = shallow(<Modal>Test</Modal>)
-    expect(wrapper.html()).to.equal(null)
-  })
-
   it('render as modal open', () => {
     const wrapper = shallow(<Modal open>Test</Modal>)
     expect(wrapper.hasClass('modal--open')).to.be.true()

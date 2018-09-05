@@ -4,7 +4,6 @@ import {pickRest} from '../lib/utils'
 
 // Modal
 export const Modal = (props) => {
-  if (!props.open) return null
   const [mods, {children, onCancel, ...rest}] = pickRest(props, ['open', 'overlay'])
   return (
     <div block='modal' mods={mods} onClick={onCancel}>

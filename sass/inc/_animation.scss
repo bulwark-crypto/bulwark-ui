@@ -3,3 +3,4 @@ $ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
 $animation-button-hover: background-color .3s;
 $animation-checkbox-click: transform .3s;
 $animation-drawer: left .5s $ease-out-quad, background-color .3s $ease-out-quad;
+$animation-modal-overlay: background-color 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
