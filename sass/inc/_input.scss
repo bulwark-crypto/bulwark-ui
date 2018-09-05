@@ -29,7 +29,9 @@
   }
 
   &--focus {
-    #{$self}__component { border-color: $primary !important; }
+    #{$self}__bar:after, #{$self}__bar:before {
+      width: 50%;
+    }
 
     select#{$self}__component { display: none; }
 
@@ -46,8 +48,32 @@
     width: 10px;
   }
 
+  &__bar {
+    display: block;
+    position: relative;
+
+    &:after, &:before {
+      content: '';
+      height: 1px;
+      width: 0;
+      bottom: 1px;
+      position: absolute;
+      background: $primary;
+      transition: 0.2s ease all;
+    }
+
+    &:after {
+      right: 50%;
+    }
+
+    &:before {
+      left: 50%;
+    }
+  }
+
   &__component {
-    border-bottom: 1px solid #f2f2f2 !important;
+    border-color: transparent;
+    border-bottom: 1px solid #f2f2f2;
     min-width: 108px;
     width: 100%;
   }
