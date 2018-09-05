@@ -22,6 +22,8 @@
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   color: $white;
 
+  @include button-default($black);
+
   &--icon {
     @include button-icon($black, 60%);
     border-radius: 50%;
@@ -47,6 +49,8 @@
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     color: $white;
 
+    @include button-default($primary);
+
     &#{$self}--icon { @include button-icon($primary, 40%); }
     &#{$self}--outline { @include button-outline($primary, 40%); }
     &#{$self}--text { @include button-text($primary, 40%); }
@@ -57,6 +61,8 @@
     border: 1px solid $secondary;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     color: $white;
+
+    @include button-default($secondary);
 
     &#{$self}--icon { @include button-icon($secondary, 35%); }
     &#{$self}--outline { @include button-outline($secondary, 35%); }
@@ -69,6 +75,8 @@
     box-shadow: none;
     color: lighten($disabled, 10%);
     cursor: not-allowed;
+
+    @include button-default($disabled);
 
     &#{$self}--icon {
       @include button-icon($disabled, 10%);
