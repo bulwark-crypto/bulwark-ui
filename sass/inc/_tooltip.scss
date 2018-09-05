@@ -10,12 +10,16 @@
     display: inline-block;
     font-size: 9px;
     line-height: 11px;
+    opacity: 0;
     padding: $grid-gutter/2 $grid-gutter;
     position: absolute;
     text-align: center;
+    transition: $animation-tooltip;
     visibility: hidden;
     width: max-content;
     width: -moz-max-content;
+    width: -ms-max-content;
+    width: -o-max-content;
     width: -webkit-max-content;
     z-index: 1;
 
@@ -100,6 +104,7 @@
   }
 
   &:hover &__content {
+    opacity: 1;
     visibility: visible;
   }
 
