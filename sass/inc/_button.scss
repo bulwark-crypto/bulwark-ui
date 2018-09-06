@@ -1,8 +1,7 @@
 
 .button {
-  background-color: transparent;
-  border: 1px solid transparent;
   border-radius: $border-radius;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   color: $white;
   cursor: pointer;
   font-family: $font-primary;
@@ -12,15 +11,10 @@
   line-height: 19px;
   letter-spacing: normal;
   margin: 0 5px;
+  overflow: hidden;
   padding: 8px 16px;
   position: relative;
   text-align: center;
-  transition: $animation-button-hover;
-
-  background-color: $black;
-  border: 1px solid $black;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-  color: $white;
 
   @include button-default($black);
 

@@ -9,16 +9,35 @@
 }
 
 @mixin button-default($color) {
-  /*
-  &:focus {
-    background-color: lighten($color, 50%);
-    border-color: lighten($color, 50%);
+  background-color: $color;
+  background-position: center;
+  border: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+    visibility: hidden;
   }
-  */
+
+  &:focus:after {
+    visibility: visible;
+  }
+
+  &:focus:not(:active)::after {
+    animation: ripple 2s ease-out;
+  }
 
   &:hover {
-    background-color: lighten($color, 25%);
-    border-color: lighten($color, 25%);
+    background-color: lighten($color, 10%);
   }
 }
 
