@@ -77,4 +77,24 @@
       padding: 0;
     }
   }
+
+  @media screen {
+    @media only screen and (max-width: $grid-md) {
+      &--open {
+        height: 100%;
+        width: 100%;
+
+        #{$self}__container {
+          bottom: 0;
+          height: 100%;
+          left: 0;
+          right: 0;
+          top: 0;
+          transform: none;
+          transition: $animation-modal-overlay;
+          width: 100%;
+        }
+      }
+    }
+  }
 }
