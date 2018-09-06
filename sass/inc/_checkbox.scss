@@ -26,7 +26,7 @@
     &#{$self}--secondary { background-color: $secondary }
     &#{$self}--red { background-color: $red }
     &#{$self}--disabled { background-color: #C8C8C8; }
-    
+
     &::after {
       content: "\2713";
     }
@@ -48,7 +48,6 @@
       height: 24px;
       border-radius: 50%;
       background-color: $white;
-      box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);
       transition: $animation-checkbox-click;
       box-sizing: content-box;
       // background-clip: padding-box;
@@ -56,20 +55,33 @@
 
     &#{$self}--checked {
       &::after {
+        animation: pulse-default 1.25s cubic-bezier(0.66, 0, 0, 1);
         background-color: $black;
         transform: translate(24px);
       }
-      &#{$self}--primary::after { background-color: $primary }
-      &#{$self}--secondary::after { background-color: $secondary }
-      &#{$self}--red::after { background-color: $red }
+      &#{$self}--primary::after {
+        animation: pulse-primary 1.25s cubic-bezier(0.66, 0, 0, 1);
+        background-color: $primary;
+      }
+      &#{$self}--secondary::after {
+        animation: pulse-secondary 1.25s cubic-bezier(0.66, 0, 0, 1);
+        background-color: $secondary;
+      }
+      &#{$self}--red::after {
+        animation: pulse-red 1.25s cubic-bezier(0.66, 0, 0, 1);
+        background-color: $red;
+      }
     }
-    
+
     // &#{$self}:focus-visible::after {
     //   margin-left: -10px;
     //   margin-top: -10px;
     //   border: 10px solid rgba(0,0,0,0.05);
     // }
 
-    &#{$self}--disabled::after { background-color: #C8C8C8; }
+    &#{$self}--disabled::after {
+      animation: none;
+      background-color: #C8C8C8;
+    }
   }
 }
