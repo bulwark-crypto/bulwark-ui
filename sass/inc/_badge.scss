@@ -1,26 +1,36 @@
 
 .badge {
-  background-color: $black;
-  border-radius: 50%;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-  color: $white;
-  height: 24px;
-  position: absolute;
-  right: -12px;
-  text-align: center;
-  top: -12px;
-  transition: $animation-badge;
-  width: 24px;
+  position: relative;
+  z-index: 1;
 
-  &--primary { background-color: $primary; }
+  $self: &;
+
+  &--primary {
+    #{$self}__text {
+      background-color: $primary;
+    }
+  }
 
   &__text {
+    background-color: $black;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    color: $white;
     font-size: 14px;
-    left: 50%;
-    line-height: 19px;
+    height: 24px;
     position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-margin-before: -1px;
+    right: -8px;
+    text-align: center;
+    top: -100%;
+    transition: $animation-badge;
+    width: 24px;
+    z-index: 2;
+
+    span {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }

@@ -7,10 +7,10 @@ import IconButton from '../../web/IconButton'
 const ButtonDemo = () => (
   <div>
     <h3>Badges</h3>
-    <Button>Default<Badge primary>2</Badge></Button>
-    <Button primary text>Primary<Badge>!</Badge></Button>
-    <IconButton secondary k='lemon'><Badge primary>6</Badge></IconButton>
-    <IconButton primary k='heartbeat'><Badge>!</Badge></IconButton>
+    <Badge primary text='2'><Button>Default</Button></Badge>
+    <Badge><Button text>Primary</Button></Badge>
+    <Badge primary text='6'><IconButton secondary k='lemon' /></Badge>
+    <Badge><IconButton primary k='heartbeat' /></Badge>
   </div>
 )
 
