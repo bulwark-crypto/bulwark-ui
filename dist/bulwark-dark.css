@@ -11,33 +11,78 @@
 /* Input */
 /* Modal */
 /* Panel */
+@keyframes pulse-default {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4); }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); } }
+
+@keyframes pulse-primary {
+  0% {
+    box-shadow: 0 0 0 0 rgba(41, 77, 234, 0.4); }
+  70% {
+    box-shadow: 0 0 0 10px rgba(41, 77, 234, 0); }
+  100% {
+    box-shadow: 0 0 0 0 rgba(41, 77, 234, 0); } }
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(227, 74, 74, 0.4); }
+  70% {
+    box-shadow: 0 0 0 10px rgba(227, 74, 74, 0); }
+  100% {
+    box-shadow: 0 0 0 0 rgba(227, 74, 74, 0); } }
+
+@keyframes pulse-secondary {
+  0% {
+    box-shadow: 0 0 0 0 rgba(124, 124, 124, 0.4); }
+  70% {
+    box-shadow: 0 0 0 10px rgba(124, 124, 124, 0); }
+  100% {
+    box-shadow: 0 0 0 0 rgba(124, 124, 124, 0); } }
+
+@keyframes ripple {
+  0% {
+    opacity: 1;
+    transform: scale(0, 0); }
+  20% {
+    opacity: 1;
+    transform: scale(25, 25); }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40); } }
+
 .badge {
-  background-color: #252525;
-  border-radius: 50%;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-  color: #ffffff;
-  height: 24px;
-  position: absolute;
-  right: -12px;
-  text-align: center;
-  top: -12px;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  width: 24px; }
-  .badge--primary {
+  position: relative;
+  z-index: 1; }
+  .badge--primary .badge__text {
+    animation: pulse-primary 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
     background-color: #294dea; }
   .badge__text {
+    animation: pulse-default 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    background-color: #252525;
+    border-radius: 50%;
+    color: #ffffff;
     font-size: 14px;
-    left: 50%;
-    line-height: 19px;
+    height: 24px;
     position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-margin-before: -1px; }
+    right: -8px;
+    text-align: center;
+    top: -100%;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 24px;
+    z-index: 2; }
+    .badge__text span {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%); }
 
 .button {
-  background-color: transparent;
-  border: 1px solid transparent;
   border-radius: 5px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   color: #ffffff;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
@@ -47,23 +92,32 @@
   line-height: 19px;
   letter-spacing: normal;
   margin: 0 5px;
+  overflow: hidden;
   padding: 8px 16px;
   position: relative;
   text-align: center;
-  transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-color: #252525;
-  border: 1px solid #252525;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-  color: #ffffff;
-  /*
-  &:focus {
-    background-color: lighten($color, 50%);
-    border-color: lighten($color, 50%);
-  }
-  */ }
+  background-position: center;
+  border: none; }
+  .button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+    visibility: hidden; }
+  .button:focus:after {
+    visibility: visible; }
+  .button:focus:not(:active)::after {
+    animation: ripple 2s ease-out; }
   .button:hover {
-    background-color: #656565;
-    border-color: #656565; }
+    background-color: #3f3f3f; }
   .button--icon {
     background: transparent;
     border: 1px solid transparent;
@@ -109,15 +163,28 @@
     border: 1px solid #294dea;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     color: #ffffff;
-    /*
-  &:focus {
-    background-color: lighten($color, 50%);
-    border-color: lighten($color, 50%);
-  }
-  */ }
+    background-color: #294dea;
+    background-position: center;
+    border: none; }
+    .button--primary:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+      visibility: hidden; }
+    .button--primary:focus:after {
+      visibility: visible; }
+    .button--primary:focus:not(:active)::after {
+      animation: ripple 2s ease-out; }
     .button--primary:hover {
-      background-color: #9daef5;
-      border-color: #9daef5; }
+      background-color: #5774ef; }
     .button--primary.button--icon {
       background: transparent;
       border: 1px solid transparent;
@@ -153,15 +220,28 @@
     border: 1px solid #7c7c7c;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     color: #ffffff;
-    /*
-  &:focus {
-    background-color: lighten($color, 50%);
-    border-color: lighten($color, 50%);
-  }
-  */ }
+    background-color: #7c7c7c;
+    background-position: center;
+    border: none; }
+    .button--secondary:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+      visibility: hidden; }
+    .button--secondary:focus:after {
+      visibility: visible; }
+    .button--secondary:focus:not(:active)::after {
+      animation: ripple 2s ease-out; }
     .button--secondary:hover {
-      background-color: #bcbcbc;
-      border-color: #bcbcbc; }
+      background-color: #969696; }
     .button--secondary.button--icon {
       background: transparent;
       border: 1px solid transparent;
@@ -198,15 +278,28 @@
     box-shadow: none;
     color: #e6e6e6;
     cursor: not-allowed;
-    /*
-  &:focus {
-    background-color: lighten($color, 50%);
-    border-color: lighten($color, 50%);
-  }
-  */ }
+    background-color: #cccccc;
+    background-position: center;
+    border: none; }
+    .button--disabled:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+      visibility: hidden; }
+    .button--disabled:focus:after {
+      visibility: visible; }
+    .button--disabled:focus:not(:active)::after {
+      animation: ripple 2s ease-out; }
     .button--disabled:hover {
-      background-color: white;
-      border-color: white; }
+      background-color: #e6e6e6; }
     .button--disabled.button--icon {
       background: transparent;
       border: 1px solid transparent;
@@ -373,19 +466,23 @@
       height: 24px;
       border-radius: 50%;
       background-color: #ffffff;
-      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
       transition: transform 0.3s;
       box-sizing: content-box; }
     .checkbox--switch.checkbox--checked::after {
+      animation: pulse-default 1.25s cubic-bezier(0.66, 0, 0, 1);
       background-color: #252525;
       transform: translate(24px); }
     .checkbox--switch.checkbox--checked.checkbox--primary::after {
+      animation: pulse-primary 1.25s cubic-bezier(0.66, 0, 0, 1);
       background-color: #294dea; }
     .checkbox--switch.checkbox--checked.checkbox--secondary::after {
+      animation: pulse-secondary 1.25s cubic-bezier(0.66, 0, 0, 1);
       background-color: #7c7c7c; }
     .checkbox--switch.checkbox--checked.checkbox--red::after {
+      animation: pulse-red 1.25s cubic-bezier(0.66, 0, 0, 1);
       background-color: #e34a4a; }
     .checkbox--switch.checkbox--disabled::after {
+      animation: none;
       background-color: #C8C8C8; }
 
 .drawer {
@@ -807,6 +904,20 @@
       margin: 0;
       padding: 0; }
 
+@media only screen and (max-width: 1024px) {
+  .modal--open {
+    height: 100%;
+    width: 100%; }
+    .modal--open .modal__container {
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      transform: none;
+      transition: background-color 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      width: 100%; } }
+
 .navbar {
   background-color: #ffffff;
   height: 90px;
@@ -964,7 +1075,9 @@
     background-color: #C8C8C8; }
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  outline: none;
+  position: relative; }
 
 html, body {
   background-color: #252525;
