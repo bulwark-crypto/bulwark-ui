@@ -36,12 +36,15 @@
     select#{$self}__component { display: none; }
 
     #{$self}__options {
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+      height: auto;
+      max-height: 300px;
+      min-width: 108px;
+      opacity: 1;
+      overflow-x: hidden;
+      overflow-y: auto;
       transform: scale(1);
-      transition: $animation-select;
-      -moz-transition: $animation-select;
-      -ms-transition: $animation-select;
-      -o-transition: $animation-select;
-      -webkit-transition: $animation-select;
+      width: 100%;
     }
   }
 
@@ -108,21 +111,16 @@
   &__options {
     background-color: $white;
     border-radius: 5px;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    height: 0;
     left: 0;
-    max-height: 300px;
-    min-width: 108px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    max-height: 0;
+    min-width: 0;
+    opacity: 0;
+    overflow: hidden;
     position: absolute;
-    top: -50%;
+    top: 18px;
     transform: scale(0);
-    transition: $animation-select;
-    -moz-transition: $animation-select;
-    -ms-transition: $animation-select;
-    -o-transition: $animation-select;
-    -webkit-transition: $animation-select;
-    width: 100%;
+    width: 0;
     z-index: 2;
 
     &__item {

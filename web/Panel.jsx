@@ -23,7 +23,7 @@ export default class Panel extends React.Component {
           <div block='panel__header' elem='title'>{title}</div>
           <div block='panel__header' elem='subtitle'>{subtitle}</div>
           <div block='panel' elem='arrow' onClick={this.handleClick}>
-            <Icon k={open ? 'angle-up' : 'angle-down'} />
+            <Icon k='angle-down' />
           </div>
         </div>
         <div block='panel' elem='content'>{children}</div>

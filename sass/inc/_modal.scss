@@ -9,8 +9,6 @@
   position: fixed;
   right: -100%;
   top: 0;
-  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  will-change: opacity;
   z-index: 10;
 
   $self: &;
@@ -24,6 +22,7 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      transition: $animation-modal-container;
     }
   }
 

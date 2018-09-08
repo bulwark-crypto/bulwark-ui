@@ -8,7 +8,7 @@
   color: $white;
   text-align: center;
   vertical-align: top;
-  
+
   &--primary { border-color: $primary; }
   &--secondary { border-color: $secondary; }
   &--red { border-color: $red; }
@@ -21,6 +21,7 @@
 
   &--checked {
     &::after {
+      animation: pulse-default 1.25s cubic-bezier(0.66, 0, 0, 1);
       content: "";
       border-radius: 50%;
       display: block;
@@ -30,9 +31,20 @@
       background-color: $black;
     }
 
-    &#{$self}--primary::after { background-color: $primary; }
-    &#{$self}--secondary::after { background-color: $secondary; }
-    &#{$self}--red::after { background-color: $red; }
-    &#{$self}--disabled::after { background-color: #C8C8C8; }
+    &#{$self}--primary::after {
+      animation: pulse-primary 1.25s cubic-bezier(0.66, 0, 0, 1);
+      background-color: $primary;
+    }
+    &#{$self}--secondary::after {
+      animation: pulse-secondary 1.25s cubic-bezier(0.66, 0, 0, 1);
+      background-color: $secondary;
+    }
+    &#{$self}--red::after {
+      animation: pulse-red 1.25s cubic-bezier(0.66, 0, 0, 1);
+      background-color: $red;
+    }
+    &#{$self}--disabled::after {
+      background-color: #C8C8C8;
+    }
   }
 }

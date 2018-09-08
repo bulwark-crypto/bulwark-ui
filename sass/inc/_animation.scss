@@ -1,36 +1,48 @@
 $ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-$animation-badge: all .3s $ease-out-quad;
-$animation-button-hover: background-color .3s $ease-out-quad;
-$animation-checkbox-click: transform .3s;
-$animation-drawer: left .5s $ease-out-quad, background-color .3s $ease-out-quad;
-$animation-input-border: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-$animation-label: top 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-$animation-menu: all .15s cubic-bezier(0.35, 0, 0.25, 1);
-$animation-modal-overlay: background-color 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-$animation-panel: max-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-$animation-panel-open: max-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-$animation-select: all .15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-$animation-tooltip: all 241ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+@keyframes bounce {
+  70% {
+    padding-bottom: 28px;
+  }
+  80% {
+    padding-bottom: 32px;
+  }
+  90% {
+    padding-bottom: 26px;
+  }
+  95% {
+    padding-bottom: 30px;
+  }
+  97% {
+    padding-bottom: 22px;
+  }
+  99% {
+    padding-bottom: 26px;
+  }
+  100% {
+    padding-bottom: 32px;
+  }
+}
 
 @keyframes hinge {
   0% {
-    animation-timing-function: ease-in-out;
+    animation-timing-function: $bounce;
     transform: rotate(-120deg);
     transform-origin: top left;
   }
   25% {
-    animation-timing-function: ease-in-out;
+    animation-timing-function: $bounce;
     transform: rotate(70deg);
     transform-origin: top left;
   }
   50% {
-    animation-timing-function: ease-in-out;
+    animation-timing-function: $bounce;
     transform: rotate(-120deg);
     transform-origin: top left;
   }
   100% {
-    animation-timing-function: ease-in;
+    animation-timing-function: $bounce;
     transform: rotate(0deg) translateY(200%);
   }
 }
@@ -97,3 +109,22 @@ $animation-tooltip: all 241ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     transform: scale(40, 40);
   }
 }
+
+$animation-badge: all .3s $bounce 0s;
+$animation-button-hover: background-color .5s $ease-out-quad 0s;
+$animation-card: all .3s $bounce 0s;
+$animation-checkbox-click: transform .3s $bounce 0s;
+$animation-drawer: left .5s $bounce 0s, background-color 0s $ease-out-quad 0s;
+$animation-input-border: all .2s $ease-out-quad 0s;
+$animation-label: top .2s $bounce 0s;
+$animation-menu: all .15s $bounce 0s;
+$animation-modal-container: all 1s $bounce 1s;
+$animation-modal-overlay: background-color .25s $bounce 0s;
+$animation-panel-arrow: all 1s $bounce 0s;
+$animation-panel-close: all .5s $bounce 0s;
+$animation-panel-open: all 1s $bounce .5s;
+$animation-select: all 1s ease-out 0s;
+$animation-stepper: background-color 1s $bounce 0s;
+$animation-table: background-color .25s $bounce 0s;
+$animation-tooltip: all .5s $bounce 0s;
+

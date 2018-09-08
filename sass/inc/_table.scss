@@ -61,6 +61,7 @@
   &__row {
     height: 50px;
     padding: 0 32px;
+    transition: $animation-table;
 
     &:hover {
       background-color: rgba(41, 77, 234, 0.1) !important;

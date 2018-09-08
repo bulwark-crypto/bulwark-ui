@@ -11,6 +11,39 @@
 /* Input */
 /* Modal */
 /* Panel */
+@keyframes bounce {
+  70% {
+    padding-bottom: 28px; }
+  80% {
+    padding-bottom: 32px; }
+  90% {
+    padding-bottom: 26px; }
+  95% {
+    padding-bottom: 30px; }
+  97% {
+    padding-bottom: 22px; }
+  99% {
+    padding-bottom: 26px; }
+  100% {
+    padding-bottom: 32px; } }
+
+@keyframes hinge {
+  0% {
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: rotate(-120deg);
+    transform-origin: top left; }
+  25% {
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: rotate(70deg);
+    transform-origin: top left; }
+  50% {
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: rotate(-120deg);
+    transform-origin: top left; }
+  100% {
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: rotate(0deg) translateY(200%); } }
+
 @keyframes pulse-default {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4); }
@@ -71,7 +104,7 @@
     right: -8px;
     text-align: center;
     top: -100%;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
     width: 24px;
     z-index: 2; }
     .badge__text span {
@@ -337,7 +370,10 @@
 .card {
   background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25); }
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; }
+  .card:hover {
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2); }
   .card--image {
     overflow: hidden; }
     .card--image .card__title {
@@ -440,13 +476,17 @@
     border-color: #C8C8C8;
     cursor: not-allowed; }
   .checkbox--checked:not(.checkbox--switch) {
+    animation: pulse-default 1.25s cubic-bezier(0.66, 0, 0, 1);
     border: 0;
     background-color: #252525; }
     .checkbox--checked:not(.checkbox--switch).checkbox--primary {
+      animation: pulse-primary 1.25s cubic-bezier(0.66, 0, 0, 1);
       background-color: #294dea; }
     .checkbox--checked:not(.checkbox--switch).checkbox--secondary {
+      animation: pulse-secondary 1.25s cubic-bezier(0.66, 0, 0, 1);
       background-color: #7c7c7c; }
     .checkbox--checked:not(.checkbox--switch).checkbox--red {
+      animation: pulse-red 1.25s cubic-bezier(0.66, 0, 0, 1);
       background-color: #e34a4a; }
     .checkbox--checked:not(.checkbox--switch).checkbox--disabled {
       background-color: #C8C8C8; }
@@ -466,7 +506,7 @@
       height: 24px;
       border-radius: 50%;
       background-color: #ffffff;
-      transition: transform 0.3s;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
       box-sizing: content-box; }
     .checkbox--switch.checkbox--checked::after {
       animation: pulse-default 1.25s cubic-bezier(0.66, 0, 0, 1);
@@ -492,7 +532,7 @@
   left: -100%;
   position: fixed;
   top: 0;
-  transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s, background-color 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   z-index: 6; }
   .drawer--open {
     background-color: rgba(0, 0, 0, 0.5);
@@ -689,12 +729,15 @@
   .input--focus select.input__component {
     display: none; }
   .input--focus .input__options {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    height: auto;
+    max-height: 300px;
+    min-width: 108px;
+    opacity: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
     transform: scale(1);
-    transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -moz-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -ms-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -o-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -webkit-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms; }
+    width: 100%; }
   .input__arrow {
     color: #7c7c7c;
     float: right;
@@ -732,7 +775,7 @@
     min-width: 108px;
     position: absolute;
     top: 18px;
-    transition: top 200ms cubic-bezier(0, 0, 0.2, 1) 0ms; }
+    transition: top 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; }
   .input__message {
     color: #7c7c7c;
     font-size: 9px;
@@ -742,21 +785,16 @@
   .input__options {
     background-color: #ffffff;
     border-radius: 5px;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    height: 0;
     left: 0;
-    max-height: 300px;
-    min-width: 108px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    max-height: 0;
+    min-width: 0;
+    opacity: 0;
+    overflow: hidden;
     position: absolute;
-    top: -50%;
+    top: 18px;
     transform: scale(0);
-    transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -moz-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -ms-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -o-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -webkit-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    width: 100%;
+    width: 0;
     z-index: 2; }
     .input__options__item {
       cursor: pointer;
@@ -814,11 +852,11 @@
     padding: 0;
     position: absolute;
     top: -50%;
-    transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -moz-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -ms-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -o-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
-    -webkit-transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1) 0ms;
+    transition: all 1s ease-out 0s;
+    -moz-transition: all 1s ease-out 0s;
+    -ms-transition: all 1s ease-out 0s;
+    -o-transition: all 1s ease-out 0s;
+    -webkit-transition: all 1s ease-out 0s;
     width: max-content;
     width: -moz-max-content;
     width: -ms-max-content;
@@ -855,8 +893,6 @@
   position: fixed;
   right: -100%;
   top: 0;
-  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  will-change: opacity;
   z-index: 10; }
   .modal--open {
     left: 0;
@@ -865,10 +901,11 @@
     .modal--open .modal__container {
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%); }
+      transform: translate(-50%, -50%);
+      transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s; }
   .modal--overlay {
     background-color: rgba(0, 0, 0, 0.5);
-    transition: background-color 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; }
+    transition: background-color 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; }
   .modal__actions {
     margin: 0;
     padding-top: 42px;
@@ -915,7 +952,7 @@
       right: 0;
       top: 0;
       transform: none;
-      transition: background-color 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      transition: background-color 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
       width: 100%; } }
 
 .navbar {
@@ -995,19 +1032,27 @@
 .panel {
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  transition: max-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; }
-  .panel--open .panel__content {
-    max-height: 500px;
-    padding: 0 32px 32px 32px;
-    transition: max-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; }
+  padding: 32px 32px 0 32px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; }
+  .panel:hover {
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2); }
+  .panel--open {
+    padding-bottom: 32px;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s; }
+    .panel--open .panel__arrow i {
+      transform: rotate(-180deg); }
+    .panel--open .panel__content {
+      max-height: 100vh;
+      transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s; }
   .panel__arrow {
     cursor: pointer;
     position: absolute;
     right: 32px;
-    top: 50%;
-    transform: translateY(-50%); }
+    top: 6px; }
+    .panel__arrow i {
+      transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; }
   .panel__content {
     color: #7c7c7c;
     display: block;
@@ -1017,9 +1062,10 @@
     max-height: 0;
     overflow: hidden;
     padding: 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
     width: 100%; }
   .panel__header {
-    padding: 32px;
+    padding-bottom: 32px;
     position: relative; }
     .panel__header__subtitle {
       color: #7c7c7c;
@@ -1029,8 +1075,7 @@
       left: 50%;
       line-height: 19px;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%); }
+      top: 5px; }
     .panel__header__title {
       font-family: "Roboto", sans-serif;
       font-size: 20px;
@@ -1058,6 +1103,7 @@
     border-color: #C8C8C8;
     cursor: not-allowed; }
   .radio--checked::after {
+    animation: pulse-default 1.25s cubic-bezier(0.66, 0, 0, 1);
     content: "";
     border-radius: 50%;
     display: block;
@@ -1066,10 +1112,13 @@
     width: 14px;
     background-color: #252525; }
   .radio--checked.radio--primary::after {
+    animation: pulse-primary 1.25s cubic-bezier(0.66, 0, 0, 1);
     background-color: #294dea; }
   .radio--checked.radio--secondary::after {
+    animation: pulse-secondary 1.25s cubic-bezier(0.66, 0, 0, 1);
     background-color: #7c7c7c; }
   .radio--checked.radio--red::after {
+    animation: pulse-red 1.25s cubic-bezier(0.66, 0, 0, 1);
     background-color: #e34a4a; }
   .radio--checked.radio--disabled::after {
     background-color: #C8C8C8; }
@@ -1077,7 +1126,9 @@
 * {
   box-sizing: border-box;
   outline: none;
-  position: relative; }
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased; }
 
 html, body {
   background-color: #f7f7f7;
@@ -1119,6 +1170,7 @@ button:focus {
     line-height: 21px;
     margin-right: 9px;
     padding: 7px 13px;
+    transition: background-color 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
     width: 35px; }
   .stepper__step__title {
     margin-right: 40px; }
@@ -1139,6 +1191,10 @@ button:focus {
   .tabs__clear {
     clear: both; }
   .tabs__content {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+    margin-top: 5px;
     padding: 32px;
     text-align: left;
     width: 100%; }
@@ -1216,7 +1272,8 @@ button:focus {
         content: "\2611"; }
   .table__row {
     height: 50px;
-    padding: 0 32px; }
+    padding: 0 32px;
+    transition: background-color 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; }
     .table__row:hover {
       background-color: rgba(41, 77, 234, 0.1) !important; }
     .table__row:nth-child(odd) {
@@ -1328,7 +1385,7 @@ button:focus {
     padding: 5px 10px;
     position: absolute;
     text-align: center;
-    transition: all 241ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
     visibility: hidden;
     width: max-content;
     width: -moz-max-content;

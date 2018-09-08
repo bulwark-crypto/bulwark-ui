@@ -20,12 +20,25 @@
   $self: &;
 
   &--checked:not(#{$self}--switch) {
+    animation: pulse-default 1.25s cubic-bezier(0.66, 0, 0, 1);
     border: 0;
     background-color: $black;
-    &#{$self}--primary { background-color: $primary }
-    &#{$self}--secondary { background-color: $secondary }
-    &#{$self}--red { background-color: $red }
-    &#{$self}--disabled { background-color: #C8C8C8; }
+
+    &#{$self}--primary {
+      animation: pulse-primary 1.25s cubic-bezier(0.66, 0, 0, 1);
+      background-color: $primary;
+    }
+    &#{$self}--secondary {
+      animation: pulse-secondary 1.25s cubic-bezier(0.66, 0, 0, 1);
+      background-color: $secondary;
+    }
+    &#{$self}--red {
+      animation: pulse-red 1.25s cubic-bezier(0.66, 0, 0, 1);
+      background-color: $red;
+    }
+    &#{$self}--disabled {
+      background-color: #C8C8C8;
+    }
 
     &::after {
       content: "\2713";
