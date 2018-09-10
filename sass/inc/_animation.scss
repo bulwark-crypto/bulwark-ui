@@ -1,6 +1,31 @@
 $ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
 $bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
+$swift-ease-out-duration: 0.4s;
+$swift-ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+$swift-ease-out: all $swift-ease-out-duration $swift-ease-out-timing-function;
+
+$swift-ease-in-duration: 0.3s;
+$swift-ease-in-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+$swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function;
+
+$swift-ease-in-out-duration: 0.5s;
+$swift-ease-in-out-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+$swift-ease-in-out: all $swift-ease-in-out-duration $swift-ease-in-out-timing-function;
+
+$swift-linear-duration: 0.08s;
+$swift-linear-timing-function: linear;
+$swift-linear: all $swift-linear-duration $swift-linear-timing-function;
+
+$material-enter-duration: 0.3s;
+$material-enter-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+$material-enter: all $material-enter-duration $material-enter-timing-function;
+
+$material-leave-duration: 0.3s;
+$material-leave-timing-function: cubic-bezier(0.4, 0.0, 1, 1);
+$material-leave: all $material-leave-duration $material-leave-timing-function;
+
+
 @keyframes bounce {
   70% {
     padding-bottom: 28px;
@@ -110,21 +135,21 @@ $bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 }
 
-$animation-badge: all .3s $bounce 0s;
-$animation-button-hover: background-color .5s $ease-out-quad 0s;
-$animation-card: all .3s $bounce 0s;
-$animation-checkbox-click: transform .3s $bounce 0s;
-$animation-drawer: left .5s $bounce 0s, background-color 0s $ease-out-quad 0s;
-$animation-input-border: all .2s $ease-out-quad 0s;
-$animation-label: top .2s $bounce 0s;
-$animation-menu: all .15s $bounce 0s;
-$animation-modal-container: all 1s $bounce 1s;
-$animation-modal-overlay: background-color .25s $bounce 0s;
-$animation-panel-arrow: all 1s $bounce 0s;
-$animation-panel-close: all .5s $bounce 0s;
-$animation-panel-open: all 1s $bounce .5s;
-$animation-select: all 1s ease-out 0s;
-$animation-stepper: background-color 1s $bounce 0s;
-$animation-table: background-color .25s $bounce 0s;
-$animation-tooltip: all .5s $bounce 0s;
+$animation-badge: $swift-ease-in;
+$animation-button-hover: $swift-ease-in;
+$animation-card: $swift-ease-in;
+$animation-checkbox-click: $swift-ease-out;
+$animation-drawer: $swift-ease-out;
+$animation-input-border: $swift-ease-in;
+$animation-label: $swift-ease-in;
+$animation-menu: $swift-ease-out;
+$animation-modal-container: $swift-ease-in;
+$animation-modal-overlay: $swift-ease-in;
+$animation-panel-arrow: $swift-ease-in;
+$animation-panel-close: $swift-ease-out;
+$animation-panel-open: $swift-ease-in;
+$animation-select: $swift-ease-in-out;
+$animation-stepper: $swift-ease-in;
+$animation-table: $swift-ease-in;
+$animation-tooltip: $swift-ease-in;
 
