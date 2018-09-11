@@ -90,7 +90,6 @@
     "parser": "babel-eslint"
   },
   "jest": {
-    "preset": "jest-expo",
     "setupFiles": [
       "./test/testSetup.js"
     ]

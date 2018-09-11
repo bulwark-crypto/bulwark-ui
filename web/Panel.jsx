@@ -18,11 +18,11 @@ export default class Panel extends React.Component {
     const open = this.state.open
     const {children, subtitle, title, ...rest} = this.props
     return (
-      <div block='panel' mods={open ? {open} : {}} {...rest}>
+      <div block='panel' mods={open ? {open} : {}} {...rest} onClick={this.handleClick}>
         <div block='panel' elem='header'>
           <div block='panel__header' elem='title'>{title}</div>
           <div block='panel__header' elem='subtitle'>{subtitle}</div>
-          <div block='panel' elem='arrow' onClick={this.handleClick}>
+          <div block='panel' elem='arrow'>
             <Icon k='angle-down' />
           </div>
         </div>

@@ -21,8 +21,7 @@ describe('<Panel />', () => {
 
   it('render panel trigger open', () => {
     const wrapper = shallow(<Panel>Test</Panel>)
-    const arrow = wrapper.find('.panel__header').find('.panel__arrow')
-    arrow.simulate('click')
+    wrapper.simulate('click')
     expect(wrapper.hasClass('panel--open'))
   })
 })
