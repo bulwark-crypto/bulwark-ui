@@ -11,39 +11,6 @@
 /* Input */
 /* Modal */
 /* Panel */
-@keyframes bounce {
-  70% {
-    padding-bottom: 28px; }
-  80% {
-    padding-bottom: 32px; }
-  90% {
-    padding-bottom: 26px; }
-  95% {
-    padding-bottom: 30px; }
-  97% {
-    padding-bottom: 22px; }
-  99% {
-    padding-bottom: 26px; }
-  100% {
-    padding-bottom: 32px; } }
-
-@keyframes hinge {
-  0% {
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform: rotate(-120deg);
-    transform-origin: top left; }
-  25% {
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform: rotate(70deg);
-    transform-origin: top left; }
-  50% {
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform: rotate(-120deg);
-    transform-origin: top left; }
-  100% {
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform: rotate(0deg) translateY(200%); } }
-
 @keyframes pulse-default {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4); }
@@ -64,17 +31,17 @@
   0% {
     box-shadow: 0 0 0 0 rgba(227, 74, 74, 0.4); }
   70% {
-    box-shadow: 0 0 0 10px rgba(227, 74, 74, 0); }
+    ox-shadow: 0 0 0 10px rgba(227, 74, 74, 0); }
   100% {
-    box-shadow: 0 0 0 0 rgba(227, 74, 74, 0); } }
+    x-shadow: 0 0 0 0 rgba(227, 74, 74, 0); } }
 
 @keyframes pulse-secondary {
   0% {
     box-shadow: 0 0 0 0 rgba(124, 124, 124, 0.4); }
   70% {
-    box-shadow: 0 0 0 10px rgba(124, 124, 124, 0); }
+    ox-shadow: 0 0 0 10px rgba(124, 124, 124, 0); }
   100% {
-    box-shadow: 0 0 0 0 rgba(124, 124, 124, 0); } }
+    x-shadow: 0 0 0 0 rgba(124, 124, 124, 0); } }
 
 @keyframes ripple {
   0% {
@@ -399,6 +366,8 @@
       margin: 0 10px 0 0; }
   .card__body {
     padding: 32px; }
+    .card__body--nopadding {
+      padding: 0; }
   .card__title {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     font-family: "Poppins", sans-serif;
@@ -461,7 +430,7 @@
   height: 24px;
   width: 24px;
   border: 1px solid #252525;
-  border-radius: 5px;
+  border-radius: 50%;
   margin: 0 5px;
   color: #ffffff;
   text-align: center;
@@ -706,13 +675,14 @@
 
 .input {
   font-family: "Roboto", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   height: 55px;
   padding-top: 18px;
   position: relative; }
   .input--active .input__label {
-    color: #252525;
-    font-size: 9px;
+    color: #7c7c7c;
+    font-family: "Roboto", sans-serif;
+    font-size: 12pt;
     height: 11px;
     line-height: 11px;
     top: 0; }
@@ -764,12 +734,15 @@
   .input__component {
     border-color: transparent;
     border-bottom: 1px solid #f2f2f2;
+    font-family: "Roboto", sans-serif;
+    font-size: 14pt;
     min-width: 108px;
     width: 100%; }
   .input__label {
     color: #7c7c7c;
     cursor: text;
-    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14pt;
     height: 16px;
     line-height: 16px;
     min-width: 108px;
@@ -799,7 +772,7 @@
     .input__options__item {
       cursor: pointer;
       font-family: "Roboto", sans-serif;
-      font-size: 14px;
+      font-size: 14pt;
       height: 27px;
       line-height: 19px;
       min-width: 108px;
@@ -886,26 +859,24 @@
 .modal {
   background: transparent;
   bottom: 0;
-  left: 100%;
+  left: 0;
   margin: 0;
   opacity: 0;
   padding: 0;
   position: fixed;
-  right: -100%;
+  right: 0;
   top: 0;
+  transform: scale(0, 0);
   z-index: 10; }
   .modal--open {
-    left: 0;
     opacity: 1;
-    right: 0; }
+    transform: scale(1, 1); }
     .modal--open .modal__container {
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2); }
+      opacity: 1;
+      transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2) 0.1s; }
   .modal--overlay {
     background-color: rgba(0, 0, 0, 0.5);
-    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2); }
+    transition: none; }
   .modal__actions {
     margin: 0;
     padding-top: 42px;
@@ -918,11 +889,13 @@
     background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-    left: 100%;
+    left: 50%;
     margin: 0;
+    opacity: 0;
     padding: 32px;
-    position: fixed;
-    top: 100%; }
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%); }
   .modal__content {
     margin: 0;
     padding: 0; }
@@ -952,7 +925,7 @@
       right: 0;
       top: 0;
       transform: none;
-      transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+      transition: none;
       width: 100%; } }
 
 .navbar {
@@ -1083,6 +1056,18 @@
       height: 26px;
       line-height: 26px; }
 
+.progressbar {
+  animation: all 1s cubic-bezier(0.55, 0, 0.55, 0.2) 0.1s;
+  background-color: #294dea;
+  box-shadow: 0 0 10px #294dea;
+  display: block;
+  height: 4px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 0;
+  z-index: 100; }
+
 .radio {
   display: inline-block;
   height: 24px;
@@ -1147,12 +1132,10 @@ button:focus {
   line-height: 19px; }
   .stepper__step--active .stepper__step__indicator {
     background-color: #294dea;
-    color: #ffffff;
-    padding: 8px 10px; }
+    color: #ffffff; }
   .stepper__step--complete .stepper__step__indicator {
     background-color: #252525;
-    color: #7c7c7c;
-    padding: 8px 10px; }
+    color: #7c7c7c; }
   .stepper__step__bar {
     border-top: 1px solid #7c7c7c;
     display: inline-block;
@@ -1165,13 +1148,22 @@ button:focus {
     background-color: #252525;
     border-radius: 50%;
     color: #ffffff;
+    display: inline-block;
     font-size: 16px;
     height: 35px;
     line-height: 21px;
     margin-right: 9px;
-    padding: 7px 13px;
-    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    margin-bottom: -12px;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.3s cubic-bezier(0.55, 0, 0.55, 0.2) 0s;
     width: 35px; }
+    .stepper__step__indicator i, .stepper__step__indicator span {
+      font-size: 16px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%); }
   .stepper__step__title {
     margin-right: 40px; }
 
