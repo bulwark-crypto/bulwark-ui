@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Button from '../../web/Button'
-import Col from '../../web/Col'
-import Icon from '../../web/Icon'
-import {Menu, MenuItem} from '../../web/Menu'
-import Row from '../../web/Row'
+import Button from '../../../web/Button'
+import Col from '../../../web/Col'
+import Icon from '../../../web/Icon'
+import {Menu, MenuItem} from '../../../web/Menu'
+import Row from '../../../web/Row'
 
 const fn = () => {}
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Button from '../../web/Button'
-import {Step, Stepper} from '../../web/Stepper'
+import Button from '../../../web/Button'
+import {Step, Stepper} from '../../../web/Stepper'
 
 export default class StepperDemo extends React.Component {
   state = {

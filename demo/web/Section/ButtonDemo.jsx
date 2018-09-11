@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Button from '../../web/Button'
-import IconButton from '../../web/IconButton'
+import Button from '../../../web/Button'
+import IconButton from '../../../web/IconButton'
 
 const ButtonDemo = () => (
   <div>

@@ -7,12 +7,12 @@ import ButtonDemo from './Section/ButtonDemo'
 import CardDemo from './Section/CardDemo'
 import ChartDemo from './Section/ChartDemo'
 import CheckboxDemo from './Section/CheckboxDemo'
-import {Drawer, DrawerDivider, DrawerHeader, DrawerLink} from '../web/Drawer'
+import {Drawer, DrawerDivider, DrawerHeader, DrawerLink} from '../../web/Drawer'
 import FontDemo from './Section/FontDemo'
 import GridDemo from './Section/GridDemo'
 import MenuDemo from './Section/MenuDemo'
 import ModalDemo from './Section/ModalDemo'
-import {Navbar, NavbarLink} from '../web/Navbar'
+import {Navbar, NavbarLink} from '../../web/Navbar'
 import PaginationDemo from './Section/PaginationDemo'
 import PanelDemo from './Section/PanelDemo'
 import RadioDemo from './Section/RadioDemo'
@@ -23,7 +23,7 @@ import TableDemo from './Section/TableDemo'
 import TextInputDemo from './Section/TextInputDemo'
 import TooltipDemo from './Section/TooltipDemo'
 
-require(`../sass/bulwark-${STYLE}.scss`)
+require(`../../sass/bulwark-${STYLE}.scss`)
 
 class App extends React.Component {
   state = {

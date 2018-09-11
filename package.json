@@ -35,14 +35,16 @@
     "build:sass-dark": "node sass-build.js dark && node sass-build.js dark min",
     "build:sass-light": "node sass-build.js light && node sass-build.js light min",
     "build:todo": "webpack --color",
+    "eject": "react-native-scripts eject",
     "jsfmt": "./node_modules/.bin/standard --fix",
-    "start": "yarn run start:todo",
-    "start:todo": "webpack-dev-server --color --hot",
+    "start:mobile": "react-native-scripts start",
+    "start:web": "webpack-dev-server --color --hot",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx-source": "^7.0.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
@@ -50,6 +52,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-rebem-jsx": "^0.3.3",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-expo": "^4.0.0",
     "babel-preset-react": "^6.24.1",
     "coveralls": "^3.0.2",
     "css-loader": "^1.0.0",
@@ -57,9 +60,12 @@
     "enzyme-adapter-react-16": "^1.2.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.5.0",
+    "jest-expo": "^29.0.0",
     "must": "^0.13.4",
     "node-sass": "^4.9.2",
     "prop-types": "^15.6.2",
+    "react-native-scripts": "^1.14.0",
+    "react-test-renderer": "^16.5.0",
     "sass-loader": "^7.0.3",
     "sinon": "^6.1.6",
     "standard": "^11.0.1",
@@ -73,15 +79,18 @@
     "d3-dsv": "^1.0.8",
     "d3-format": "^1.3.0",
     "d3-time-format": "^2.1.1",
+    "expo": "^29.0.0",
     "react": "^16.4.1",
     "react-chartkick": "^0.3.0",
     "react-dom": "^16.4.1",
+    "react-native": "^0.56.1",
     "react-stockcharts": "^0.7.7"
   },
   "standard": {
     "parser": "babel-eslint"
   },
   "jest": {
+    "preset": "jest-expo",
     "setupFiles": [
       "./test/testSetup.js"
     ]

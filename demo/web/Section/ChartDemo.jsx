@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {ChartLine} from '../../web/Chart'
+import {ChartLine} from '../../../web/Chart'
 
 const data = {}
 const keys = [1.1, 1.2301, 1.32, 1.30, 1.4, 1.5, 1.6]

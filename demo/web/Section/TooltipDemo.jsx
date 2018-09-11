@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Button from '../../web/Button'
-import IconButton from '../../web/IconButton'
-import Tooltip from '../../web/Tooltip'
+import Button from '../../../web/Button'
+import IconButton from '../../../web/IconButton'
+import Tooltip from '../../../web/Tooltip'
 
 const TooltipDemo = () => (
   <div>

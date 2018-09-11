@@ -10,7 +10,7 @@ module.exports = {
     port: 8080,
     hot: true
   },
-  entry: path.join(__dirname, 'todo', 'App.jsx'),
+  entry: path.join(__dirname, 'demo/web', 'App.jsx'),
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   module: {
     rules: [

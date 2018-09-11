@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Radio from '../../web/Radio'
+import Radio from '../../../web/Radio'
 
 export default class RadioDemo extends React.Component {
   constructor (props) {

@@ -1,14 +1,15 @@
 node_modules/
 *.log
-*.sublime-project
 
+*.sublime-gulp.cache
+*.sublime-project
 *.sublime-workspace
 .composer.phar
 
-*.sublime-gulp.cache
-
 \.DS_Store
 
-.vscode
+.vscode/
 
 coverage/
+
+.expo/

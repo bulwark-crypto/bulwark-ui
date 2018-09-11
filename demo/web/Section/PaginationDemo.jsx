@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Pagination from '../../web/Pagination'
+import Pagination from '../../../web/Pagination'
 
 export default class PaginationDemo extends React.Component {
   state = {

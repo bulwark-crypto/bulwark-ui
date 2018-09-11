@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Checkbox from '../../web/Checkbox'
+import Checkbox from '../../../web/Checkbox'
 
 const CheckboxDemo = () => (
   <div>
