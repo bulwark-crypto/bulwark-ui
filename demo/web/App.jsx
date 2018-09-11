@@ -15,6 +15,7 @@ import ModalDemo from './Section/ModalDemo'
 import {Navbar, NavbarLink} from '../../web/Navbar'
 import PaginationDemo from './Section/PaginationDemo'
 import PanelDemo from './Section/PanelDemo'
+import ProgressBarDemo from './Section/ProgressBarDemo'
 import RadioDemo from './Section/RadioDemo'
 import SelectInputDemo from './Section/SelectInputDemo'
 import StepperDemo from './Section/StepperDemo'
@@ -69,6 +70,7 @@ class App extends React.Component {
           <StepperDemo />
           <TableDemo />
           <ChartDemo />
+          <ProgressBarDemo />
         </div>
         <div style={{height: 100}} />
       </div>

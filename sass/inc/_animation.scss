@@ -77,6 +77,7 @@ $animation-modal-overlay: none;
 $animation-panel-arrow: $swift-ease-in;
 $animation-panel-close: $swift-ease-out;
 $animation-panel-open: $swift-ease-in;
+$animation-progressbar: all 1s $swift-ease-in-timing-function .1s;
 $animation-select: $swift-ease-in-out;
 $animation-stepper: background-color $swift-ease-in-duration $swift-ease-in-timing-function 0s;
 $animation-table: $swift-ease-in;
