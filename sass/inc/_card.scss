@@ -48,6 +48,8 @@
 
   &__body {
     padding: $card-padding;
+
+    &--nopadding { padding: 0; }
   }
 
   &__title {

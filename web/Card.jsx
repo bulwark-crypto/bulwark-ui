@@ -28,14 +28,15 @@ CardActions.propTypes = {
 }
 
 // Body
-export const CardBody = ({children, ...rest}) => (
-  <div block='card' elem='body' {...rest}>
+export const CardBody = ({children, nopadding, ...rest}) => (
+  <div block='card' elem='body' mods={{nopadding: !!nopadding}} {...rest}>
     {children}
   </div>
 )
 
 CardBody.propTypes = {
-  children: PropTypes.any.isRequired
+  children: PropTypes.any.isRequired,
+  nopadding: PropTypes.bool
 }
 
 // Title

@@ -16,7 +16,7 @@ describe('<Card />', () => {
     const wrapper = shallow(
       <Card>
         <CardTitle icon='home' title='Title' />
-        <CardBody>Body</CardBody>
+        <CardBody nopadding>Body</CardBody>
         <CardActions>
           <Button>Action</Button>
         </CardActions>
@@ -25,6 +25,7 @@ describe('<Card />', () => {
     expect(wrapper.children()).to.have.length(3)
     expect(wrapper.childAt(0).dive().hasClass('card__title')).to.be.true()
     expect(wrapper.childAt(1).dive().hasClass('card__body')).to.be.true()
+    expect(wrapper.childAt(1).dive().hasClass('card__body--nopadding')).to.be.true()
     expect(wrapper.childAt(2).dive().hasClass('card__actions')).to.be.true()
   })
 

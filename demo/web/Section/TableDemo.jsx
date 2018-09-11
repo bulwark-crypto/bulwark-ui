@@ -1,5 +1,6 @@
 import React from 'react'
 
+import {Card, CardBody} from '../../../web/Card'
 import {Table} from '../../../web/Table'
 
 const tx = {
@@ -38,17 +39,25 @@ export default class TableDemo extends React.Component {
     return (
       <div>
         <h3>Tables</h3>
-        <Table columns={cols} rows={rows} />
+        <Card>
+          <CardBody nopadding>
+            <Table columns={cols} rows={rows} />
+          </CardBody>
+        </Card>
         <br />
-        <Table
-          column={this.state.column}
-          columns={cols}
-          descending={this.state.descending}
-          onSelect={this.handleSelect}
-          onSort={this.handleSort}
-          rows={rows}
-          selectable
-          sortable />
+        <Card>
+          <CardBody nopadding>
+            <Table
+              column={this.state.column}
+              columns={cols}
+              descending={this.state.descending}
+              onSelect={this.handleSelect}
+              onSort={this.handleSort}
+              rows={rows}
+              selectable
+              sortable />
+          </CardBody>
+        </Card>
       </div>
     )
   }
