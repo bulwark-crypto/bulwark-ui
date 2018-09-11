@@ -49,6 +49,7 @@ describe('<Tabs />', () => {
   })
 
   it('renders first tab as active', () => {
+    wrapper3.instance().selectTab()
     expect(wrapper3.childAt(0).childAt(0).childAt(0).dive().hasClass('tab--active')).to.be.true()
   })
 

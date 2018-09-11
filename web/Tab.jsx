@@ -38,9 +38,12 @@ export class Tabs extends React.Component {
   tabs = null
 
   componentDidMount () {
-    if (this.tabs && this.tabs.children) {
-      this.tabs.children[0].children[0].click()
-    }
+    this.reselectTab()
+    window.addEventListener('resize', this.reselectTab)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.reselectTab)
   }
 
   handleSelect = (ev, index) => {
@@ -56,15 +59,22 @@ export class Tabs extends React.Component {
     this.setState(state)
   }
 
+  reselectTab = () => {
+    this.selectTab(this.state.index)
+  }
+
+  selectTab = (index = 0) => {
+    if (this.tabs && this.tabs.children) {
+      this.tabs.children[index].children[0].click()
+    }
+  }
+
   render () {
     const [mods, {children, ...rest}] = pickRest(this.props, [])
-    let tabs = children
-    if (!Array.isArray(tabs)) tabs = [tabs]
-
     // Clone tabs and add props
     let content = null
     let hasIcon = false
-    tabs = tabs.map((t, i) => {
+    const tabs = (Array.isArray(children) ? children : [children]).map((t, i) => {
       if (!hasIcon && !!t.props.icon) hasIcon = true
       if (i === this.state.index) content = t.props.children
       return React.cloneElement(t, {
