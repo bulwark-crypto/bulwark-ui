@@ -32,14 +32,14 @@ export class Menu extends React.Component {
     return (
       <div block='menu' mods={mods} {...rest}>
         {React.cloneElement(component, {onClick: this.handleOpen})}
-        {this.state.isOpen && <div block='menu' elem='items'>{children}</div>}
+        <div block='menu' elem='items'>{children}</div>
       </div>
     )
   }
 }
 
-export const MenuItem = ({children, onClick}) => (
-  <div block='menu' elem='item' onClick={onClick}>
+export const MenuItem = ({children, ...rest}) => (
+  <div block='menu' elem='item' {...rest}>
     {children}
   </div>
 )

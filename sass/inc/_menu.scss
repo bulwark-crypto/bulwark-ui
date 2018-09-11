@@ -1,27 +1,37 @@
 
 .menu {
+  display: inline-block;
   position: relative;
   z-index: 1;
+
+  $self: &;
+
+  &--open {
+    #{$self}__items {
+      max-height: 230px;
+      transition: $animation-select;
+    }
+
+    #{$self}__item {
+      opacity: 1;
+      transition: $animation-select-item;
+    }
+  }
 
   &__items {
     background-color: $white;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     display: block;
-    left: 10%;
+    left: 50%;
     margin: 0;
-    max-height: 130px;
-    min-width: 58px;
+    max-height: 0;
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0;
     position: absolute;
-    top: -50%;
-    transition: $animation-select;
-    -moz-transition: $animation-select;
-    -ms-transition: $animation-select;
-    -o-transition: $animation-select;
-    -webkit-transition: $animation-select;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: max-content;
     width: -moz-max-content;
     width: -ms-max-content;
@@ -33,10 +43,11 @@
   &__item {
     cursor: pointer;
     font-family: $font-primary;
-    font-size: 14px;
+    font-size: 16pt;
     height: 39px;
     line-height: 19px;
     margin: 0;
+    opacity: 0;
     overflow: hidden;
     padding: 10px 11px;
     position: relative;

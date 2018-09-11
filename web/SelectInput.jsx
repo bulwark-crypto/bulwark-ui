@@ -66,12 +66,14 @@ export default class SelectInput extends React.Component {
   }
 
   render () {
-    const [mods, {defaultValue, label, message, options, value, ...rest}] = pickRest(this.props, ['error', 'native'])
+    const [mods, {defaultValue, label, message, name, options, value, ...rest}] = pickRest(this.props, ['error', 'native'])
 
     if (this.state.isFocus) mods.focus = true
     if (mods.focus || !!this.state.value) mods.active = true
 
     const inputProps = {
+      autoComplete: 'off',
+      name,
       onChange: this.handleChange,
       onFocus: this.handleShow,
       ref: i => { this.input = i },
@@ -91,7 +93,7 @@ export default class SelectInput extends React.Component {
         <select block='input' elem='component' {...rest} {...inputProps}>
           {adjustedOptions.map((o, i) => (<option key={i} value={o.value}>{o.text}</option>))}
         </select>
-        {!!this.state.isFocus &&
+        {!mods.native &&
           <div block='input' elem='options'>
             {adjustedOptions.map((o, i) => (
               <div block='input__options' elem='item' key={i} mods={{active: o.value === this.state.value}} onClick={ev => this.handleSelect(ev, o)}>
