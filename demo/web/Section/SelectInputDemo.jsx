@@ -22,6 +22,14 @@ const SelectInputDemo = () => (
             defaultValue='United Kingdom'
             label='Country'
             name='two'
+            options={makeOptions(['United States', 'Ireland', 'United Kingdom', 'Brazil', 'China', 'Japan', 'Canada', 'Mexico', 'Peru'])} />
+        </Col>
+        <Col xs={12} sm={12} md={6} lg={3}>
+          <SelectInput
+            defaultValue='United Kingdom'
+            label='Native Select'
+            name='two'
+            native
             options={makeOptions(['United States', 'Ireland', 'United Kingdom', 'Brazil'])} />
         </Col>
       </Row>

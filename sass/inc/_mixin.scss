@@ -85,3 +85,29 @@
     }
   }
 }
+
+@mixin scrollbar {
+  scrollbar-3dlight-color: $light-gray;
+  scrollbar-arrow-color: $black;
+  scrollbar-base-color: $white;
+  scrollbar-darkshadow-color: $black;
+  scrollbar-face-color: $gray;
+  scrollbar-highlight-color: $light-gray;
+  scrollbar-shadow-color: $black;
+
+  -webkit-scrollbar-3dlight-color: $light-gray;
+  -webkit-scrollbar-arrow-color: $black;
+  -webkit-scrollbar-base-color: $white;
+  -webkit-scrollbar-darkshadow-color: $black;
+  -webkit-scrollbar-face-color: $gray;
+  -webkit-scrollbar-highlight-color: $light-gray;
+  -webkit-scrollbar-shadow-color: $black;
+
+  -moz-scrollbar-3dlight-color: $light-gray;
+  -moz-scrollbar-arrow-color: $black;
+  -moz-scrollbar-base-color: $white;
+  -moz-scrollbar-darkshadow-color: $black;
+  -moz-scrollbar-face-color: $gray;
+  -moz-scrollbar-highlight-color: $light-gray;
+  -moz-scrollbar-shadow-color: $black;
+}

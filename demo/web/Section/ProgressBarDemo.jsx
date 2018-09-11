@@ -25,7 +25,7 @@ export default class ProgressBarDemo extends React.Component {
     return (
       <div>
         <h3>ProgressBar</h3>
-        <ProgressBar progress={this.state.v} />
+        <ProgressBar v={this.state.v} />
         <br />
         <Button onClick={this.clear}>Reset</Button>
         <Button onClick={() => this.reset()}>Start</Button>

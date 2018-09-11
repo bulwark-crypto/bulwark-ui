@@ -8,6 +8,32 @@
 
   $self: &;
 
+  input, select, textarea {
+    background: transparent;
+    border: 0;
+    color: $black;
+    line-height: 16px;
+    outline: none;
+    padding: 4px 0;
+    z-index: 1;
+  }
+
+  select {
+    border: 0 !important;  /*Removes border*/
+    -webkit-appearance: none;  /*Removes default chrome and safari style*/
+    -moz-appearance: none;  /*Removes default style Firefox*/
+
+    option {
+      border: 0;
+      display: none;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      outline: 0;
+      width: 0;
+    }
+  }
+
   &--active {
     #{$self}__label {
       color: $secondary;
@@ -34,18 +60,43 @@
       width: 50%;
     }
 
-    select#{$self}__component { display: none; }
+    &:not(#{$self}--native) {
+      select#{$self}__component { display: none; }
 
-    #{$self}__options {
-      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-      height: auto;
-      max-height: 300px;
-      min-width: 108px;
-      opacity: 1;
-      overflow-x: hidden;
-      overflow-y: auto;
-      transform: scale(1);
-      width: 100%;
+      #{$self}__options {
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+        height: auto;
+        max-height: 230px;
+        min-width: 108px;
+        opacity: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transform: scale(1);
+        width: 100%;
+
+        @include scrollbar;
+      }
+    }
+  }
+
+  &--native {
+    select {
+      font-family: $font-primary;
+      font-size: 14pt;
+
+      option {
+        cursor: pointer;
+        display: block !important;
+        height: 27px;
+        line-height: 19px;
+        min-width: 108px;
+        padding: 6px 11px;
+        width: 100%;
+
+        &:active { background-color: rgba(124, 124, 124, 0.2); }
+
+        &:hover { background-color: rgba(124, 124, 124, 0.1); }
+      }
     }
   }
 
@@ -140,34 +191,6 @@
       &:hover { background-color: rgba(124, 124, 124, 0.1); }
 
       &--active { background-color: rgba(124, 124, 124, 0.2); }
-    }
-  }
-
-  input, select, textarea {
-    background: transparent;
-    border: 0;
-    color: $black;
-    line-height: 16px;
-    outline: 0;
-    padding: 4px 0;
-    z-index: 1;
-  }
-
-  select {
-    border: 0 !important;  /*Removes border*/
-    -webkit-appearance: none;  /*Removes default chrome and safari style*/
-    -moz-appearance: none;  /*Removes default style Firefox*/
-
-    option {
-      background-color: transparent;
-      border: 0;
-      color: transparent;
-      display: none;
-      height: 0;
-      margin: 0;
-      padding: 0;
-      outline: 0;
-      width: 0;
     }
   }
 }

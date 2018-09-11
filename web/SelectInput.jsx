@@ -15,6 +15,7 @@ export default class SelectInput extends React.Component {
     label: PropTypes.string,
     message: PropTypes.string,
     name: PropTypes.string.isRequired,
+    native: PropTypes.bool,
     options: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string.isRequired,
       value: PropTypes.any.isRequired
@@ -30,6 +31,12 @@ export default class SelectInput extends React.Component {
 
   componentWillMount () {
     this.setState({value: this.props.value || this.props.defaultValue || ''})
+  }
+
+  handleChange = (ev) => {
+    const value = ev.target.value
+    const opt = this.props.options.find(o => o.text === value)
+    this.handleSelect({}, opt || {value})
   }
 
   handleHide = () => {
@@ -59,12 +66,13 @@ export default class SelectInput extends React.Component {
   }
 
   render () {
-    const [mods, {defaultValue, label, message, options, value, ...rest}] = pickRest(this.props, ['error'])
+    const [mods, {defaultValue, label, message, options, value, ...rest}] = pickRest(this.props, ['error', 'native'])
 
     if (this.state.isFocus) mods.focus = true
     if (mods.focus || !!this.state.value) mods.active = true
 
     const inputProps = {
+      onChange: this.handleChange,
       onFocus: this.handleShow,
       ref: i => { this.input = i },
       value: this.state.value

@@ -63,4 +63,22 @@ describe('<SelectInput />', () => {
     wrapper.find('.input__options').find('.input__options__item').first().simulate('click')
     expect(x).to.equal(1)
   })
+
+  it('renders native options and handles change', () => {
+    let x = ''
+    const onChange = ev => { x = ev.target.value }
+    const opts = ['A', 'B', 'C'].map(k => ({text: k, value: k}))
+    const wrapper = shallow(<SelectInput name='test' onChange={onChange} options={opts} />)
+    wrapper.find('.input__component').find('select').simulate('change', {target: {value: 'B'}})
+    expect(x).to.equal('B')
+  })
+
+  it('renders native options and handles change empty', () => {
+    let x = ''
+    const onChange = ev => { x = ev.target.value }
+    const opts = ['A', 'B', 'C'].map(k => ({text: k, value: k}))
+    const wrapper = shallow(<SelectInput name='test' onChange={onChange} options={opts} />)
+    wrapper.find('.input__component').find('select').simulate('change', {target: {value: ''}})
+    expect(x).to.equal('')
+  })
 })
