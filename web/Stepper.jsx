@@ -32,7 +32,7 @@ export class Stepper extends React.Component {
       if (active) content = s.props.children
       return (
         <div block='stepper' elem='step' mods={{active, complete}} key={i}>
-          <span block='stepper__step' elem='indicator'>{active || complete ? <Icon k='check' /> : i}</span>
+          <span block='stepper__step' elem='indicator'>{active || complete ? <Icon k='check' /> : <span>{i}</span>}</span>
           <span block='stepper__step' elem='title'>{s.props.title}</span>
           {i !== (childArray.length - 1) && <div block='stepper__step' elem='bar' />}
         </div>
