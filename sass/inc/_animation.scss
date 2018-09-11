@@ -72,13 +72,13 @@ $animation-drawer: $swift-ease-out;
 $animation-input-border: $swift-ease-in;
 $animation-label: $swift-ease-in;
 $animation-menu: $swift-ease-out;
-$animation-modal-container: all .2s $swift-ease-in-timing-function .1s;
+$animation-modal-container: all $swift-ease-in-duration $swift-ease-in-timing-function .1s;
 $animation-modal-overlay: none;
 $animation-panel-arrow: $swift-ease-in;
 $animation-panel-close: $swift-ease-out;
 $animation-panel-open: $swift-ease-in;
 $animation-select: $swift-ease-in-out;
-$animation-stepper: $swift-ease-in;
+$animation-stepper: background-color $swift-ease-in-duration $swift-ease-in-timing-function 0s;
 $animation-table: $swift-ease-in;
 $animation-tooltip: $swift-ease-in;
 

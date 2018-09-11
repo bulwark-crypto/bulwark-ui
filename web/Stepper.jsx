@@ -24,8 +24,9 @@ export class Stepper extends React.Component {
   render () {
     const [mods, {children, ...rest}] = pickRest(this.props, ['vertical'])
 
+    const childArray = Array.isArray(children) ? children : [children]
     let content = null
-    const steps = (Array.isArray(children) ? children : [children]).map((s, i) => {
+    const steps = childArray.map((s, i) => {
       const active = i === this.props.index
       const complete = i < this.props.index
       if (active) content = s.props.children
@@ -33,7 +34,7 @@ export class Stepper extends React.Component {
         <div block='stepper' elem='step' mods={{active, complete}} key={i}>
           <span block='stepper__step' elem='indicator'>{active || complete ? <Icon k='check' /> : i}</span>
           <span block='stepper__step' elem='title'>{s.props.title}</span>
-          <div block='stepper__step' elem='bar' />
+          {i !== (childArray.length - 1) && <div block='stepper__step' elem='bar' />}
         </div>
       )
     })
