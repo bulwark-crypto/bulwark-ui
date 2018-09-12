@@ -42,7 +42,7 @@
     #{$self}__label {
       color: $secondary;
       font-family: $font-primary;
-      font-size: 12pt;
+      font-size: 12px;
       height: 11px;
       line-height: 11px;
       top: 0;
@@ -80,7 +80,7 @@
   &--native {
     select {
       font-family: $font-primary;
-      font-size: 14pt;
+      font-size: 14px;
 
       option {
         cursor: pointer;
@@ -135,7 +135,7 @@
     border-color: transparent;
     border-bottom: 1px solid #f2f2f2;
     font-family: $font-primary;
-    font-size: 14pt;
+    font-size: 14px;
     min-width: 108px;
     width: 100%;
   }
@@ -144,7 +144,7 @@
     color: $secondary;
     cursor: text;
     font-family: $font-primary;
-    font-size: 14pt;
+    font-size: 14px;
     height: 16px;
     line-height: 16px;
     min-width: 108px;
@@ -182,7 +182,7 @@
     &__item {
       cursor: pointer;
       font-family: $font-primary;
-      font-size: 14pt;
+      font-size: 14px;
       height: 27px;
       line-height: 19px;
       min-width: 108px;
