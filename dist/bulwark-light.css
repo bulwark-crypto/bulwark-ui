@@ -988,6 +988,7 @@
       color: #294dea !important; }
     .navbar__link a {
       color: #252525;
+      cursor: pointer;
       font-family: "Roboto", sans-serif;
       font-size: 16px;
       text-decoration: none;
