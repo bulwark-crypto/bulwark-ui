@@ -3,14 +3,13 @@ import React from 'react'
 import {pickRest} from '../lib/utils'
 
 import Icon from './Icon'
-import IconButton from './IconButton'
 
 // Navbar
 export const Navbar = ({children, onDrawer, ...rest}) => (
   <div block='navbar' {...rest}>
     {!!onDrawer &&
-      <div block='navbar' elem='menu'>
-        <IconButton k='bars' onClick={onDrawer} />
+      <div block='navbar' elem='menu' onClick={onDrawer}>
+        <Icon k='bars' />
       </div>
     }
     <div block='navbar' elem='links'>{children}</div>
@@ -23,33 +22,44 @@ Navbar.propTypes = {
 }
 
 // Navbar Link
-export const NavbarLink = (props) => {
-  const [ mods, {as, children, k, to, ...rest} ] = pickRest(props, ['active'])
-  if (as === 'Link') {
-    rest.to = to
-  } else {
-    rest.href = to
+export class NavbarLink extends React.Component {
+  static defaultProps = {
+    as: 'a'
   }
 
-  const As = as
-  return (
-    <As block='navbar' elem='link' mods={mods} {...rest}>
-      {!!k && <Icon k={k} />}
-      {children}
-    </As>
-  )
-}
+  static propTypes = {
+    active: PropTypes.bool,
+    as: PropTypes.string.isRequired,
+    children: PropTypes.any.isRequired,
+    k: PropTypes.string,
+    to: PropTypes.string
+  }
 
-NavbarLink.defaultProps = {
-  as: 'a'
-}
+  input = null
 
-NavbarLink.propTypes = {
-  active: PropTypes.bool,
-  as: PropTypes.string.isRequired,
-  children: PropTypes.any.isRequired,
-  k: PropTypes.string,
-  to: PropTypes.string
+  handleClick = (ev) => {
+    if (ev.target.classList.contains('navbar__link')) {
+      this.input.click()
+    }
+  }
+
+  render() {
+    const [ mods, {as, children, k, to, ...rest} ] = pickRest(this.props, ['active'])
+    if (as === 'Link') {
+      rest.to = to
+    } else {
+      rest.href = to
+    }
+
+    rest.onClick = ev => console.log(ev)
+
+    const As = as
+    return (
+      <div block='navbar' elem='link' mods={mods} onClick={this.handleClick}>
+        <As {...rest} ref={i => { this.input = i }}>{!!k && <Icon k={k} />}{children}</As>
+      </div>
+    )
+  }
 }
 
 export default {Navbar, NavbarLink}
