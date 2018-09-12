@@ -35,15 +35,11 @@ export class NavbarLink extends React.Component {
     to: PropTypes.string
   }
 
-  input = null
-
   handleClick = (ev) => {
-    if (ev.target.classList.contains('navbar__link')) {
-      this.input.click()
-    }
+    try { ev.target.firstChild.click() } catch(err) {}
   }
 
-  render() {
+  render () {
     const [ mods, {as, children, k, to, ...rest} ] = pickRest(this.props, ['active'])
     if (as === 'Link') {
       rest.to = to
@@ -51,12 +47,10 @@ export class NavbarLink extends React.Component {
       rest.href = to
     }
 
-    rest.onClick = ev => console.log(ev)
-
     const As = as
     return (
       <div block='navbar' elem='link' mods={mods} onClick={this.handleClick}>
-        <As {...rest} ref={i => { this.input = i }}>{!!k && <Icon k={k} />}{children}</As>
+        <As {...rest}>{!!k && <Icon k={k} />}{children}</As>
       </div>
     )
   }
