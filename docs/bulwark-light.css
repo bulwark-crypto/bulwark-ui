@@ -679,6 +679,28 @@
   height: 55px;
   padding-top: 18px;
   position: relative; }
+  .input input, .input select, .input textarea {
+    background: transparent;
+    border: 0;
+    color: #252525;
+    line-height: 16px;
+    outline: none;
+    padding: 4px 0;
+    z-index: 1; }
+  .input select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0 !important;
+    color: #252525;
+    text-indent: 0.1px;
+    text-overflow: ''; }
+    .input select::-ms-expand {
+      display: none; }
+    .input select option {
+      border: 0;
+      color: #252525;
+      max-height: 0; }
   .input--active .input__label {
     color: #7c7c7c;
     font-family: "Roboto", sans-serif;
@@ -688,26 +710,35 @@
     top: 0; }
   .input--active .input__arrow {
     color: #252525; }
-  .input--active select {
-    color: #252525 !important; }
   .input--error .input__label {
     color: #e34a4a !important; }
   .input--error .input__component {
     border-color: #e34a4a !important; }
   .input--focus .input__bar:after, .input--focus .input__bar:before {
     width: 50%; }
-  .input--focus select.input__component {
+  .input--focus:not(.input--native) select.input__component {
     display: none; }
-  .input--focus .input__options {
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-    height: auto;
-    max-height: 300px;
-    min-width: 108px;
-    opacity: 1;
-    overflow-x: hidden;
-    overflow-y: auto;
-    transform: scale(1);
-    width: 100%; }
+  .input--focus:not(.input--native) .input__options {
+    max-height: 230px;
+    transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1); }
+    .input--focus:not(.input--native) .input__options__item {
+      opacity: 1;
+      transition: opacity 0.15s cubic-bezier(0.55, 0, 0.55, 0.2) 0.4s; }
+  .input--native select {
+    font-family: "Roboto", sans-serif;
+    font-size: 14pt; }
+    .input--native select option {
+      cursor: pointer;
+      display: block !important;
+      height: 27px;
+      line-height: 19px;
+      min-width: 108px;
+      padding: 6px 11px;
+      width: 100%; }
+      .input--native select option:active {
+        background-color: rgba(124, 124, 124, 0.2); }
+      .input--native select option:hover {
+        background-color: rgba(124, 124, 124, 0.1); }
   .input__arrow {
     color: #7c7c7c;
     float: right;
@@ -758,17 +789,39 @@
   .input__options {
     background-color: #ffffff;
     border-radius: 5px;
-    height: 0;
-    left: 0;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    display: block;
+    left: 50%;
     max-height: 0;
-    min-width: 0;
-    opacity: 0;
-    overflow: hidden;
+    min-width: 108px;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: absolute;
-    top: 18px;
-    transform: scale(0);
-    width: 0;
-    z-index: 2; }
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 2;
+    scrollbar-3dlight-color: #f7f7f7;
+    scrollbar-arrow-color: #252525;
+    scrollbar-base-color: #ffffff;
+    scrollbar-darkshadow-color: #252525;
+    scrollbar-face-color: #959595;
+    scrollbar-highlight-color: #f7f7f7;
+    scrollbar-shadow-color: #252525;
+    -webkit-scrollbar-3dlight-color: #f7f7f7;
+    -webkit-scrollbar-arrow-color: #252525;
+    -webkit-scrollbar-base-color: #ffffff;
+    -webkit-scrollbar-darkshadow-color: #252525;
+    -webkit-scrollbar-face-color: #959595;
+    -webkit-scrollbar-highlight-color: #f7f7f7;
+    -webkit-scrollbar-shadow-color: #252525;
+    -moz-scrollbar-3dlight-color: #f7f7f7;
+    -moz-scrollbar-arrow-color: #252525;
+    -moz-scrollbar-base-color: #ffffff;
+    -moz-scrollbar-darkshadow-color: #252525;
+    -moz-scrollbar-face-color: #959595;
+    -moz-scrollbar-highlight-color: #f7f7f7;
+    -moz-scrollbar-shadow-color: #252525; }
     .input__options__item {
       cursor: pointer;
       font-family: "Roboto", sans-serif;
@@ -776,60 +829,38 @@
       height: 27px;
       line-height: 19px;
       min-width: 108px;
+      opacity: 0;
       padding: 6px 11px;
       width: 100%; }
       .input__options__item:hover {
         background-color: rgba(124, 124, 124, 0.1); }
       .input__options__item--active {
         background-color: rgba(124, 124, 124, 0.2); }
-  .input input, .input select, .input textarea {
-    background: transparent;
-    border: 0;
-    color: #252525;
-    line-height: 16px;
-    outline: 0;
-    padding: 4px 0;
-    z-index: 1; }
-  .input select {
-    border: 0 !important;
-    /*Removes border*/
-    -webkit-appearance: none;
-    /*Removes default chrome and safari style*/
-    -moz-appearance: none;
-    /*Removes default style Firefox*/ }
-    .input select option {
-      background-color: transparent;
-      border: 0;
-      color: transparent;
-      display: none;
-      height: 0;
-      margin: 0;
-      padding: 0;
-      outline: 0;
-      width: 0; }
 
 .menu {
+  display: inline-block;
   position: relative;
   z-index: 1; }
+  .menu--open .menu__items {
+    max-height: 230px;
+    transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1); }
+  .menu--open .menu__item {
+    opacity: 1;
+    transition: opacity 0.15s cubic-bezier(0.55, 0, 0.55, 0.2) 0.4s; }
   .menu__items {
     background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     display: block;
-    left: 10%;
+    left: 50%;
     margin: 0;
-    max-height: 130px;
-    min-width: 58px;
+    max-height: 0;
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0;
     position: absolute;
-    top: -50%;
-    transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1);
-    -moz-transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1);
-    -ms-transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1);
-    -o-transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1);
-    -webkit-transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: max-content;
     width: -moz-max-content;
     width: -ms-max-content;
@@ -839,10 +870,11 @@
   .menu__item {
     cursor: pointer;
     font-family: "Roboto", sans-serif;
-    font-size: 14px;
+    font-size: 16pt;
     height: 39px;
     line-height: 19px;
     margin: 0;
+    opacity: 0;
     overflow: hidden;
     padding: 10px 11px;
     position: relative;
@@ -930,41 +962,61 @@
 
 .navbar {
   background-color: #ffffff;
-  height: 90px;
+  min-height: 90px;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 5; }
   .navbar__links {
-    left: 145px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%); }
+    min-height: 90px;
+    left: 121px;
+    margin: 0;
+    padding: 0; }
   .navbar__link {
-    color: #252525;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-    height: 26px;
-    line-height: 26px;
-    margin-right: 48px;
-    text-decoration: none; }
-    .navbar__link--active {
-      color: #294dea; }
+    cursor: pointer;
+    display: inline-block;
+    height: 90px;
+    padding: 33px 24px;
+    position: relative; }
+    .navbar__link:hover a {
+      color: #294dea;
+      transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2); }
+    .navbar__link--active a {
+      color: #294dea !important; }
+    .navbar__link--active i {
+      color: #294dea !important; }
+    .navbar__link a {
+      color: #252525;
+      font-family: "Roboto", sans-serif;
+      font-size: 16pt;
+      text-decoration: none;
+      width: max-content;
+      width: -moz-max-content;
+      width: -ms-max-content;
+      width: -o-max-content;
+      width: -webkit-max-content; }
     .navbar__link i {
+      color: #252525;
       font-size: 22px;
       margin-right: 10px; }
   .navbar__menu {
+    cursor: pointer;
+    font-size: 30px;
     left: 32px;
+    margin: 0;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%); }
-    .navbar__menu .button--icon {
-      font-size: 32px;
-      margin: 0; }
-      .navbar__menu .button--icon:active, .navbar__menu .button--icon:focus, .navbar__menu .button--icon:hover {
-        background-color: transparent;
-        border-color: transparent; }
+    top: 32px; }
+  @media only screen and (max-width: 768px) {
+    .navbar:hover .navbar__links {
+      display: block;
+      margin-bottom: 24px; }
+    .navbar:hover .navbar__link {
+      display: block;
+      height: 50px;
+      padding: 33px 24px; }
+    .navbar__links {
+      display: none; } }
 
 .pagination {
   color: #7c7c7c;
