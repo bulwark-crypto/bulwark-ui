@@ -685,8 +685,7 @@
     color: #252525;
     line-height: 16px;
     outline: none;
-    padding: 4px 0;
-    z-index: 1; }
+    padding: 4px 0; }
   .input select {
     appearance: none;
     -webkit-appearance: none;
@@ -800,7 +799,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    z-index: 2;
+    z-index: 4;
     scrollbar-3dlight-color: #f7f7f7;
     scrollbar-arrow-color: #252525;
     scrollbar-base-color: #ffffff;
@@ -839,8 +838,7 @@
 
 .menu {
   display: inline-block;
-  position: relative;
-  z-index: 1; }
+  position: relative; }
   .menu--open .menu__items {
     max-height: 230px;
     transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1); }
@@ -1024,26 +1022,30 @@
   display: block;
   font-size: 14px;
   line-height: 19px; }
-  .pagination * {
-    display: inline-block; }
   .pagination__count {
+    display: inline-block;
     margin-right: 20px; }
   .pagination__label {
+    display: inline-block;
     margin-right: 20px; }
-  .pagination__page__label {
-    padding: 0 10px; }
-  .pagination__page .button--icon {
-    border: 0;
-    color: #7c7c7c;
-    font-size: 14px;
-    margin: 0 4px;
-    padding: 0;
-    width: 16px; }
-    .pagination__page .button--icon:active, .pagination__page .button--icon:focus, .pagination__page .button--icon:hover {
-      background: transparent; }
+  .pagination__page {
+    display: inline-block; }
+    .pagination__page__label {
+      display: inline-block;
+      padding: 0 10px; }
+    .pagination__page .button--icon {
+      border: 0;
+      color: #7c7c7c;
+      display: inline-block;
+      font-size: 14px;
+      margin: 0 4px;
+      padding: 0;
+      width: 16px; }
+      .pagination__page .button--icon:active, .pagination__page .button--icon:focus, .pagination__page .button--icon:hover {
+        background: transparent; }
   .pagination__size {
-    margin-right: 20px;
-    position: relative; }
+    display: inline-block;
+    margin-right: 20px; }
     .pagination__size select {
       background-color: transparent;
       border: 0;
