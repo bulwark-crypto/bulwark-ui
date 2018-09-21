@@ -26,7 +26,7 @@ describe('<Pagination />', () => {
   })
 
   it('renders select component for page size', () => {
-    expect(wrapper.find('select')).to.have.length(1)
+    expect(wrapper.find('.pagination__size')).to.have.length(1)
   })
 
   it('renders correct label', () => {
@@ -48,7 +48,7 @@ describe('<Pagination />', () => {
   })
 
   it('handles onSize event', () => {
-    wrapper.find('select').simulate('change', {target: {value: 20}})
+    wrapper.childAt(1).childAt(0).dive().childAt(1).simulate('change', {target: {value: 20}})
     expect(size).to.equal(20)
   })
 })
