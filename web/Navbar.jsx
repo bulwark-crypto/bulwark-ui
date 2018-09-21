@@ -36,7 +36,7 @@ export class NavbarLink extends React.Component {
   }
 
   handleClick = (ev) => {
-    try { ev.target.firstChild.click() } catch(err) {}
+    try { ev.target.firstChild.click() } catch (err) {}
   }
 
   render () {

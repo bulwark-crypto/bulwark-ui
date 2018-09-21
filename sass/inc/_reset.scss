@@ -9,12 +9,12 @@
 }
 
 html, body {
-    background-color: $bg-color;
-    color: $fg-color;
+  background-color: $bg-color;
+  color: $fg-color;
 }
 
 button {
 	&:focus {
-        outline: none;
-    }
+    outline: none;
+  }
 }

@@ -15,6 +15,7 @@ export default class SelectInput extends React.Component {
     label: PropTypes.string,
     message: PropTypes.string,
     name: PropTypes.string.isRequired,
+    notempty: PropTypes.bool,
     native: PropTypes.bool,
     options: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string.isRequired,
@@ -66,7 +67,7 @@ export default class SelectInput extends React.Component {
   }
 
   render () {
-    const [mods, {defaultValue, label, message, name, options, value, ...rest}] = pickRest(this.props, ['error', 'native'])
+    const [mods, {defaultValue, label, message, name, notempty, options, value, ...rest}] = pickRest(this.props, ['error', 'native'])
 
     if (this.state.isFocus) mods.focus = true
     if (mods.focus || !!this.state.value) mods.active = true
@@ -80,7 +81,7 @@ export default class SelectInput extends React.Component {
       value: this.state.value
     }
 
-    const adjustedOptions = [{text: '', value: ''}, ...options]
+    const adjustedOptions = notempty ? options : [{text: '', value: ''}, ...options]
 
     return (
       <div block='input' mods={mods}>
