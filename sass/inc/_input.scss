@@ -15,7 +15,6 @@
     line-height: 16px;
     outline: none;
     padding: 4px 0;
-    z-index: 1;
   }
 
   select {
@@ -63,7 +62,9 @@
     }
 
     &:not(#{$self}--native) {
-      select#{$self}__component { display: none; }
+      select#{$self}__component {
+        display: none;
+      }
 
       #{$self}__options {
         max-height: 230px;
@@ -175,7 +176,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    z-index: 2;
+    z-index: 4;
 
     @include scrollbar;
 

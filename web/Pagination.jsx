@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import IconButton from './IconButton'
+import SelectInput from './SelectInput'
 
 export default class Pagination extends React.Component {
   static defaultProps = {
@@ -29,11 +30,12 @@ export default class Pagination extends React.Component {
       <div block='pagination'>
         <div block='pagination' elem='label'>{this.props.label}:</div>
         <div block='pagination' elem='size'>
-          <select onChange={this.handleSize} value={this.props.size}>
-            {this.props.sizes.map(s => (
-              <option key={s} value={s}>{s}</option>
-            ))}
-          </select>
+          <SelectInput
+            name='pageSize'
+            notempty
+            onChange={this.handleSize}
+            options={this.props.sizes.map(s => ({text: s.toString(), value: s}))}
+            value={this.props.size} />
         </div>
         <div block='pagination' elem='count'>
           {((this.props.page - 1) * this.props.size) + 1}-{this.props.page * this.props.size} of {this.props.total}

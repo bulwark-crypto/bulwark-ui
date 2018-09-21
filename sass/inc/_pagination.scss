@@ -5,24 +5,28 @@
   font-size: 14px;
   line-height: 19px;
 
-  * { display: inline-block; }
-
   &__count {
+    display: inline-block;
     margin-right: 20px;
   }
 
   &__label {
+    display: inline-block;
     margin-right: 20px;
   }
 
   &__page {
+    display: inline-block;
+
     &__label {
+      display: inline-block;
       padding: 0 10px;
     }
 
     .button--icon {
       border: 0;
       color: $secondary;
+      display: inline-block;
       font-size: 14px;
       margin: 0 4px;
       padding: 0;
@@ -35,8 +39,8 @@
   }
 
   &__size {
+    display: inline-block;
     margin-right: 20px;
-    position: relative;
 
     select {
       background-color: transparent;
