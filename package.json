@@ -85,7 +85,9 @@
     "react-chartkick": "^0.3.0",
     "react-dom": "^16.4.1",
     "react-native": "^0.56.1",
-    "react-stockcharts": "^0.7.7"
+    "react-router-dom": "^4.3.1",
+    "react-stockcharts": "^0.7.7",
+    "react-syntax-highlighter": "^8.0.1"
   },
   "standard": {
     "parser": "babel-eslint"
