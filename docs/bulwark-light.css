@@ -494,6 +494,12 @@
       animation: none;
       background-color: #C8C8C8; }
 
+.code {
+  background-color: #e2e2e2;
+  color: #252525;
+  font-family: "Poppins", sans-serif;
+  padding: 20px; }
+
 .drawer {
   background-color: transparent;
   bottom: 0;
@@ -526,26 +532,28 @@
       padding: 20px; }
     .drawer__menu__link {
       cursor: pointer;
-      height: 80px;
       position: relative; }
       .drawer__menu__link:active {
         background-color: #b2b2b2; }
       .drawer__menu__link:focus, .drawer__menu__link:hover {
         background-color: #f2f2f2; }
-      .drawer__menu__link * {
-        left: 39px;
+      .drawer__menu__link a {
+        color: #7c7c7c;
+        display: block;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        height: 60px;
+        line-height: 19px;
+        padding-left: 84px;
+        padding-top: 22px;
+        text-decoration: none;
+        width: 100%; }
+      .drawer__menu__link i {
+        font-size: 24px;
+        left: 32px;
         position: absolute;
         top: 50%;
         transform: translateY(-50%); }
-      .drawer__menu__link a {
-        color: #7c7c7c;
-        font-family: "Roboto", sans-serif;
-        font-size: 14px;
-        left: 84px;
-        line-height: 19px;
-        text-decoration: none; }
-      .drawer__menu__link i {
-        font-size: 24px; }
     .drawer__menu__title {
       color: #252525;
       font-family: "Poppins", sans-serif;
