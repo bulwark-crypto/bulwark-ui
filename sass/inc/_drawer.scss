@@ -39,7 +39,6 @@
 
     &__link {
       cursor: pointer;
-      height: 80px;
       position: relative;
 
       &:active {
@@ -50,23 +49,26 @@
         background-color: #f2f2f2;
       }
 
-      * {
-        left: 39px;
+      a {
+        color: $secondary;
+        display: block;
+        font-family: $font-primary;
+        font-size: 14px;
+        height: 60px;
+        line-height: 19px;
+        padding-left: 84px;
+        padding-top: 22px;
+        text-decoration: none;
+        width: 100%;
+      }
+
+      i {
+        font-size: 24px;
+        left: 32px;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
       }
-
-      a {
-        color: $secondary;
-        font-family: $font-primary;
-        font-size: 14px;
-        left: 84px;
-        line-height: 19px;
-        text-decoration: none;
-      }
-
-      i { font-size: 24px; }
     }
 
     &__title {

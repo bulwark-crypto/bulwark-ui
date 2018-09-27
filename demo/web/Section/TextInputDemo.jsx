@@ -2,6 +2,7 @@ import React from 'react'
 
 import Col from '../../../web/Col'
 import Row from '../../../web/Row'
+import Source from '../../../web/Source'
 import TextInput from '../../../web/TextInput'
 
 const TextInputDemo = () => (
@@ -36,6 +37,30 @@ const TextInputDemo = () => (
         </Col>
       </Row>
     </form>
+    <h4>Code Example</h4>
+    <Source
+      code={`import TextInput from 'bulwark-ui/web/TextInput'
+
+<TextInput
+  label='Name'
+  name='one' />
+
+<TextInput
+  defaultValue='Search'
+  label='Helper'
+  message='You’re a retard, hit enter'
+  name='two' />
+
+<TextInput
+  as='textarea'
+  label='Multiline'
+  name='three'
+  value='Cat in the Hat I like bacon HELLO OOOOO' />
+
+<TextInput
+  error
+  label='Error'
+  name='four' />`} />
   </div>
 )
 

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {Card, CardBody} from '../../../web/Card'
+import Source from '../../../web/Source'
 import {Table} from '../../../web/Table'
 
 const tx = {
@@ -44,6 +45,16 @@ export default class TableDemo extends React.Component {
             <Table columns={cols} rows={rows} />
           </CardBody>
         </Card>
+        <h4>Code Example</h4>
+        <Source
+          code={`import {Card, CardBody} from 'bulwark-ui/web/Card'
+import {Table} from 'bulwark-ui/web/Table'
+
+<Card>
+  <CardBody nopadding>
+    <Table columns={cols} rows={rows} />
+  </CardBody>
+</Card>`} />
         <br />
         <Card>
           <CardBody nopadding>
@@ -58,6 +69,39 @@ export default class TableDemo extends React.Component {
               sortable />
           </CardBody>
         </Card>
+        <h4>Code Example</h4>
+        <Source
+          code={`import {Card, CardBody} from 'bulwark-ui/web/Card'
+import {Table} from 'bulwark-ui/web/Table'
+
+/* example class members */
+state = {
+  column: 'block',
+  descending: false
+}
+
+handleSelect = row => console.log(row)
+
+handleSort = column => {
+  const state = {column}
+  if (this.state.column === column) state.descending = !this.state.descending
+  this.setState(state)
+}
+/* end example class members */
+
+<Card>
+  <CardBody nopadding>
+    <Table
+      column={this.state.column}
+      columns={cols}
+      descending={this.state.descending}
+      onSelect={this.handleSelect}
+      onSort={this.handleSort}
+      rows={rows}
+      selectable
+      sortable />
+  </CardBody>
+</Card>`} />
       </div>
     )
   }

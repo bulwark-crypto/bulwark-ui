@@ -13,12 +13,12 @@ const Source = ({code, type}) => (
 )
 
 Source.defaultProps = {
-  type: 'javascript'
+  type: 'html'
 }
 
 Source.propTypes = {
   code: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['javascript']).isRequired
+  type: PropTypes.oneOf(['html', 'javascript']).isRequired
 }
 
 export default Source
