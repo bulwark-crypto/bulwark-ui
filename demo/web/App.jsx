@@ -44,7 +44,7 @@ class App extends React.Component {
       <HashRouter>
         <div>
           <Navbar onDrawer={this.handleDrawer}>
-            <NavbarLink active k='home' to='/'>Home</NavbarLink>
+            <NavbarLink active k='home' to='/#/'>Home</NavbarLink>
           </Navbar>
           <Drawer onDrawer={this.handleDrawer} open={this.state.menu}>
             <DrawerHeader title='Bulwark' subtitle='React UI Framework' />
