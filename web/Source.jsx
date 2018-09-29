@@ -1,24 +1,27 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import {monokai} from 'react-syntax-highlighter/styles/hljs'
-import Highlighter from 'react-syntax-highlighter'
+import SyntaxHighlighter, { registerLanguage } from "react-syntax-highlighter/prism-light";
+import jsx from 'react-syntax-highlighter/languages/prism/jsx';
+import prism from 'react-syntax-highlighter/styles/prism/prism';
+
+registerLanguage('jsx', jsx);
 
 const Source = ({code, type}) => (
-  <Highlighter
+  <SyntaxHighlighter
     language={type}
     showLineNumbers
     startingLineNumber={1}
-    style={monokai}>{code}</Highlighter>
+    style={prism}>{code}</SyntaxHighlighter>
 )
 
 Source.defaultProps = {
-  type: 'html'
+  type: 'jsx'
 }
 
 Source.propTypes = {
   code: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['html', 'javascript']).isRequired
+  type: PropTypes.oneOf(['html', 'javascript', 'jsx']).isRequired
 }
 
 export default Source
