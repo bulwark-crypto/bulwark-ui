@@ -21,7 +21,7 @@ Source.defaultProps = {
 
 Source.propTypes = {
   code: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['html', 'javascript', 'jsx']).isRequired
+  type: PropTypes.oneOf(['css', 'html', 'javascript', 'jsx']).isRequired
 }
 
 export default Source
