@@ -4,7 +4,8 @@ import {pickRest} from '../lib/utils'
 
 export default class TextInput extends React.Component {
   static defaultProps = {
-    as: 'input'
+    as: 'input',
+    onChange: () => {}
   }
 
   static propTypes = {

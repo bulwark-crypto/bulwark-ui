@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import SyntaxHighlighter, { registerLanguage } from "react-syntax-highlighter/prism-light";
-import jsx from 'react-syntax-highlighter/languages/prism/jsx';
-import prism from 'react-syntax-highlighter/styles/prism/prism';
+import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light'
+import jsx from 'react-syntax-highlighter/languages/prism/jsx'
+import prism from 'react-syntax-highlighter/styles/prism/prism'
 
-registerLanguage('jsx', jsx);
+registerLanguage('jsx', jsx)
 
 const Source = ({code, type}) => (
   <SyntaxHighlighter
