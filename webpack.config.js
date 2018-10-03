@@ -43,7 +43,7 @@ module.exports = {
       }
     }),
     new htmlPlugin({ // eslint-disable-line new-cap
-      title: 'Bulwark UI - TODO Demo App',
+      title: 'Bulwark Design Framework - Documentation and examples',
       filename: 'index.html',
       template: path.join(__dirname, 'web', 'template.html'),
       inject: 'body',

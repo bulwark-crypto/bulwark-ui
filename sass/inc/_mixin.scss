@@ -78,14 +78,6 @@
   box-shadow: none;
 }
 
-@mixin cols($slug) {
-  @for $i from 1 through $grid-size {
-    .col-#{$slug}-#{$i} {
-      width: ($i/$grid-size)*100%;
-    }
-  }
-}
-
 @mixin scrollbar {
   scrollbar-3dlight-color: $light-gray;
   scrollbar-arrow-color: $black;

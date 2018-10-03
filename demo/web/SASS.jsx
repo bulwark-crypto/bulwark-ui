@@ -49,12 +49,6 @@ $font-secondary: 'Poppins', sans-serif;
 
 /* Grid */
 $grid-gutter: 10px;
-$grid-size: 12;
-$grid-xs: 496px;
-$grid-sm: 768px;
-$grid-md: 1024px;
-$grid-lg: 1200px;
-$grid-breaks: ("xs": $grid-xs, "sm": $grid-sm, "md": $grid-md, "lg": $grid-lg);
 
 /* Modal */
 $modal-padding: 32px;

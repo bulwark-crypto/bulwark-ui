@@ -66,7 +66,7 @@
     top: 32px;
   }
 
-  @media only screen and (max-width: $grid-sm) {
+  @media only screen and (max-width: 768px) {
     &:hover {
       #{$self}__links {
         display: block;

@@ -337,6 +337,7 @@
 
 .card {
   background-color: #ffffff;
+  border-bottom: 10px;
   border-radius: 5px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2); }
@@ -571,7 +572,7 @@
 
 /* We will use Bootstrap's grid system */
 .wrapper {
-  padding-top: 90px; }
+  padding: 90px 10px 10px 10px; }
 
 .input {
   font-family: "Roboto", sans-serif;
@@ -844,7 +845,7 @@
       margin: 0;
       padding: 0; }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   .modal--open {
     height: 100%;
     width: 100%; }

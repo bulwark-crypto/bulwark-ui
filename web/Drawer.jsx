@@ -30,14 +30,14 @@ export const DrawerDivider = () => (
 // Header
 export const DrawerHeader = ({subtitle, title, ...rest}) => (
   <div block='drawer__menu' elem='header' {...rest}>
-    <div block='drawer__menu' elem='title'>{title}</div>
+    {!!title && <div block='drawer__menu' elem='title'>{title}</div>}
     {!!subtitle && <div block='drawer__menu' elem='subtitle'>{subtitle}</div>}
   </div>
 )
 
 DrawerHeader.propTypes = {
   subtitle: PropTypes.string,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string
 }
 
 // Link

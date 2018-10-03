@@ -44,13 +44,13 @@ class App extends React.Component {
       <HashRouter>
         <div>
           <Navbar onDrawer={this.handleDrawer}>
-            <NavbarLink active k='home' to='/#/'>Home</NavbarLink>
+            <NavbarLink k='home' to='#/'>Home</NavbarLink>
           </Navbar>
           <Drawer onDrawer={this.handleDrawer} open={this.state.menu}>
             <DrawerHeader title='Bulwark' subtitle='React UI Framework' />
             <DrawerLink k='palette'><Link to='/sass'>SASS</Link></DrawerLink>
             <DrawerLink k='code'><Link to='/github'>Source Code</Link></DrawerLink>
-            <DrawerHeader title='Components' />
+            <DrawerHeader subtitle='Components' />
             <DrawerLink><Link to='/badge'>Badge</Link></DrawerLink>
             <DrawerLink><Link to='/button'>Button</Link></DrawerLink>
             <DrawerLink><Link to='/card'>Card</Link></DrawerLink>

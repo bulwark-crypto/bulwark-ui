@@ -47,6 +47,8 @@ export class NavbarLink extends React.Component {
       rest.href = to
     }
 
+    if (window.location.hash === to) mods.active = true
+
     const As = as
     return (
       <div block='navbar' elem='link' mods={mods} onClick={this.handleClick}>
