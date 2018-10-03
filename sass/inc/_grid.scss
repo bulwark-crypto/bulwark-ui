@@ -1,35 +1,6 @@
+/* We will use Bootstrap's grid system */
+@import "../css/bootstrap-grid.min.css";
 
 .wrapper {
   padding-top: 90px;
-}
-
-.row {
-  width: 100%;
-
-  &:after {
-    clear: both;
-    content: " ";
-    display: table;
-  }
-
-  [class*="col-"] {
-    float: left;
-    padding: $grid-gutter;
-  }
-
-  @media only screen and (min-width: $grid-md) {
-    @include cols("lg");
-  }
-
-  @media only screen and (max-width: $grid-md) {
-    @include cols("md");
-  }
-
-  @media only screen and (max-width: $grid-sm) {
-    @include cols("sm");
-  }
-
-  @media only screen and (max-width: $grid-xs) {
-    @include cols("xs");
-  }
 }
