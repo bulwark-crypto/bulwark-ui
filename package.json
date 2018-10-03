@@ -66,6 +66,7 @@
     "must": "^0.13.4",
     "node-sass": "^4.9.2",
     "prop-types": "^15.6.2",
+    "react-native-sass-transformer": "^1.2.3",
     "react-native-scripts": "^1.14.0",
     "react-test-renderer": "^16.5.0",
     "sass-loader": "^7.0.3",
