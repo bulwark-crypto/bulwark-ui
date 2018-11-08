@@ -14,7 +14,7 @@ const BadgeWrapper = styled.span`
   ` : ''}
 `
 const BadgeText = styled.span`
-  animation: ${pulse('default')} 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: ${pulse('black')} 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
   background-color: ${props => props.theme.black};
   border-radius: 50%;
   color: ${props => props.theme.white};

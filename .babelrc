@@ -1,5 +1,9 @@
 {
   "plugins": [
+    ["babel-plugin-styled-components", {
+      "minify": false,
+      "displayName": true
+    }],
     "transform-class-properties",
     "transform-object-rest-spread",
     "transform-rebem-jsx"
