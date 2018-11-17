@@ -16,7 +16,10 @@ const CheckboxWrapper = styled.span`
   text-align: center;
   vertical-align: top;
 
-  ${props => props.disabled ? 'cursor: not-allowed;' : ''}
+  ${props => props.disabled ? css`
+    border-color: #C8C8C8;
+    cursor: not-allowed;
+  ` : ''}
 
   ${props => props.checked && !props.switch ? css`
     animation: ${pulse('black')} 1.25s cubic-bezier(0.66, 0, 0, 1);
@@ -27,7 +30,7 @@ const CheckboxWrapper = styled.span`
       animation: ${pulse(props.color)} 1.25s cubic-bezier(0.66, 0, 0, 1);
       background-color: ${props => props.theme[props.color]};
     ` : ''}
-    ${props => props.color == 'disabled' ? 'background-color: #C8C8C8;' : ''}
+    ${props => props.disabled ? 'background-color: #C8C8C8;' : ''}
 
     ::after {
       content: ${props => props.indeterminate ? '"\\2015"' : '"\\2713"'};
@@ -59,10 +62,8 @@ const CheckboxWrapper = styled.span`
         ` : ''}
       ` : ''}
       ${props => props.disabled ? css`
-        ::after {
-          animation: none;
-          background-color: #C8C8C8;
-        }
+        animation: none;
+        background-color: #C8C8C8;
       ` : ''}
     }
   ` : ''}
@@ -70,13 +71,13 @@ const CheckboxWrapper = styled.span`
 
 export default class Checkbox extends React.Component {
   static defaultProps = {
-    as: 'span',
-    defaultChecked: false
+    defaultChecked: false,
+    color: 'black'
   }
 
   static propTypes = {
     as: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    color: PropTypes.oneOf('primary', 'secondary', 'red'),
+    color: PropTypes.oneOf('black', 'primary', 'secondary', 'red'),
     disabled: PropTypes.bool,
     indeterminate: PropTypes.bool,
     defaultChecked: PropTypes.bool,
@@ -119,9 +120,8 @@ export default class Checkbox extends React.Component {
   }
 
   render () {
-    const { checked, color, ...rest } = this.props
+    const { checked, ...rest } = this.props
     const realChecked = this.isControlled() ? checked : this.state.checked
-    const realColor = this.props.disabled ? 'disabled' : color
-    return <CheckboxWrapper checked={realChecked} color={realColor} onClick={this.handleClick} onKeyDown={this.handleKeyDown} tabIndex={0} {...this.props} />
+    return <CheckboxWrapper checked={realChecked} onClick={this.handleClick} onKeyDown={this.handleKeyDown} tabIndex={0} {...this.props} />
   }
 }
