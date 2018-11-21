@@ -1,25 +1,87 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import {pickRest} from '../lib/utils'
+import styled from 'styled-components'
 
 import Checkbox from './Checkbox'
 import Icon from './Icon'
+import { swiftEaseIn } from '../lib/Animations'
 
-export const TableBody = ({children, ...rest}) => (
-  <tbody block='table' elem='body' {...rest}>{children}</tbody>
-)
+const TableWrapper = styled.table`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+`
 
-export const TableCell = ({children, ...rest}) => (
-  <td block='table' elem='cell' {...rest}>{children}</td>
-)
+// Empty?
+export const TableBody = styled.tbody`
 
-export const TableHead = ({children, ...rest}) => (
-  <thead block='table' elem='head' {...rest}>{children}</thead>
-)
+`
 
-export const TableRow = ({children, ...rest}) => (
-  <tr block='table' elem='row' {...rest}>{children}</tr>
-)
+export const TableCell = styled.td`
+  color: #252525;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 7px;
+
+  input[type="checkbox"] {
+    border-radius: 2px;
+    display: none;
+
+    :hover::before {
+      text-shadow: 0px 0px 1px ${props => props.theme.primary};
+    }
+
+    ::before {
+      color: ${props => props.theme.secondary};
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      text-shadow: 0px 0px 1px ${props => props.theme.lightGray};
+      transition: color .3s ease;
+    }
+
+    &:checked + label::before {
+      color: ${props => props.theme.primary};
+    }
+
+    & + label::before {
+      content: "\\2610";
+      font-size: 18px;
+    }
+
+    &:checked + label::before {  content: "\\2611"; }
+  }
+`
+
+export const TableRow = styled.tr`
+  height: 50px;
+  padding: 0 32px;
+  transition: ${swiftEaseIn};
+
+  &:hover {
+    background-color: rgba(41, 77, 234, 0.1) !important;
+  }
+
+  &:nth-child(odd) {
+    background-color: rgba(124, 124, 124, 0.1);
+  }
+`
+
+export const TableHead = styled.thead`
+  ${TableCell} {
+      color: ${props => props.theme.secondary};
+      cursor: pointer;
+      font-size: 14px;
+      height: 70px;
+      line-height: 19px;
+
+      i { margin-left: 7px; }
+    }
+
+    ${TableRow}, ${TableRow}:hover {
+      background: transparent !important;
+    }
+`
 
 export class Table extends React.Component {
   static propTypes = {
@@ -37,17 +99,17 @@ export class Table extends React.Component {
   }
 
   render () {
-    const [mods, {children, column, columns, onSelect, onSort, row, rows, ...rest}] = pickRest(this.props, ['descending', 'selectable', 'sortable'])
-    const cols = mods.selectable ? [{key: '__select', text: ''}, ...columns] : [...columns]
+    const {children, column, columns, onSelect, onSort, row, rows, ...rest} = this.props
+    const cols = this.props.selectable ? [{key: '__select', text: ''}, ...columns] : [...columns]
 
     return (
-      <table block='table' mods={mods} cellPadding={0} cellSpacing={0} {...rest}>
+      <TableWrapper cellPadding={0} cellSpacing={0} {...rest}>
         <TableHead>
           <TableRow>
             {cols.map(c => (
               <TableCell key={c.key} onClick={onSort ? () => onSort(c.key) : null}>
-                {c.text}{(mods.sortable && column === c.key) &&
-                  <Icon k={mods.descending ? 'arrow-down' : 'arrow-up'} />
+                {c.text}{(this.props.sortable && column === c.key) &&
+                  <Icon k={this.props.descending ? 'arrow-down' : 'arrow-up'} />
                 }
               </TableCell>
             ))}
@@ -69,7 +131,7 @@ export class Table extends React.Component {
             )
           })}
         </TableBody>
-      </table>
+      </TableWrapper>
     )
   }
 }

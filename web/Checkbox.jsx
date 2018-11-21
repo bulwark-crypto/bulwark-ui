@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import {pickRest} from '../lib/utils'
 import styled, { css } from 'styled-components'
 
 import { pulse, swiftEaseOut } from '../lib/Animations'
@@ -122,6 +121,6 @@ export default class Checkbox extends React.Component {
   render () {
     const { checked, ...rest } = this.props
     const realChecked = this.isControlled() ? checked : this.state.checked
-    return <CheckboxWrapper checked={realChecked} onClick={this.handleClick} onKeyDown={this.handleKeyDown} tabIndex={0} {...this.props} />
+    return <CheckboxWrapper checked={realChecked} onClick={this.handleClick} onKeyDown={this.handleKeyDown} tabIndex={0} {...rest} />
   }
 }
