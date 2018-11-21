@@ -86,7 +86,6 @@ const IconButton = props => {
 }
 
 IconButton.propTypes = {
-  as: PropTypes.string.isRequired,
   icon: PropTypes.bool,
   k: PropTypes.string.isRequired,
   primary: PropTypes.bool,

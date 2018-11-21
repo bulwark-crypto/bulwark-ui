@@ -104,11 +104,7 @@ const Button = styled(props => {
     p = 0.1
   }
   return <StyledButton color={color} p={p} {...rest}>{children}</StyledButton>
-})
-
-Button.defaultProps = {
-  as: 'button'
-}
+})``
 
 Button.propTypes = {
   as: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),

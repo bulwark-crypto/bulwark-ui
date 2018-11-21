@@ -77,7 +77,7 @@ export default class Checkbox extends React.Component {
 
   static propTypes = {
     as: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    color: PropTypes.oneOf('black', 'primary', 'secondary', 'red'),
+    color: PropTypes.oneOf(['black', 'primary', 'secondary', 'red']),
     disabled: PropTypes.bool,
     indeterminate: PropTypes.bool,
     defaultChecked: PropTypes.bool,
