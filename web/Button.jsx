@@ -22,7 +22,7 @@ const StyledButton = styled.button`
   position: relative;
   text-align: center;
 
-  background-color: ${props => props.theme[props.color]}
+  background-color: ${props => props.theme[props.color]};
   background-position: center;
   border: none;
   
@@ -89,7 +89,7 @@ const StyledButton = styled.button`
 `
 /* eslint-enable indent */
 
-const Button = props => {
+const Button = styled(props => {
   const {primary, secondary, disabled, children, ...rest} = props
   let color = 'black'
   let p = 0.6
@@ -104,7 +104,7 @@ const Button = props => {
     p = 0.1
   }
   return <StyledButton color={color} p={p} {...rest}>{children}</StyledButton>
-}
+})
 
 Button.defaultProps = {
   as: 'button'
