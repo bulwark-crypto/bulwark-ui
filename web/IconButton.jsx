@@ -68,7 +68,7 @@ const StyledIconButton = styled.button`
 `
 /* eslint-enable indent */
 
-const IconButton = props => {
+const IconButton = styled(props => {
   const {primary, secondary, disabled, children, k, ...rest} = props
   let color = 'black'
   let p = 0.6
@@ -83,7 +83,7 @@ const IconButton = props => {
     p = 0.1
   }
   return <StyledIconButton color={color} p={p} {...rest}><Icon {...{k}} />{children}</StyledIconButton>
-}
+})``
 
 IconButton.propTypes = {
   icon: PropTypes.bool,
