@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import {pickRest} from '../lib/utils'
+import styled, {css} from 'styled-components'
 
 import Icon from './Icon'
+import { animationStepper } from '../lib/Animations'
 
 // Step
 export const Step = () => null
@@ -13,6 +14,75 @@ Step.propTypes = {
   title: PropTypes.string.isRequired
 }
 
+const StepperWrapper = styled.div`
+`
+
+const StepperSteps = styled.div`
+`
+
+const StepperContent = styled.div`
+  padding: 32px;
+`
+
+const StepperStep = styled.div`
+  color: ${props => props.theme.secondary};
+  display: inline-block;
+  font-size: 14px;
+  line-height: 19px;
+
+  ${props => props.active ? css`
+    ${StepperIndicator} {
+      background-color: ${props => props.theme.primary};
+      color: ${props => props.theme.white};
+    }
+  ` : ''}
+
+  ${props => props.complete ? css`
+    ${StepperIndicator} {
+      background-color: ${props => props.theme.black};
+      color: ${props => props.theme.secondary};
+    }
+  ` : ''}
+`
+
+const StepperIndicator = styled.span`
+  background-color: ${props => props.theme.black};
+  border-radius: 50%;
+  color: ${props => props.theme.white};
+  display: inline-block;
+  font-size: 16px;
+  height: 35px;
+  line-height: 21px;
+  margin-right: 9px;
+  margin-bottom: -12px;
+  overflow: hidden;
+  position: relative;
+  transition: ${animationStepper};
+  width: 35px;
+
+  i, span {
+    font-size: 16px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+`
+
+const StepperBar = styled.div`
+  border-top: 1px solid ${props => props.theme.secondary};
+  display: inline-block;
+  height: 5px;
+  margin-right: 21px;
+  margin-top: -2px;
+  min-width: 100px;
+  width: 100px;
+`
+
+const StepperTitle = styled.span`
+  margin-right: 40px;
+`
+
 // Stepper
 export class Stepper extends React.Component {
   static propTypes = {
@@ -22,7 +92,7 @@ export class Stepper extends React.Component {
   }
 
   render () {
-    const [mods, {children, ...rest}] = pickRest(this.props, ['vertical'])
+    const {children, ...rest} = this.props
 
     const childArray = Array.isArray(children) ? children : [children]
     let content = null
@@ -31,19 +101,19 @@ export class Stepper extends React.Component {
       const complete = i < this.props.index
       if (active) content = s.props.children
       return (
-        <div block='stepper' elem='step' mods={{active, complete}} key={i}>
-          <span block='stepper__step' elem='indicator'>{active || complete ? <Icon k='check' /> : <span>{i}</span>}</span>
-          <span block='stepper__step' elem='title'>{s.props.title}</span>
-          {i !== (childArray.length - 1) && <div block='stepper__step' elem='bar' />}
-        </div>
+        <StepperStep key={i} active={active} {...rest}>
+          <StepperIndicator>{active || complete ? <Icon k='check' /> : <span>{i}</span>}</StepperIndicator>
+          <StepperTitle>{s.props.title}</StepperTitle>
+          {i !== (childArray.length - 1) && <StepperBar />}
+        </StepperStep>
       )
     })
 
     return (
-      <div block='stepper' mods={mods} {...rest}>
-        <div block='stepper' elem='steps'>{steps}</div>
-        <div block='stepper' elem='content'>{content}</div>
-      </div>
+      <StepperWrapper {...rest}>
+        <StepperSteps>{steps}</StepperSteps>
+        <StepperContent>{content}</StepperContent>
+      </StepperWrapper>
     )
   }
 }
