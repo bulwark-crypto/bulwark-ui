@@ -1,18 +1,50 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import {pickRest} from '../lib/utils'
+import styled, {css} from 'styled-components'
 
 import Icon from './Icon'
+import { swiftEaseOut } from '../lib/Animations'
+
+const DrawerWrapper = styled.div`
+  background-color: transparent;
+  bottom: 0;
+  display: block;
+  left: -100%;
+  position: fixed;
+  top: 0;
+  transition: ${swiftEaseOut};
+  z-index: 6;
+
+  ${props => props.open ? css`
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    right: 0;
+  ` : ''}
+`
+
+const DrawerMenu = styled.div`
+  background-color: ${props => props.theme.white};
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  width: ${props => props.theme.drawerWidth};
+  z-index: 7;
+`
 
 // Drawer
 export const Drawer = (props) => {
-  const [mods, {children, onDrawer, ...rest}] = pickRest(props, ['open'])
+  const {children, onDrawer, ...rest} = props
   return (
-    <div block='drawer' mods={mods} onClick={onDrawer}>
-      <div block='drawer' elem='menu' {...rest}>
+    <DrawerWrapper onClick={onDrawer} {...rest}>
+      <DrawerMenu {...rest}>
         {children}
-      </div>
-    </div>
+      </DrawerMenu>
+    </DrawerWrapper>
   )
 }
 
@@ -23,16 +55,39 @@ Drawer.propTypes = {
 }
 
 // Divider
-export const DrawerDivider = () => (
-  <div block='drawer__menu' elem='divider' />
-)
+export const DrawerDivider = styled.div`
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 1px;
+`
+
+const DrawerHeaderWrapper = styled.div`
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 20px;
+`
+
+const DrawerHeaderTitle = styled.div`
+  color: ${props => props.theme.black};
+  font-family: ${props => props.theme.fontSecondary};
+  font-size: 24px;
+  font-weight: bold;
+  height: 33px;
+  letter-spacing: -1px;
+  line-height: 35px;
+`
+
+const DrawerHeaderSubtitle = styled.div`
+  color: ${props => props.theme.black};
+  font-family: ${props => props.theme.fontPrimary};
+  font-size: 14px;
+  line-height: 19px;
+`
 
 // Header
 export const DrawerHeader = ({subtitle, title, ...rest}) => (
-  <div block='drawer__menu' elem='header' {...rest}>
-    {!!title && <div block='drawer__menu' elem='title'>{title}</div>}
-    {!!subtitle && <div block='drawer__menu' elem='subtitle'>{subtitle}</div>}
-  </div>
+  <DrawerHeaderWrapper {...rest}>
+    {!!title && <DrawerHeaderTitle>{title}</DrawerHeaderTitle>}
+    {!!subtitle && <DrawerHeaderSubtitle>{subtitle}</DrawerHeaderSubtitle>}
+  </DrawerHeaderWrapper>
 )
 
 DrawerHeader.propTypes = {
@@ -40,13 +95,47 @@ DrawerHeader.propTypes = {
   title: PropTypes.string
 }
 
+const DrawerLinkWrapper = styled.div`
+  cursor: pointer;
+  position: relative;
+
+  &:active {
+    background-color: darken(#f2f2f2, 25%);
+  }
+
+  &:focus, &:hover {
+    background-color: #f2f2f2;
+  }
+
+  a {
+    color: ${props => props.theme.secondary};
+    display: block;
+    font-family: ${props => props.theme.fontPrimary};
+    font-size: 14px;
+    height: 60px;
+    line-height: 19px;
+    padding-left: 84px;
+    padding-top: 22px;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  i {
+    font-size: 24px;
+    left: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+`
+
 // Link
 export const DrawerLink = (props) => {
-  const [mods, {children, k, ...rest}] = pickRest(props, ['active'])
+  const {children, k, ...rest} = props
   return (
-    <div block='drawer__menu' elem='link' mods={mods} {...rest}>
+    <DrawerLinkWrapper {...rest}>
       {!!k && <Icon k={k} />}{children}
-    </div>
+    </DrawerLinkWrapper>
   )
 }
 
