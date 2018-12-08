@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
-import React from 'react'
 import styled from 'styled-components'
 import {lighten} from 'polished'
+import { black, gray, fontSecondary } from '../lib/Theme'
 
 const Code = styled.pre`
-  background-color: ${props => lighten(0.3, props.theme.gray)};
-  color: ${props => props.theme.black};
-  font-family: ${props => props.theme.fontSecondary};
+  background-color: ${props => lighten(0.3, gray(props))};
+  color: ${black};
+  font-family: ${fontSecondary};
   padding: 20px;
 `
 

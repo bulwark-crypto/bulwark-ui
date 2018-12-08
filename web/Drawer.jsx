@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import {pickRest} from '../lib/utils'
 import styled, {css} from 'styled-components'
 
 import Icon from './Icon'
 import { swiftEaseOut } from '../lib/Animations'
+import { white, drawerWidth, fontSecondary, fontPrimary, secondary, black } from '../lib/Theme'
 
 const DrawerWrapper = styled.div`
   background-color: transparent;
@@ -24,7 +24,7 @@ const DrawerWrapper = styled.div`
 `
 
 const DrawerMenu = styled.div`
-  background-color: ${props => props.theme.white};
+  background-color: ${white};
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   height: 100%;
   left: 0;
@@ -32,7 +32,7 @@ const DrawerMenu = styled.div`
   overflow-y: auto;
   position: absolute;
   top: 0;
-  width: ${props => props.theme.drawerWidth};
+  width: ${drawerWidth};
   z-index: 7;
 `
 
@@ -66,8 +66,8 @@ const DrawerHeaderWrapper = styled.div`
 `
 
 const DrawerHeaderTitle = styled.div`
-  color: ${props => props.theme.black};
-  font-family: ${props => props.theme.fontSecondary};
+  color: ${black};
+  font-family: ${fontSecondary};
   font-size: 24px;
   font-weight: bold;
   height: 33px;
@@ -76,8 +76,8 @@ const DrawerHeaderTitle = styled.div`
 `
 
 const DrawerHeaderSubtitle = styled.div`
-  color: ${props => props.theme.black};
-  font-family: ${props => props.theme.fontPrimary};
+  color: ${black};
+  font-family: ${fontPrimary};
   font-size: 14px;
   line-height: 19px;
 `
@@ -108,9 +108,9 @@ const DrawerLinkWrapper = styled.div`
   }
 
   a {
-    color: ${props => props.theme.secondary};
+    color: ${secondary};
     display: block;
-    font-family: ${props => props.theme.fontPrimary};
+    font-family: ${fontPrimary};
     font-size: 14px;
     height: 60px;
     line-height: 19px;

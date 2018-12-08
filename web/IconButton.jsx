@@ -3,16 +3,32 @@ import React from 'react'
 import styled from 'styled-components'
 import {ripple} from '../lib/Animations'
 import {lighten, darken} from 'polished'
+import theme from 'styled-theming'
 
+import { black, primary, secondary, disabled, fontPrimary } from '../lib/Theme'
 import Icon from './Icon'
 
+const color = theme.variants('mode', 'color', {
+  default: {light: black},
+  primary: {light: primary},
+  secondary: {light: secondary},
+  disabled: {light: disabled}
+})
+
+const lightenedColor = theme.variants('mode', 'color', {
+  default: {light: lighten(0.6, black)},
+  primary: {light: props => lighten(0.4, primary(props))},
+  secondary: {light: props => lighten(0.35, secondary(props))},
+  disabled: {light: props => lighten(0.1, disabled(props))}
+})
+
 /* eslint-disable indent */
-const StyledIconButton = styled.button`
+const IconButtonWrapper = styled.button`
   border-radius: 50%;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-  color: ${props => props.theme[props.color]};
+  color: ${color};
   cursor: pointer;
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 14px;
   font-weight: 500;
   height: 44px;
@@ -54,43 +70,33 @@ const StyledIconButton = styled.button`
   }
 
   :hover {
-    background-color: ${props => lighten(0.1, props.theme[props.color])}
+    background-color: ${props => lighten(0.1, color(props))};
   }
 
   :active {
-      background-color: ${props => darken(0.25, lighten(props.p, props.theme[props.color]))};
+      background-color: ${props => darken(0.25, lightenedColor(props))};
   }
 
   :hover, :focus {
-    background-color: ${props => lighten(props.p, props.theme[props.color])};
-    border: 1px solid ${props => lighten(props.p, props.theme[props.color])};
+    background-color: ${lightenedColor};
+    border: 1px solid ${lightenedColor};
   }
 `
 /* eslint-enable indent */
 
 const IconButton = styled(props => {
-  const {primary, secondary, disabled, children, k, ...rest} = props
-  let color = 'black'
-  let p = 0.6
-  if (primary) {
-    color = 'primary'
-    p = 0.4
-  } else if (secondary) {
-    color = 'secondary'
-    p = 0.35
-  } else if (disabled) {
-    color = 'disabled'
-    p = 0.1
-  }
-  return <StyledIconButton color={color} p={p} {...rest}><Icon {...{k}} />{children}</StyledIconButton>
+  const {disabled, color, children, k, ...rest} = props
+  return <IconButtonWrapper color={disabled ? 'disabled' : color} {...rest}><Icon {...{k}} />{children}</IconButtonWrapper>
 })``
+
+IconButton.defaultProps = {
+  color: 'default'
+}
 
 IconButton.propTypes = {
   icon: PropTypes.bool,
-  k: PropTypes.string.isRequired,
-  primary: PropTypes.bool,
-  secondary: PropTypes.bool,
-  disabled: PropTypes.bool
+  color: PropTypes.oneOf(['default', 'primary', 'secondary']),
+  k: PropTypes.string.isRequired
 }
 
 export default IconButton

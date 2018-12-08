@@ -4,6 +4,7 @@ import styled, {css} from 'styled-components'
 import {swiftEaseIn} from '../lib/Animations'
 
 import Icon from './Icon'
+import { primary, black, fontPrimary, white } from '../lib/Theme'
 
 const NavbarMenu = styled.div`
   cursor: pointer;
@@ -30,35 +31,35 @@ const NavbarLinkWrapper = styled.div`
 
   :hover {
     a {
-      color: ${props => props.theme.primary};
+      color: ${primary};
       transition: ${swiftEaseIn};
     }
   }
 
   ${props => props.active ? css`
-    a { color: ${props => props.theme.primary} !important; }
+    a { color: ${primary} !important; }
 
-    i { color: ${props => props.theme.primary} !important; }
+    i { color: ${primary} !important; }
   ` : ''}
 
   a {
-    color: ${props => props.theme.black};
+    color: ${black};
     cursor: pointer;
-    font-family: ${props => props.theme.fontPrimary};
+    font-family: ${fontPrimary};
     font-size: 16px;
     text-decoration: none;
     width: max-content;
   }
 
   i {
-    color: ${props => props.theme.black};
+    color: ${black};
     font-size: 22px;
     margin-right: 10px;
   }
 `
 
 const NavbarWrapper = styled.div`
-  background-color: ${props => props.theme.white};
+  background-color: ${white};
   min-height: 90px;
   left: 0;
   position: fixed;

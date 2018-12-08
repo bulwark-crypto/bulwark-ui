@@ -3,14 +3,30 @@ import styled, {css} from 'styled-components'
 import {ripple} from '../lib/Animations'
 import {lighten, darken} from 'polished'
 import React from 'react'
+import { fontPrimary, white, borderRadius, black, primary, secondary, disabled } from '../lib/Theme'
+import theme from 'styled-theming'
+
+const color = theme.variants('mode', 'color', {
+  default: {light: black},
+  primary: {light: primary},
+  secondary: {light: secondary},
+  disabled: {light: disabled}
+})
+
+const lightenedColor = theme.variants('mode', 'color', {
+  default: {light: lighten(0.6, black)},
+  primary: {light: props => lighten(0.4, primary(props))},
+  secondary: {light: props => lighten(0.35, secondary(props))},
+  disabled: {light: props => lighten(0.1, disabled(props))}
+})
 
 /* eslint-disable indent */
-const StyledButton = styled.button`
-  border-radius: ${props => props.theme.borderRadius};
+const ButtonWrapper = styled.button`
+  border-radius: ${borderRadius};
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-  color: ${props => props.theme.white};
+  color: ${white};
   cursor: pointer;
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 14px;
   font-weight: 500;
   height: 35px;
@@ -22,7 +38,7 @@ const StyledButton = styled.button`
   position: relative;
   text-align: center;
 
-  background-color: ${props => props.theme[props.color]};
+  background-color: ${color};
   background-position: center;
   border: none;
   
@@ -55,62 +71,53 @@ const StyledButton = styled.button`
   }
 
   :hover {
-    background-color: ${props => lighten(0.1, props.theme[props.color])}
+    background-color: ${props => lighten(0.1, color(props))};
   }
 
   ${props => props.outline ? css`
     background: transparent;
-    border: 1px solid ${props => props.theme[props.color]};
+    border: 1px solid ${color};
     box-shadow: none;
-    color: ${props => props.theme[props.color]};
+    color: ${color};
 
     :active {
-      background-color: ${props => darken(0.25, lighten(props.p, props.theme[props.color]))};
+      background-color: ${props => darken(0.25, lightenedColor(props))};
     }
 
     :hover, :focus {
-      background-color: ${props => lighten(props.p, props.theme[props.color])};
+      background-color: ${lightenedColor};
     }
   ` : ''}
 
   ${props => props.text ? css`
     background: transparent;
     box-shadow: none;
-    color: ${props => props.theme[props.color]};
+    color: ${color};
 
     :active {
-      background-color: ${props => darken(0.25, lighten(props.p, props.theme[props.color]))};
+      background-color: ${props => darken(0.25, lightenedColor(props))};
     }
 
     :hover, :focus {
-      background-color: ${props => lighten(props.p, props.theme[props.color])};
+      background-color: ${lightenedColor};
     }
   ` : ''}
 `
 /* eslint-enable indent */
 
 const Button = styled(props => {
-  const {primary, secondary, disabled, children, ...rest} = props
-  let color = 'black'
-  let p = 0.6
-  if (primary) {
-    color = 'primary'
-    p = 0.4
-  } else if (secondary) {
-    color = 'secondary'
-    p = 0.35
-  } else if (disabled) {
-    color = 'disabled'
-    p = 0.1
-  }
-  return <StyledButton color={color} p={p} {...rest}>{children}</StyledButton>
+  const {disabled, children, color, ...rest} = props
+  return <ButtonWrapper color={disabled ? 'disabled' : color} {...rest}>{children}</ButtonWrapper>
 })``
 
+Button.defaultProps = {
+  color: 'default'
+}
+
 Button.propTypes = {
-  as: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   large: PropTypes.bool,
-  primary: PropTypes.bool,
-  secondary: PropTypes.bool,
+  as: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary']),
   disabled: PropTypes.bool,
   outline: PropTypes.bool,
   text: PropTypes.bool

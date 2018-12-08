@@ -5,11 +5,12 @@ import styled, { css } from 'styled-components'
 import { swiftEaseIn } from '../lib/Animations'
 
 import Icon from './Icon'
+import { white, borderRadius, cardPadding, gridGutter, fontSecondary, red } from '../lib/Theme'
 
 const CardWrapper = styled.div`
-  background-color: ${props => props.theme.white};
+  background-color: ${white};
   border-bottom: 10px;
-  border-radius: ${props => props.theme.borderRadius};
+  border-radius: ${borderRadius};
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   transition: ${swiftEaseIn};
   
@@ -22,20 +23,20 @@ const CardWrapper = styled.div`
 
     ${CardTitle} {
       border: 0;
-      color: ${props => props.theme.white};
+      color: ${white};
       margin: 0;
       padding: 0;
 
       ${CardText} {
-        bottom: ${props => props.theme.cardPadding};
-        left: ${props => props.theme.cardPadding};
+        bottom: ${cardPadding};
+        left: ${cardPadding};
         position: absolute;
       }
     }
 
     img {
-      border-top-left-radius: $border-radius;
-      border-top-right-radius: $border-radius;
+      border-top-left-radius: ${borderRadius};
+      border-top-right-radius: ${borderRadius};
       height: min-content;
     }
   ` : ''}
@@ -56,7 +57,7 @@ Card.propTypes = {
 
 // Actions
 export const CardActions = styled.div`
-  padding: 0 ${props => props.theme.cardPadding} ${props => props.theme.cardPadding} ${props => props.theme.cardPadding};
+  padding: 0 ${cardPadding} ${cardPadding} ${cardPadding};
   position: relative;
 
   .row div:first {
@@ -64,7 +65,7 @@ export const CardActions = styled.div`
     padding-left: 0;
   }
 
-  button { margin: 0 ${props => props.theme.gridGutter} 0 0; }
+  button { margin: 0 ${gridGutter} 0 0; }
 `
 
 CardActions.propTypes = {
@@ -73,7 +74,7 @@ CardActions.propTypes = {
 
 // Body
 export const CardBody = styled.div`
-  padding: ${props => props.theme.cardPadding};
+  padding: ${cardPadding};
 
   ${props => props.nopadding ? 'padding: 0;' : ''}
 `
@@ -85,24 +86,24 @@ CardBody.propTypes = {
 
 const CardTitleWrapper = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  font-family: ${props => props.theme.fontSecondary};
+  font-family: ${fontSecondary};
   font-size: 24px;
   font-weight: bold;
-  padding: ${props => props.theme.cardPadding};
+  padding: ${cardPadding};
   position: relative;
 
   i {
-    color: $red;
+    color: ${red};
     font-size: 24px;
     position: absolute;
-    right: ${props => props.theme.cardPadding};
+    right: ${cardPadding};
     top: 50%;
     transform: translateY(-50%);
   }
 
   img {
-    border-top-left-radius: ${props => props.theme.borderRadius};
-    border-top-right-radius: ${props => props.theme.borderRadius};
+    border-top-left-radius: ${borderRadius};
+    border-top-right-radius: ${borderRadius};
   }
 `
 const CardText = styled.span``

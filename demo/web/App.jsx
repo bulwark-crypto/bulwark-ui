@@ -6,8 +6,6 @@ import { render } from 'react-dom'
 
 import {ThemeProvider} from 'styled-components'
 
-import {light} from '../../lib/Themes'
-
 import Github from './Github'
 import Home from './Home'
 import SASS from './SASS'
@@ -45,7 +43,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <ThemeProvider theme={light}>
+      <ThemeProvider theme={{mode: 'light'}}>
         <HashRouter>
           <div>
             <Navbar onDrawer={this.handleDrawer}>

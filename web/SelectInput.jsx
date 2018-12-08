@@ -5,9 +5,11 @@ import styled, {css} from 'styled-components'
 
 import Icon from './Icon'
 import { swiftEaseIn, swiftEaseInOut, animationSelectItem } from '../lib/Animations'
+import { fontPrimary, secondary, white } from '../lib/Theme'
+import { black } from 'kleur'
 
 const SelectInputWrapper = styled.div`
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 14px;
   height: 55px;
   padding-top: 18px;
@@ -15,15 +17,15 @@ const SelectInputWrapper = styled.div`
 
   ${props => props.active ? css`
     ${SelectInputLabel} {
-      color: ${props => props.theme.secondary};
-      font-family: ${props => props.theme.fontPrimary};
+      color: ${secondary};
+      font-family: ${fontPrimary};
       font-size: 12px;
       height: 11px;
       line-height: 11px;
       top: 0;
     }
 
-    ${SelectInputArrow} { color: ${props => props.theme.black}; }
+    ${SelectInputArrow} { color: ${black}; }
   ` : ''}
 
   ${props => props.focus && !props.native ? css`
@@ -44,9 +46,9 @@ const SelectInputWrapper = styled.div`
 `
 
 const SelectInputLabel = styled.label`
-  color: ${props => props.theme.secondary};
+  color: ${secondary};
   cursor: text;
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 14px;
   height: 16px;
   line-height: 16px;
@@ -57,7 +59,7 @@ const SelectInputLabel = styled.label`
 `
 
 const SelectInputArrow = styled.label`
-  color: ${props => props.theme.secondary};
+  color: ${secondary};
   float: right;
   height: 5px;
   position: absolute;
@@ -69,13 +71,13 @@ const SelectInputArrow = styled.label`
 const SelectInputComponent = styled.select`
   background: transparent;
   border: 0;
-  color: ${props => props.theme.black};
+  color: ${black};
   line-height: 16px;
   outline: none;
   padding: 4px 0;
   appearance: none;
   border: 0 !important;
-  color: ${props => props.theme.black};
+  color: ${black};
   text-indent: 0.1px;
   text-overflow: '';
 
@@ -85,20 +87,20 @@ const SelectInputComponent = styled.select`
 
   option {
     border: 0;
-    color: ${props => props.theme.black};
+    color: ${black};
     max-height: 0;
   }
 
   border-color: transparent;
   border-bottom: 1px solid #f2f2f2;
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 14px;
   min-width: 108px;
   width: 100%;
 `
 
 const SelectInputOptions = styled.div`
-  background-color: ${props => props.theme.white};
+  background-color: ${white};
   border-radius: 5px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   display: block;
@@ -116,7 +118,7 @@ const SelectInputOptions = styled.div`
 
 const SelectInputItem = styled.div`
   cursor: pointer;
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 14px;
   height: 27px;
   line-height: 19px;

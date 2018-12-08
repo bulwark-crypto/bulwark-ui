@@ -2,9 +2,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled, {css} from 'styled-components'
 import { swiftEaseIn } from '../lib/Animations'
+import { secondary, fontPrimary, red, black, primary } from '../lib/Theme'
 
 const TextInputWrapper = styled.div`
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 14px;
   height: 55px;
   padding-top: 18px;
@@ -12,8 +13,8 @@ const TextInputWrapper = styled.div`
 
   ${props => props.active ? css`
     ${TextInputLabel} {
-      color: ${props => props.theme.secondary};
-      font-family: ${props => props.theme.fontPrimary};
+      color: ${secondary};
+      font-family: ${fontPrimary};
       font-size: 12px;
       height: 11px;
       line-height: 11px;
@@ -28,16 +29,16 @@ const TextInputWrapper = styled.div`
   ` : ''}
 
   ${props => props.error ? css`
-    ${TextInputLabel} { color: ${props => props.theme.red} !important; }
+    ${TextInputLabel} { color: ${red} !important; }
 
-    ${TextInputInput} { border-color: ${props => props.theme.red} !important; }
+    /* ${TextInputInput} { border-color: ${red} !important; } */
   ` : ''}
 `
 
 const TextInputLabel = styled.label`
-  color: ${props => props.theme.secondary};
+  color: ${secondary};
   cursor: text;
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 14px;
   height: 16px;
   line-height: 16px;
@@ -50,13 +51,13 @@ const TextInputLabel = styled.label`
 const TextInputInput = styled.input`
   background: transparent;
   border: 0;
-  color: ${props => props.theme.black};
+  color: ${black};
   line-height: 16px;
   outline: none;
   padding: 4px 0;
   border-color: transparent;
   border-bottom: 1px solid #f2f2f2;
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 14px;
   min-width: 108px;
   width: 100%;
@@ -72,7 +73,7 @@ const TextInputBar = styled.div`
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: ${props => props.theme.primary};
+    background: ${primary};
     transition: 0.2s ease all;
   }
 
@@ -86,7 +87,7 @@ const TextInputBar = styled.div`
 `
 
 const TextInputMessage = styled.div`
-  color: ${props => props.theme.secondary};
+  color: ${secondary};
   font-size: 9px;
   height: 11px;
   line-height: 11px;
@@ -125,7 +126,7 @@ export default class TextInput extends React.Component {
   handleFocus = isFocus => this.setState({isFocus})
 
   render () {
-    const {defaultValue, label, message, ...rest} = this.props
+    const {defaultValue, label, message, error, ...rest} = this.props
 
     let focus = false
     if (this.state.isFocus) focus = true
@@ -143,7 +144,7 @@ export default class TextInput extends React.Component {
     }
 
     return (
-      <TextInputWrapper focus={focus} active={active}>
+      <TextInputWrapper focus={focus} active={active} error={error}>
         {!!label &&
           <TextInputLabel htmlFor={rest.name} onClick={this.handleLabelClick}>
             {label}

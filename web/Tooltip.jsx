@@ -4,17 +4,25 @@ import styled, {css} from 'styled-components'
 
 import Button from './Button'
 import { swiftEaseIn } from '../lib/Animations'
+import { alert, secondary, primary, borderRadius, white, gridGutter } from '../lib/Theme'
+import theme from 'styled-theming'
+
+const color = theme.variants('mode', 'color', {
+  default: {light: secondary},
+  primary: {light: primary},
+  alert: {light: alert}
+})
 
 // TODO: Change the padding here to calculate based on gridGutter/2 instead of hardcoded
 const TooltipContent = styled.div`
-  background-color: ${props => props.color ? props.theme[props.color] : props.theme.secondary};
-  border-radius: ${props => props.theme.borderRadius};
-  color: ${props => props.theme.white};
+  background-color: ${color};
+  border-radius: ${borderRadius};
+  color: ${white};
   display: inline-block;
   font-size: 9px;
   line-height: 11px;
   opacity: 0;
-  padding: 5px ${props => props.theme.gridGutter};
+  padding: 5px ${gridGutter};
   position: absolute;
   text-align: center;
   transition: ${swiftEaseIn};
@@ -35,7 +43,7 @@ const TooltipContent = styled.div`
     transform: translateX(-50%);
 
     ::after {
-      border-color: transparent transparent ${props => props.color ? props.theme[props.color] : props.theme.secondary} transparent;
+      border-color: transparent transparent ${color} transparent;
       bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
@@ -48,7 +56,7 @@ const TooltipContent = styled.div`
     transform: translateY(-50%);
 
     ::after {
-      border-color: transparent transparent transparent ${props => props.color ? props.theme[props.color] : props.theme.secondary};
+      border-color: transparent transparent transparent ${color};
       left: 100%;
       top: 50%;
       transform: translateY(-50%);
@@ -61,7 +69,7 @@ const TooltipContent = styled.div`
     transform: translateY(-50%);
 
     ::after {
-      border-color: transparent ${props => props.color ? props.theme[props.color] : props.theme.secondary} transparent transparent;
+      border-color: transparent ${color} transparent transparent;
       right: 100%;
       top: 50%;
       transform: translateY(-50%);
@@ -74,7 +82,7 @@ const TooltipContent = styled.div`
     transform: translateX(-50%);
 
     ::after {
-      border-color: ${props => props.color ? props.theme[props.color] : props.theme.secondary} transparent transparent transparent;
+      border-color: ${color} transparent transparent transparent;
       left: 50%;
       top: 100%;
       transform: translateX(-50%);
@@ -106,6 +114,10 @@ const Tooltip = (props) => {
   )
 }
 
+Tooltip.defaultProps = {
+  color: 'default'
+}
+
 Tooltip.propTypes = {
   bottom: PropTypes.bool,
   children: PropTypes.any.isRequired,
@@ -114,7 +126,7 @@ Tooltip.propTypes = {
   primary: PropTypes.bool,
   right: PropTypes.bool,
   top: PropTypes.bool,
-  color: PropTypes.string
+  color: PropTypes.oneOf(['default', 'primary', 'alert'])
 }
 
 export default Tooltip

@@ -4,6 +4,8 @@ import styled, {css} from 'styled-components'
 
 import Icon from './Icon'
 import { animationStepper } from '../lib/Animations'
+import { secondary, white, primary } from '../lib/Theme'
+import { black } from 'kleur'
 
 // Step
 export const Step = () => null
@@ -25,30 +27,30 @@ const StepperContent = styled.div`
 `
 
 const StepperStep = styled.div`
-  color: ${props => props.theme.secondary};
+  color: ${secondary};
   display: inline-block;
   font-size: 14px;
   line-height: 19px;
 
   ${props => props.active ? css`
     ${StepperIndicator} {
-      background-color: ${props => props.theme.primary};
-      color: ${props => props.theme.white};
+      background-color: ${primary};
+      color: ${white};
     }
   ` : ''}
 
   ${props => props.complete ? css`
     ${StepperIndicator} {
-      background-color: ${props => props.theme.black};
-      color: ${props => props.theme.secondary};
+      background-color: ${black};
+      color: ${secondary};
     }
   ` : ''}
 `
 
 const StepperIndicator = styled.span`
-  background-color: ${props => props.theme.black};
+  background-color: ${black};
   border-radius: 50%;
-  color: ${props => props.theme.white};
+  color: ${white};
   display: inline-block;
   font-size: 16px;
   height: 35px;
@@ -70,7 +72,7 @@ const StepperIndicator = styled.span`
 `
 
 const StepperBar = styled.div`
-  border-top: 1px solid ${props => props.theme.secondary};
+  border-top: 1px solid ${secondary};
   display: inline-block;
   height: 5px;
   margin-right: 21px;

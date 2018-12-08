@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import IconButton from './IconButton'
 import SelectInput from './SelectInput'
+import { secondary } from '../lib/Theme'
 
 const PaginationWrapper = styled.div`
   color: ${props => props.theme.secondary};
@@ -24,8 +25,8 @@ const PaginationSize = styled.div`
   select {
     background-color: transparent;
     border: 0;
-    border-bottom: 1px solid $secondary;
-    color: $secondary;
+    border-bottom: 1px solid ${secondary};
+    color: ${secondary};
     min-width: 43px;
     width: 43px;
   }
@@ -46,7 +47,7 @@ const PaginationPage = styled.div`
 
   ${IconButton} {
     border: 0;
-    color: ${props => props.theme.secondary};
+    color: ${secondary};
     display: inline-block;
     font-size: 14px;
     margin: 0 4px;

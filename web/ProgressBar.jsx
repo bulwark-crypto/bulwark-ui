@@ -2,11 +2,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import {animationProgressbar} from '../lib/Animations'
+import { primary } from '../lib/Theme'
 
 const ProgressBarWrapper = styled.div`
   animation: all 1s ${animationProgressbar} .1s;
-  background-color: ${props => props.theme.primary};
-  box-shadow: 0 0 10px ${props => props.theme.primary};
+  background-color: ${primary};
+  box-shadow: 0 0 10px ${primary};
   display: block;
   height: 4px;
   left: 0;

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Checkbox from './Checkbox'
 import Icon from './Icon'
 import { swiftEaseIn } from '../lib/Animations'
+import { primary, secondary, lightGray } from '../lib/Theme'
 
 const TableWrapper = styled.table`
   margin: 0;
@@ -28,20 +29,20 @@ export const TableCell = styled.td`
     display: none;
 
     :hover::before {
-      text-shadow: 0px 0px 1px ${props => props.theme.primary};
+      text-shadow: 0px 0px 1px ${primary};
     }
 
     ::before {
-      color: ${props => props.theme.secondary};
+      color: ${secondary};
       cursor: pointer;
       display: inline-block;
       text-align: center;
-      text-shadow: 0px 0px 1px ${props => props.theme.lightGray};
+      text-shadow: 0px 0px 1px ${lightGray};
       transition: color .3s ease;
     }
 
     &:checked + label::before {
-      color: ${props => props.theme.primary};
+      color: ${primary};
     }
 
     & + label::before {
@@ -69,7 +70,7 @@ export const TableRow = styled.tr`
 
 export const TableHead = styled.thead`
   ${TableCell} {
-      color: ${props => props.theme.secondary};
+      color: ${secondary};
       cursor: pointer;
       font-size: 14px;
       height: 70px;

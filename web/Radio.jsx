@@ -1,15 +1,23 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import {pickRest} from '../lib/utils'
 import styled, { css } from 'styled-components'
+import theme from 'styled-theming'
 
-import { pulse, swiftEaseOut } from '../lib/Animations'
+import { pulse } from '../lib/Animations'
+import { black, primary, secondary } from '../lib/Theme'
+
+const color = theme.variants('mode', 'color', {
+  default: {light: black},
+  primary: {light: primary},
+  secondary: {light: secondary},
+  disabled: {light: '#C8C8C8'}
+})
 
 const RadioWrapper = styled.span`
   display: inline-block;
   height: 24px;
   width: 24px;
-  border: 1px solid ${props => props.theme[props.color]};
+  border: 1px solid ${color};
   border-radius: 50%;
   margin: 0 5px;
   text-align: center;
@@ -19,22 +27,14 @@ const RadioWrapper = styled.span`
 
   ${props => props.checked ? css`
     ::after {
-      animation: ${pulse('black')} 1.25s cubic-bezier(0.66, 0, 0, 1);
+      animation: ${props => pulse(color(props))} 1.25s cubic-bezier(0.66, 0, 0, 1);
       content: "";
       border-radius: 50%;
       display: block;
       margin: 4px;
       height: 14px;
       width: 14px;
-      background-color: ${props => props.theme.black};
-
-      ${props => props.color ? css`
-        animation: ${pulse(props.color)} 1.25s cubic-bezier(0.66, 0, 0, 1);
-        background-color: ${props => props.theme[props.color]};
-      `: ''}
-      ${props => props.disabled ? css`
-        background-color: #C8C8C8;
-      ` : ''}
+      background-color: ${color};
     }
   ` : ''}
 `

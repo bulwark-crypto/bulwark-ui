@@ -1,35 +1,38 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled, { css } from 'styled-components'
+import theme from 'styled-theming'
 
 import { pulse, swiftEaseOut } from '../lib/Animations'
+import { black, primary, secondary, white, red } from '../lib/Theme'
+
+const color = theme.variants('mode', 'color', {
+  default: {light: black},
+  primary: {light: primary},
+  secondary: {light: secondary},
+  disabled: {light: '#C8C8C8'},
+  red: {light: red}
+})
 
 const CheckboxWrapper = styled.span`
   display: inline-block;
   height: 24px;
   width: 24px;
-  border: 1px solid ${props => props.theme[props.color]};
+  border: 1px solid ${color};
   border-radius: 50%;
   margin: 0 5px;
-  color: ${props => props.theme.white};
+  color: ${white};
   text-align: center;
   vertical-align: top;
 
   ${props => props.disabled ? css`
-    border-color: #C8C8C8;
     cursor: not-allowed;
   ` : ''}
 
   ${props => props.checked && !props.switch ? css`
-    animation: ${pulse('black')} 1.25s cubic-bezier(0.66, 0, 0, 1);
+    animation: ${props => pulse(color(props))} 1.25s cubic-bezier(0.66, 0, 0, 1);
     border: 0;
-    background-color: ${props => props.theme.black};
-
-    ${props => props.color ? css`
-      animation: ${pulse(props.color)} 1.25s cubic-bezier(0.66, 0, 0, 1);
-      background-color: ${props => props.theme[props.color]};
-    ` : ''}
-    ${props => props.disabled ? 'background-color: #C8C8C8;' : ''}
+    background-color: ${color};
 
     ::after {
       content: ${props => props.indeterminate ? '"\\2015"' : '"\\2713"'};
@@ -48,21 +51,13 @@ const CheckboxWrapper = styled.span`
       width: 24px;
       height: 24px;
       border-radius: 50%;
-      background-color: ${props => props.theme.white};
+      background-color: ${white};
       transition: ${swiftEaseOut};
       box-sizing: content-box;
       ${props => props.checked ? css`
-        animation: ${pulse('black')} 1.25s cubic-bezier(0.66, 0, 0, 1);
-        background-color: ${props => props.theme.black};
+        animation: ${props => pulse(color(props))} 1.25s cubic-bezier(0.66, 0, 0, 1);
+        background-color: ${color};
         transform: translate(24px);
-        ${props => props.color ? css`
-          animation: ${pulse(props.color)} 1.25s cubic-bezier(0.66, 0, 0, 1);
-          background-color: ${props => props.theme[props.color]};
-        ` : ''}
-      ` : ''}
-      ${props => props.disabled ? css`
-        animation: none;
-        background-color: #C8C8C8;
       ` : ''}
     }
   ` : ''}
@@ -71,12 +66,12 @@ const CheckboxWrapper = styled.span`
 export default class Checkbox extends React.Component {
   static defaultProps = {
     defaultChecked: false,
-    color: 'black'
+    color: 'default'
   }
 
   static propTypes = {
     as: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    color: PropTypes.oneOf(['black', 'primary', 'secondary', 'red']),
+    color: PropTypes.oneOf(['default', 'primary', 'secondary', 'red']),
     disabled: PropTypes.bool,
     indeterminate: PropTypes.bool,
     defaultChecked: PropTypes.bool,
@@ -119,8 +114,8 @@ export default class Checkbox extends React.Component {
   }
 
   render () {
-    const { checked, ...rest } = this.props
+    const { checked, color, ...rest } = this.props
     const realChecked = this.isControlled() ? checked : this.state.checked
-    return <CheckboxWrapper checked={realChecked} onClick={this.handleClick} onKeyDown={this.handleKeyDown} tabIndex={0} {...rest} />
+    return <CheckboxWrapper color={this.props.disabled ? 'disabled' : color} checked={realChecked} onClick={this.handleClick} onKeyDown={this.handleKeyDown} tabIndex={0} {...rest} />
   }
 }

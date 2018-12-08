@@ -5,17 +5,18 @@ import styled, {css} from 'styled-components'
 import {swiftEaseIn, swiftEaseOut} from '../lib/Animations'
 
 import Icon from '../web/Icon'
+import { white, panelPadding, fontPrimary, secondary } from '../lib/Theme'
 
 const PanelWrapper = styled.div`
-  background-color: ${props => props.theme.white};
+  background-color: ${white};
   border-radius: 10px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  padding: ${props => props.theme.panelPadding} ${props => props.theme.panelPadding} 0 ${props => props.theme.panelPadding};
+  padding: ${panelPadding} ${panelPadding} 0 ${panelPadding};
   transition: ${swiftEaseOut};
 
   ${props => props.open ? css`
-    padding-bottom: ${props => props.theme.panelPadding};
+    padding-bottom: ${panelPadding};
     transition: ${swiftEaseIn};
 
     ${PanelArrow} i {
@@ -30,12 +31,12 @@ const PanelWrapper = styled.div`
 `
 
 const PanelHeader = styled.div`
-  padding-bottom: ${props => props.theme.panelPadding};
+  padding-bottom: ${panelPadding};
   position: relative;
 `
 
 const PanelHeaderTitle = styled.div`
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 20px;
   font-weight: bold;
   height: 26px;
@@ -43,8 +44,8 @@ const PanelHeaderTitle = styled.div`
 `
 
 const PanelHeaderSubtitle = styled.div`
-  color: ${props => props.theme.secondary};
-  font-family: ${props => props.theme.fontPrimary};
+  color: ${secondary};
+  font-family: ${fontPrimary};
   font-size: 14px;
   height: 19px;
   left: 50%;
@@ -62,9 +63,9 @@ const PanelArrow = styled.div`
 `
 
 const PanelContent = styled.div`
-color: ${props => props.theme.secondary};
+  color: ${secondary};
   display: block;
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 14px;
   margin: 0;
   max-height: 0;

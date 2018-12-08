@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import {kill, pickRest} from '../lib/utils'
+import {kill} from '../lib/utils'
 import Icon from './Icon'
 import styled, {css} from 'styled-components'
+import { primary } from '../lib/Theme'
+import { white } from 'kleur'
 
 const TabWrapper = styled.div`
   display: inline-block;
@@ -59,7 +61,7 @@ const TabsWrapper = styled.div`
 `
 
 const TabsBar = styled.div`
-  background-color: ${props => props.theme.primary};
+  background-color: ${primary};
   height: 1px;
   position: absolute;
   top: 50px;
@@ -68,7 +70,7 @@ const TabsBar = styled.div`
 `
 
 const TabsContent = styled.div`
-  background-color: ${props => props.theme.white};
+  background-color: ${white};
   border-radius: 5px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
   margin-top: 5px;
@@ -78,7 +80,7 @@ const TabsContent = styled.div`
 `
 
 const TabsList = styled.div`
-  background-color: ${props => props.theme.white};
+  background-color: ${white};
   border-radius: 5px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
   position: relative;

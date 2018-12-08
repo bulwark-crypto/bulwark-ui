@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import {pickRest} from '../lib/utils'
 import styled, {css} from 'styled-components'
 import { animationModalContainer } from '../lib/Animations'
 
@@ -38,7 +37,7 @@ const ModalWrapper = styled.div`
           right: 0;
           top: 0;
           transform: none;
-          transition: $animation-modal-overlay;
+          transition: none;
           width: 100%;
         }
       }

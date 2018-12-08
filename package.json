@@ -92,7 +92,8 @@
     "react-router-dom": "^4.3.1",
     "react-stockcharts": "^0.7.7",
     "react-syntax-highlighter": "^8.0.1",
-    "styled-components": "^4.0.3"
+    "styled-components": "^4.0.3",
+    "styled-theming": "^2.2.0"
   },
   "standard": {
     "parser": "babel-eslint"

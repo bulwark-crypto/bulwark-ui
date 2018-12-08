@@ -3,6 +3,7 @@ import React from 'react'
 import {kill} from '../lib/utils'
 import styled, {css} from 'styled-components'
 import {swiftEaseInOut, animationSelectItem} from '../lib/Animations'
+import { white, fontPrimary } from '../lib/Theme'
 
 const MenuWrapper = styled.div`
   display: inline-block;
@@ -21,7 +22,7 @@ const MenuWrapper = styled.div`
 `
 
 const MenuItems = styled.div`
-  background-color: ${props => props.theme.white};
+  background-color: ${white};
   border-radius: 5px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   display: block;
@@ -40,7 +41,7 @@ const MenuItems = styled.div`
 
 export const MenuItem = styled.div`
   cursor: pointer;
-  font-family: ${props => props.theme.fontPrimary};
+  font-family: ${fontPrimary};
   font-size: 16px;
   height: 39px;
   line-height: 19px;

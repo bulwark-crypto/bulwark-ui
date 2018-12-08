@@ -3,14 +3,15 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import ReactChartKick, {LineChart} from 'react-chartkick'
 import styled from 'styled-components'
+import { black, white, fontSecondary, secondary } from '../lib/Theme'
 
 ReactChartKick.addAdapter(Chart)
 
 const ChartWrapper = styled.div`
-  background-color: ${props => props.theme.black};
+  background-color: ${black};
   border-radius: 10px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-  color: ${props => props.theme.white};
+  color: ${white};
 `
 
 const ChartHead = styled.div`
@@ -22,7 +23,7 @@ const ChartHead = styled.div`
 `
 
 const ChartHeadTitle = styled.div`
-  font-family: ${props => props.theme.fontSecondary};
+  font-family: ${fontSecondary};
   font-size: 24px;
   font-weight: bold;
   letter-spacing: -1px;
@@ -42,7 +43,7 @@ const ChartHeadFlex = styled.div`
 
 const ChartHeadLinks = styled.div`
   a {
-    color: ${props => props.theme.secondary};
+    color: ${secondary};
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
@@ -51,7 +52,7 @@ const ChartHeadLinks = styled.div`
 
     &:last-child { margin-right: 0; }
 
-    &.active { color: ${props => props.theme.white}; }
+    &.active { color: ${white}; }
   }
 `
 
