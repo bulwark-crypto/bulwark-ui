@@ -1,10 +1,46 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import {pickRest} from '../lib/utils'
+import styled, { css } from 'styled-components'
+import theme from 'styled-theming'
+
+import { pulse } from '../lib/Animations'
+import { black, primary, secondary } from '../lib/Theme'
+
+const color = theme.variants('mode', 'color', {
+  default: {light: black},
+  primary: {light: primary},
+  secondary: {light: secondary},
+  disabled: {light: '#C8C8C8'}
+})
+
+const RadioWrapper = styled.span`
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  border: 1px solid ${color};
+  border-radius: 50%;
+  margin: 0 5px;
+  text-align: center;
+  vertical-align: top;
+
+  ${props => props.disabled ? 'cursor: not-allowed;' : ''}
+
+  ${props => props.checked ? css`
+    ::after {
+      animation: ${props => pulse(color(props))} 1.25s cubic-bezier(0.66, 0, 0, 1);
+      content: "";
+      border-radius: 50%;
+      display: block;
+      margin: 4px;
+      height: 14px;
+      width: 14px;
+      background-color: ${color};
+    }
+  ` : ''}
+`
 
 export default class Radio extends React.Component {
   static defaultProps = {
-    as: 'span',
     defaultChecked: false
   }
 
@@ -54,9 +90,8 @@ export default class Radio extends React.Component {
   }
 
   render () {
-    const [mods, {children, as, checked, onChange, value, ...rest}] = pickRest(this.props, ['primary', 'secondary', 'red', 'disabled', 'radio'])
-    mods.checked = this.isControlled() ? checked : this.state.checked
-    const As = as
-    return <As block='radio' mods={mods} onClick={this.handleClick} onKeyDown={this.handleKeyDown} tabIndex={0} {...rest} />
+    const { checked, ...rest } = this.props
+    const realChecked = this.isControlled() ? checked : this.state.checked
+    return <RadioWrapper checked={realChecked} onClick={this.handleClick} onKeyDown={this.handleKeyDown} tabIndex={0} {...this.props} />
   }
 }

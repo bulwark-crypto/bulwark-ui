@@ -7,7 +7,8 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 8080,
-    hot: true
+    hot: true,
+    overlay: true
   },
   entry: path.join(__dirname, 'demo/web', 'App.jsx'),
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',

@@ -8,9 +8,9 @@ import Source from '../../../web/Source'
 const ButtonDemo = () => (
   <div>
     <h3>Badges</h3>
-    <Badge primary text='2'><Button>Default</Button></Badge>
+    <Badge color='primary' text='2'><Button>Default</Button></Badge>
     <Badge><Button text>Primary</Button></Badge>
-    <Badge primary text='6'><IconButton secondary k='lemon' /></Badge>
+    <Badge color='primary' text='6'><IconButton secondary k='lemon' /></Badge>
     <Badge><IconButton primary k='heartbeat' /></Badge>
     <h4>Code Example</h4>
     <Source

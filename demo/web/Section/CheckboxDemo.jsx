@@ -6,9 +6,9 @@ import Source from '../../../web/Source'
 const CheckboxDemo = () => (
   <div>
     <h3>Checkboxes</h3>
-    <Checkbox defaultChecked red />
-    <Checkbox defaultChecked primary />
-    <Checkbox defaultChecked primary indeterminate />
+    <Checkbox defaultChecked color='red' />
+    <Checkbox defaultChecked color='primary' />
+    <Checkbox defaultChecked color='primary' indeterminate />
     <Checkbox disabled />
     <Checkbox defaultChecked disabled />
     <br />
@@ -23,8 +23,8 @@ const CheckboxDemo = () => (
 <Checkbox defaultChecked disabled />`} />
     <br />
     <Checkbox defaultChecked />
-    <Checkbox defaultChecked primary />
-    <Checkbox defaultChecked secondary />
+    <Checkbox defaultChecked color='primary' />
+    <Checkbox defaultChecked color='secondary' />
     <Checkbox />
     <Checkbox defaultChecked disabled />
     <h4>Code Example</h4>
@@ -38,9 +38,9 @@ const CheckboxDemo = () => (
 <Checkbox defaultChecked disabled />`} />
     <h3>Switches</h3>
     <Checkbox switch defaultChecked />
-    <Checkbox switch defaultChecked primary />
-    <Checkbox switch defaultChecked secondary />
-    <Checkbox switch red />
+    <Checkbox switch defaultChecked color='primary' />
+    <Checkbox switch defaultChecked color='secondary' />
+    <Checkbox switch color='red' />
     <Checkbox switch defaultChecked disabled />
     <h4>Code Example</h4>
     <Source

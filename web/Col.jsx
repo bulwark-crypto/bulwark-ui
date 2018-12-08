@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+// this can stay, we're probally not going to do our own grid system
 const Col = ({children, lg, md, sm, xs, ...props}) => {
   let classes = `col-xs-${xs}`
   if (props.className) {
